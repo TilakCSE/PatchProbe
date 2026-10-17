@@ -1,26 +1,37 @@
 # Presentation guide and likely professor questions
 
 ## One sentence
+
 PatchProbe helps a developer review a dependency upgrade by routing each release-note entry to a suggested area for the first downstream verification check.
 
-## Pipeline to show
-Official versioned notes → entry extraction and provenance → five-label human annotation → release-grouped split → training-only TF-IDF → linear model → held-out evaluation → review board with source links.
+## Five-minute walkthrough
+
+1. State the task boundary: classify one published Django release-note entry into one of four verification areas or `No targeted check stated`. `UNCLEAR` is a human review state, not a sixth model label.
+2. Show the source manifest: 14 pinned release-note RST files, 571 unlabeled extracted entries, source URLs/hashes, and a 50-entry pilot with 10 from each of Django 4.2, 5.0, 5.1, 5.2, and 6.0.
+3. Open `python -m streamlit run app.py`. Read one entry, consult the label guide, make a human choice, save, and show resume/revisit. Demonstrate `UNCLEAR` for an ambiguous note.
+4. Explain the model pipeline: note `text` only → release-grouped split → training-only word 1–2 and character 3–5 TF-IDF → balanced logistic regression → majority and keyword baselines → per-class metrics and errors. No stopword-removal step is required. No dense embedding dimension exists.
+5. If a human-labeled model has been trained, show its real held-out results and a prediction in the app. If labels are still pending, show the deliberate training gate and describe the annotation pilot as the current deliverable. Never substitute synthetic test fixtures for measured accuracy.
 
 ## Likely questions
-**What is original?** The exact routing target, label guide, small reviewed dataset, leakage-aware experiment, and reviewer workflow. We do not claim no similar system exists anywhere.
+
+**What is original?** The exact routing target, label guide, curated human-reviewed subset, release-aware experiment, and reviewer workflow. The literature review finds adjacent work on release-note change types and test selection; we do not claim worldwide uniqueness.
 
 **Who uses it?** Developers, QA engineers, and maintainers planning upgrade checks. They retain the final decision.
 
-**Why no blanket stopword removal?** Negation and words such as removed, required, and unsupported matter in technical notes. Document-frequency filtering can still remove very common terms.
+**What exactly is in the dataset?** One row is a candidate note entry, usually a substantive bullet or prose block, extracted from official release notes. Each has an ID, release, exact source URL/revision, section path, raw RST, and cleaned text. The 571 current rows have **no target labels**. A separate CSV stores explicit reviewer decisions.
 
-**Why TF-IDF and a linear model?** It is fast, reproducible on a CPU, appropriate for a small dataset, and its feature weights can be inspected. Compare it to simple baselines before adding complexity.
+**Why these five labels?** Four practical downstream check surfaces cover API/code, configuration/deployment, data/schema, and UI/output behavior. `No targeted check stated` prevents inventing a check when a note does not support one. `UNCLEAR` preserves ambiguity instead of forcing a class.
 
-**Why split by release?** Notes within one release share wording and context. Holding out releases better tests transfer to an unseen version.
+**Why no blanket stopword removal?** Small words and negation can change technical meaning. TF-IDF already downweights very common terms; the pipeline retains the original cleaned wording.
 
-**What does the metric mean?** It measures agreement with the team's documented human label decisions on held-out releases. It does not measure whether a codebase passes its actual upgrade tests.
+**Why TF-IDF and logistic regression?** It is reproducible on a CPU and suitable as a transparent starting point for a small labeled dataset. Character features help with identifiers and spelling variants. The model is a baseline until human-labeled evaluation demonstrates its quality.
 
-**Why five classes?** Four concrete downstream check surfaces plus a no-targeted-check class. UNCLEAR is a review state so ambiguous notes are not forced into training.
+**Why split by release?** Notes within one release can share wording and context. Whole-release holdout reduces this leakage path. It does not prove performance on future releases or other software ecosystems.
 
-**What are the limitations?** A note may imply multiple checks; a single lane cannot certify compatibility; the corpus is Django-specific; and results depend on annotation consistency.
+**What does the metric mean?** It measures agreement with documented human decisions on held-out Django releases. It does not measure whether an actual application passes upgrade tests. Macro-F1 highlights weak minority classes; report per-class support and errors alongside it.
 
-Add exact counts, model settings, error examples, and live demo steps after implementation.
+**What if labels are missing or classes are rare?** The training command stops without human labels. A small or class-sparse run is marked a pilot, not a validated five-class result. The 50-row pilot measures annotation time and guide clarity before the team commits to a larger review set.
+
+**What are the main limitations?** A note may imply several checks; RST extraction can lose context; Django-only writing style limits transfer; labels can vary between reviewers; classifier scores are not calibrated. The product recommends a first review area, not a compatibility guarantee.
+
+Record the actual presentation date, rubric, labeling time, class counts, split sizes, model feature count, and held-out errors here when they are known.
