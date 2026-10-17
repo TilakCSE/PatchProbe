@@ -1,0 +1,193 @@
+{
+  "dataset_kind": "unlabeled Django release-note candidate entries",
+  "extraction_method": "patchprobe.ingest.parse_release_notes, source-controlled RST block parser",
+  "source_license": "Django BSD-3-Clause; see docs/DATA_PROVENANCE.md",
+  "files": [
+    {
+      "release": "4.2",
+      "tag": "5.2.8",
+      "source_revision": "47fe39af56ecd0ad73b9c7562511015e96b91b80",
+      "raw_url": "https://raw.githubusercontent.com/django/django/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt",
+      "sha256_utf8": "30f3c0b001dd640cdefec44220d7dab4fa88386658d1b745389612860bd8a1f5",
+      "extracted_entries_before_dedup": 107
+    },
+    {
+      "release": "5.0",
+      "tag": "5.2.8",
+      "source_revision": "47fe39af56ecd0ad73b9c7562511015e96b91b80",
+      "raw_url": "https://raw.githubusercontent.com/django/django/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt",
+      "sha256_utf8": "05ff31d7c0462fde8925c8353ab011f05f06c869dd52280e67634af9d41d64d0",
+      "extracted_entries_before_dedup": 127
+    },
+    {
+      "release": "5.1",
+      "tag": "5.2.8",
+      "source_revision": "47fe39af56ecd0ad73b9c7562511015e96b91b80",
+      "raw_url": "https://raw.githubusercontent.com/django/django/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt",
+      "sha256_utf8": "9a5b5dd095b041be91805057afee5ce1136bf7af4a12de233195e1f80f629bef",
+      "extracted_entries_before_dedup": 89
+    },
+    {
+      "release": "5.2",
+      "tag": "5.2.8",
+      "source_revision": "47fe39af56ecd0ad73b9c7562511015e96b91b80",
+      "raw_url": "https://raw.githubusercontent.com/django/django/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt",
+      "sha256_utf8": "91c05ff0bc3564237cd8b4cc38c2b9286b379f858b58b63e3683203a2c498ed7",
+      "extracted_entries_before_dedup": 71
+    },
+    {
+      "release": "5.2.1",
+      "tag": "5.2.8",
+      "source_revision": "47fe39af56ecd0ad73b9c7562511015e96b91b80",
+      "raw_url": "https://raw.githubusercontent.com/django/django/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt",
+      "sha256_utf8": "1c6a5546a09485818c76c725d8520b2da344ac787acc6010f6d6a17c6a8a2cf9",
+      "extracted_entries_before_dedup": 16
+    },
+    {
+      "release": "5.2.2",
+      "tag": "5.2.8",
+      "source_revision": "47fe39af56ecd0ad73b9c7562511015e96b91b80",
+      "raw_url": "https://raw.githubusercontent.com/django/django/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.2.txt",
+      "sha256_utf8": "224ff1c2478d6b7a159e74e3c304e399d41cbacdb5a50e8c58a4c766573c91fc",
+      "extracted_entries_before_dedup": 12
+    },
+    {
+      "release": "5.2.3",
+      "tag": "5.2.8",
+      "source_revision": "47fe39af56ecd0ad73b9c7562511015e96b91b80",
+      "raw_url": "https://raw.githubusercontent.com/django/django/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.3.txt",
+      "sha256_utf8": "78598abe935370f31f59c9907b082c3a302a61fceed415cb104c7808a3e817cc",
+      "extracted_entries_before_dedup": 3
+    },
+    {
+      "release": "5.2.4",
+      "tag": "5.2.8",
+      "source_revision": "47fe39af56ecd0ad73b9c7562511015e96b91b80",
+      "raw_url": "https://raw.githubusercontent.com/django/django/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.4.txt",
+      "sha256_utf8": "5bf1ff6222a7aca01ff8e4550b52621cb7054b740d85c09607fa79e6df9c7287",
+      "extracted_entries_before_dedup": 3
+    },
+    {
+      "release": "5.2.5",
+      "tag": "5.2.8",
+      "source_revision": "47fe39af56ecd0ad73b9c7562511015e96b91b80",
+      "raw_url": "https://raw.githubusercontent.com/django/django/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.5.txt",
+      "sha256_utf8": "559ed1d70b6e3d9d375dc9daeee5d3fe91def36bd10a73f51cc3ac8dbac0c2b0",
+      "extracted_entries_before_dedup": 5
+    },
+    {
+      "release": "5.2.6",
+      "tag": "5.2.8",
+      "source_revision": "47fe39af56ecd0ad73b9c7562511015e96b91b80",
+      "raw_url": "https://raw.githubusercontent.com/django/django/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.6.txt",
+      "sha256_utf8": "5e3eb606b25e48ef9a0c4137f5c0f8e4790f9a249963b66143fbd6010cfe701f",
+      "extracted_entries_before_dedup": 2
+    },
+    {
+      "release": "5.2.7",
+      "tag": "5.2.8",
+      "source_revision": "47fe39af56ecd0ad73b9c7562511015e96b91b80",
+      "raw_url": "https://raw.githubusercontent.com/django/django/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.7.txt",
+      "sha256_utf8": "e076421892f094c4374890faa72502eaf5128a6a4f6436df33ecf873f06926fa",
+      "extracted_entries_before_dedup": 3
+    },
+    {
+      "release": "5.2.8",
+      "tag": "5.2.8",
+      "source_revision": "47fe39af56ecd0ad73b9c7562511015e96b91b80",
+      "raw_url": "https://raw.githubusercontent.com/django/django/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.8.txt",
+      "sha256_utf8": "f0691ad3f1b5851c9f6bc00b7f6e388a4500e0af55b3e319facf25df6b3600c9",
+      "extracted_entries_before_dedup": 5
+    },
+    {
+      "release": "6.0",
+      "tag": "6.0.1",
+      "source_revision": "85eb963c5297fb285aecf4a90c97141a1b9c5bee",
+      "raw_url": "https://raw.githubusercontent.com/django/django/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt",
+      "sha256_utf8": "0f062aab84b0ebbfd8a2985992cc072da6d838fc56c102184bbfd78355198516",
+      "extracted_entries_before_dedup": 118
+    },
+    {
+      "release": "6.0.1",
+      "tag": "6.0.1",
+      "source_revision": "85eb963c5297fb285aecf4a90c97141a1b9c5bee",
+      "raw_url": "https://raw.githubusercontent.com/django/django/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.1.txt",
+      "sha256_utf8": "d76634f867e2fb50dc0136935a0820ebfd0fed4f872035a1599cb6047778db29",
+      "extracted_entries_before_dedup": 10
+    }
+  ],
+  "candidate_count_before_exact_dedup": 571,
+  "exact_duplicate_count": 0,
+  "entry_count": 571,
+  "counts_by_release": {
+    "4.2": 107,
+    "5.0": 127,
+    "5.1": 89,
+    "5.2": 71,
+    "5.2.1": 16,
+    "5.2.2": 12,
+    "5.2.3": 3,
+    "5.2.4": 3,
+    "5.2.5": 5,
+    "5.2.6": 2,
+    "5.2.7": 3,
+    "5.2.8": 5,
+    "6.0": 118,
+    "6.0.1": 10
+  },
+  "pilot_count": 50,
+  "pilot_entry_ids": [
+    "dj-44c4cba3d7b7318a",
+    "dj-239bce880672c352",
+    "dj-78db149ac73235f6",
+    "dj-5850f125d681b2a5",
+    "dj-4f7e7d1bde6bf560",
+    "dj-4a8efa894f79d51e",
+    "dj-957a60cba32b80bb",
+    "dj-dd6b62a0b3da89eb",
+    "dj-0db04252c24ebb63",
+    "dj-419ced0e3b3b5c9a",
+    "dj-df0e5e3fd9cd3d49",
+    "dj-e25c824b03887d30",
+    "dj-312bb34a285c17a9",
+    "dj-ba412e63aeda0cd0",
+    "dj-e4f5d721aac5caaa",
+    "dj-73ce2c03d92cf9ad",
+    "dj-ec76bd9ebc875ab2",
+    "dj-c6206bca65cdf600",
+    "dj-827b6fdbaaeaf250",
+    "dj-bf96fbc55535db84",
+    "dj-84348ed14b32c161",
+    "dj-bbc20fda80685fcc",
+    "dj-6aaeff8cf7961fc4",
+    "dj-af54932e4defb838",
+    "dj-42c1a4a8e9dadaf5",
+    "dj-b80011775cf9c280",
+    "dj-92db7b78039a40ab",
+    "dj-1290ffa57cd99944",
+    "dj-b88d18efb2fdeb5f",
+    "dj-437a0b96dc0778cd",
+    "dj-f7e13b7d851a4c88",
+    "dj-541ed350a6e738ac",
+    "dj-995c215eb38f1d96",
+    "dj-0c6449b08f70ef20",
+    "dj-49b2515cbe8ef124",
+    "dj-fccc186303613cf1",
+    "dj-485803ee534b9de7",
+    "dj-3ae3f8d8fbcae259",
+    "dj-44e31593a028e605",
+    "dj-0cef0c8c7053b673",
+    "dj-5c237fcaabf7f13f",
+    "dj-3b38f31e42c8f79c",
+    "dj-e44ca58068c6eaf7",
+    "dj-5ea54f89b8c35e14",
+    "dj-a4b7d37cb533d0a4",
+    "dj-6622909c675e5b94",
+    "dj-dc88a878dc11c36a",
+    "dj-4017b1ea8b70b1f2",
+    "dj-6706f6476c2cb5de",
+    "dj-958df5e44fe7eaa8"
+  ],
+  "pilot_selection": "pilot-v1 substantive bullets only, stable SHA-256 order within release, release round-robin, text length 70–700",
+  "labels_present": false
+}

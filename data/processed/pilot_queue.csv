@@ -1,0 +1,138 @@
+entry_id,release,source_url,source_revision,section_path,raw_text,text
+dj-44c4cba3d7b7318a,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L296-L297,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Minor features > Models,"* :class:`F() <django.db.models.F>` expressions that output ``BooleanField``
+  can now be negated using ``~F()`` (inversion operator).",F() expressions that output BooleanField can now be negated using ~F() (inversion operator).
+dj-239bce880672c352,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L545-L546,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.0 > Miscellaneous,"* The undocumented ``Query.annotation_select_mask`` attribute is changed from a
+  set of strings to an ordered list of strings.",The undocumented Query.annotation_select_mask attribute is changed from a set of strings to an ordered list of strings.
+dj-78db149ac73235f6,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L362-L363,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.1 > Miscellaneous,"* In order to improve accessibility, the admin's changelist filter is now
+  rendered in a ``<nav>`` tag instead of a ``<div>``.","In order to improve accessibility, the admin's changelist filter is now rendered in a <nav> tag instead of a <div>."
+dj-5850f125d681b2a5,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L438-L439,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.2 > Miscellaneous,"* ``HttpRequest.accepted_types`` is now sorted by the client's preference,
+  based on the request's ``Accept`` header.","HttpRequest.accepted_types is now sorted by the client's preference, based on the request's Accept header."
+dj-4f7e7d1bde6bf560,5.2.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt#L53-L55,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a regression in Django 5.2 that caused improper values to be returned
+  from ``QuerySet.values_list()`` when duplicate field names were specified
+  (:ticket:`36288`).",Fixed a regression in Django 5.2 that caused improper values to be returned from QuerySet.values_list() when duplicate field names were specified (36288).
+dj-4a8efa894f79d51e,5.2.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.2.txt#L30-L32,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a bug in Django 5.2 where subqueries using ``""pk""`` to reference models
+  with a ``CompositePrimaryKey`` failed to raise ``ValueError`` when too many
+  or too few columns were selected (:ticket:`36392`).","Fixed a bug in Django 5.2 where subqueries using ""pk"" to reference models with a CompositePrimaryKey failed to raise ValueError when too many or too few columns were selected (36392)."
+dj-957a60cba32b80bb,5.2.3,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.3.txt#L17-L19,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a regression in Django 5.2 that caused :meth:`.QuerySet.bulk_update` to
+  incorrectly convert ``None`` to JSON ``null`` instead of SQL ``NULL`` for
+  ``JSONField`` (:ticket:`36419`).",Fixed a regression in Django 5.2 that caused QuerySet.bulk_update to incorrectly convert None to JSON null instead of SQL NULL for JSONField (36419).
+dj-dd6b62a0b3da89eb,5.2.4,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.4.txt#L16-L18,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a regression in Django 5.2.3 where ``Value(None, JSONField())`` used in
+  a :class:`~django.db.models.expressions.When` condition was incorrectly
+  serialized as SQL ``NULL`` instead of JSON ``null`` (:ticket:`36453`).","Fixed a regression in Django 5.2.3 where Value(None, JSONField()) used in a django.db.models.expressions.When condition was incorrectly serialized as SQL NULL instead of JSON null (36453)."
+dj-0db04252c24ebb63,5.2.5,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.5.txt#L12-L14,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a regression in Django 5.2.1 that prevented the usage of ``UNNEST``
+  PostgreSQL strategy of ``QuerySet.bulk_create()`` with foreign keys
+  (:ticket:`36502`).",Fixed a regression in Django 5.2.1 that prevented the usage of UNNEST PostgreSQL strategy of QuerySet.bulk_create() with foreign keys (36502).
+dj-419ced0e3b3b5c9a,5.2.6,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.6.txt#L19-L21,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a bug where using ``QuerySet.values()`` or ``values_list()`` with a
+  ``ForeignObject`` composed of multiple fields returned incorrect results
+  instead of tuples of the referenced fields (:ticket:`36431`).",Fixed a bug where using QuerySet.values() or values_list() with a ForeignObject composed of multiple fields returned incorrect results instead of tuples of the referenced fields (36431).
+dj-df0e5e3fd9cd3d49,5.2.7,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.7.txt#L31-L33,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a regression in Django 5.2 that reduced the color contrast of
+  the chosen label of ``filter_horizontal`` and ``filter_vertical`` widgets
+  within a ``TabularInline`` (:ticket:`36601`).",Fixed a regression in Django 5.2 that reduced the color contrast of the chosen label of filter_horizontal and filter_vertical widgets within a TabularInline (36601).
+dj-e25c824b03887d30,5.2.8,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.8.txt#L37-L38,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a bug in Django 5.2 where proxy models having a ``CompositePrimaryKey``
+  incorrectly raised a ``models.E042`` system check error.",Fixed a bug in Django 5.2 where proxy models having a CompositePrimaryKey incorrectly raised a models.E042 system check error.
+dj-312bb34a285c17a9,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L366-L367,85eb963c5297fb285aecf4a90c97141a1b9c5bee,Backwards incompatible changes in 6.0 > Database backend API,"* :class:`~django.db.backends.base.schema.BaseDatabaseSchemaEditor` and
+  PostgreSQL backends no longer use ``CASCADE`` when dropping a column.",django.db.backends.base.schema.BaseDatabaseSchemaEditor and PostgreSQL backends no longer use CASCADE when dropping a column.
+dj-ba412e63aeda0cd0,6.0.1,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.1.txt#L46-L51,85eb963c5297fb285aecf4a90c97141a1b9c5bee,Bugfixes,"* Reverted an undocumented optimization in Django 6.0 that modified permission
+  :attr:`~django.contrib.auth.models.Permission.name` and
+  :attr:`~django.contrib.auth.models.Permission.codename` values when renaming
+  models via a migration. This change could affect unrelated
+  :class:`~django.contrib.auth.models.Permission` objects (:ticket:`36843`) and
+  did not report conflicts (:ticket:`36793`).",Reverted an undocumented optimization in Django 6.0 that modified permission django.contrib.auth.models.Permission.name and django.contrib.auth.models.Permission.codename values when renaming models via a migration. This change could affect unrelated django.contrib.auth.models.Permission objects (36843) and did not report conflicts (36793).
+dj-e4f5d721aac5caaa,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L275-L277,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Minor features > Models,"* ``QuerySet`` now extensively supports filtering against
+  :ref:`window-functions` with the exception of disjunctive filter lookups
+  against window functions when performing aggregation.",QuerySet now extensively supports filtering against window-functions with the exception of disjunctive filter lookups against window functions when performing aggregation.
+dj-73ce2c03d92cf9ad,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L335-L336,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > File Storage,"* :meth:`.File.open` now passes all positional (``*args``) and keyword
+  arguments (``**kwargs``) to Python's built-in :func:`python:open`.",File.open now passes all positional (args) and keyword arguments (*kwargs) to Python's built-in python:open.
+dj-ec76bd9ebc875ab2,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L429-L430,47fe39af56ecd0ad73b9c7562511015e96b91b80,Features deprecated in 5.1 > Miscellaneous,"* The ``django.contrib.gis.geoip2.GeoIP2.open()`` method is deprecated. Use the
+  :class:`~django.contrib.gis.geoip2.GeoIP2` constructor instead.",The django.contrib.gis.geoip2.GeoIP2.open() method is deprecated. Use the django.contrib.gis.geoip2.GeoIP2 constructor instead.
+dj-c6206bca65cdf600,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L237-L239,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > Email,"* The new :meth:`~django.core.mail.EmailMultiAlternatives.body_contains` method
+  returns a boolean indicating whether a provided text is contained in the
+  email ``body`` and in all attached MIME type ``text/*`` alternatives.",The new django.core.mail.EmailMultiAlternatives.body_contains method returns a boolean indicating whether a provided text is contained in the email body and in all attached MIME type text/* alternatives.
+dj-827b6fdbaaeaf250,5.2.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt#L49-L51,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a regression in Django 5.2 that caused a crash when using
+  ``QuerySet.select_for_update(of=(…))`` with ``values()/values_list()``
+  including expressions (:ticket:`36301`).",Fixed a regression in Django 5.2 that caused a crash when using QuerySet.select_for_update(of=(…)) with values()/values_list() including expressions (36301).
+dj-bf96fbc55535db84,5.2.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.2.txt#L41-L42,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a regression in Django 5.2 that caused a crash when using ``OuterRef``
+  in the ``filter`` argument of an ``Aggregate`` expression (:ticket:`36404`).",Fixed a regression in Django 5.2 that caused a crash when using OuterRef in the filter argument of an Aggregate expression (36404).
+dj-84348ed14b32c161,5.2.3,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.3.txt#L21-L22,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a regression in Django 5.2.2 where the ``q`` parameter was removed from
+  the internal ``django.http.MediaType.params`` property (:ticket:`36446`).",Fixed a regression in Django 5.2.2 where the q parameter was removed from the internal django.http.MediaType.params property (36446).
+dj-bbc20fda80685fcc,5.2.4,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.4.txt#L12-L14,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a regression in Django 5.2.2 where :meth:`HttpRequest.get_preferred_type()
+  <django.http.HttpRequest.get_preferred_type>` incorrectly preferred more
+  specific media types with a lower quality (:ticket:`36447`).",Fixed a regression in Django 5.2.2 where HttpRequest.get_preferred_type() incorrectly preferred more specific media types with a lower quality (36447).
+dj-6aaeff8cf7961fc4,5.2.5,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.5.txt#L25-L27,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a crash in Django 5.2 when using a ``ManyToManyField`` on a model with
+  a composite primary key, by extending the ``fields.E347`` system check
+  (:ticket:`36530`).","Fixed a crash in Django 5.2 when using a ManyToManyField on a model with a composite primary key, by extending the fields.E347 system check (36530)."
+dj-af54932e4defb838,5.2.8,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.8.txt#L33-L35,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a bug in Django 5.2 where ``QuerySet.first()`` and ``QuerySet.last()``
+  raised an error on querysets performing aggregation that selected all fields
+  of a composite primary key.",Fixed a bug in Django 5.2 where QuerySet.first() and QuerySet.last() raised an error on querysets performing aggregation that selected all fields of a composite primary key.
+dj-42c1a4a8e9dadaf5,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L190-L191,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > :mod:`django.contrib.gis`,"* The new :attr:`.BaseGeometryWidget.base_layer` attribute allows specifying a
+  JavaScript map base layer, enabling customization of map tile providers.","The new BaseGeometryWidget.base_layer attribute allows specifying a JavaScript map base layer, enabling customization of map tile providers."
+dj-b80011775cf9c280,6.0.1,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.1.txt#L19-L21,85eb963c5297fb285aecf4a90c97141a1b9c5bee,Bugfixes,"* Fixed a regression in Django 6.0 that prevented changing the name of a
+  :class:`~django.db.models.ManyToManyField` from taking effect when applying
+  migrations (:ticket:`36800`).",Fixed a regression in Django 6.0 that prevented changing the name of a django.db.models.ManyToManyField from taking effect when applying migrations (36800).
+dj-92db7b78039a40ab,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L564-L567,47fe39af56ecd0ad73b9c7562511015e96b91b80,Features deprecated in 4.2 > Miscellaneous,"* The ``BaseUserManager.make_random_password()`` method is deprecated. See
+  `recipes and best practices
+  <https://docs.python.org/3/library/secrets.html#recipes-and-best-practices>`_
+  for using Python's :py:mod:`secrets` module to generate passwords.",The BaseUserManager.make_random_password() method is deprecated. See recipes and best practices for using Python's secrets module to generate passwords.
+dj-1290ffa57cd99944,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L261-L264,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > :mod:`django.contrib.gis`,"* The new
+  :class:`ClosestPoint() <django.contrib.gis.db.models.functions.ClosestPoint>`
+  function returns a 2-dimensional point on the geometry that is closest to
+  another geometry.",The new ClosestPoint() function returns a 2-dimensional point on the geometry that is closest to another geometry.
+dj-b88d18efb2fdeb5f,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L479-L480,47fe39af56ecd0ad73b9c7562511015e96b91b80,Features removed in 5.1,"* The ``map_width`` and ``map_height`` attributes of ``BaseGeometryWidget`` are
+  removed.",The map_width and map_height attributes of BaseGeometryWidget are removed.
+dj-437a0b96dc0778cd,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L350-L352,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > Serialization,"* Each serialization format now defines a ``Deserializer`` class, rather than a
+  function, to improve extensibility when defining a
+  :ref:`custom serialization format <custom-serialization-formats>`.","Each serialization format now defines a Deserializer class, rather than a function, to improve extensibility when defining a custom serialization format."
+dj-f7e13b7d851a4c88,5.2.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt#L72-L74,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a regression in Django 5.2 that caused a crash when using ``update()``
+  on a ``QuerySet`` filtered against a related model and including references
+  to annotations through ``values()`` (:ticket:`36360`).",Fixed a regression in Django 5.2 that caused a crash when using update() on a QuerySet filtered against a related model and including references to annotations through values() (36360).
+dj-541ed350a6e738ac,5.2.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.2.txt#L56-L59,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a bug in Django 5.2 where :meth:`HttpRequest.get_preferred_type()
+  <django.http.HttpRequest.get_preferred_type>` did not account for media type
+  parameters in ``Accept`` headers, reducing specificity in content negotiation
+  (:ticket:`36411`).","Fixed a bug in Django 5.2 where HttpRequest.get_preferred_type() did not account for media type parameters in Accept headers, reducing specificity in content negotiation (36411)."
+dj-995c215eb38f1d96,5.2.3,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.3.txt#L13-L15,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a log injection possibility by migrating remaining response logging
+  to ``django.utils.log.log_response()``, which safely escapes arguments such
+  as the request path to prevent unsafe log output (:cve:`2025-48432`).","Fixed a log injection possibility by migrating remaining response logging to django.utils.log.log_response(), which safely escapes arguments such as the request path to prevent unsafe log output (2025-48432)."
+dj-0c6449b08f70ef20,5.2.4,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.4.txt#L20-L22,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a crash in Django 5.2 when performing an ``__in`` lookup involving a
+  composite primary key and a subquery on backends that lack native support for
+  tuple lookups (:ticket:`36464`).",Fixed a crash in Django 5.2 when performing an __in lookup involving a composite primary key and a subquery on backends that lack native support for tuple lookups (36464).
+dj-49b2515cbe8ef124,5.2.5,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.5.txt#L16-L17,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a crash in Django 5.2 when filtering against a composite primary key
+  using a tuple containing expressions (:ticket:`36522`).",Fixed a crash in Django 5.2 when filtering against a composite primary key using a tuple containing expressions (36522).
+dj-fccc186303613cf1,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L280-L281,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > Models,"* :doc:`Constraints </ref/models/constraints>` now implement a ``check()``
+  method that is already registered with the check framework.",Constraints now implement a check() method that is already registered with the check framework.
+dj-485803ee534b9de7,6.0.1,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.1.txt#L27-L29,85eb963c5297fb285aecf4a90c97141a1b9c5bee,Bugfixes,"* Fixed a regression in Django 6.0 that caused
+  :meth:`~django.db.models.query.QuerySet.bulk_create` to crash
+  when introspecting the connection on SQLite (:ticket:`36818`).",Fixed a regression in Django 6.0 that caused django.db.models.query.QuerySet.bulk_create to crash when introspecting the connection on SQLite (36818).
+dj-3ae3f8d8fbcae259,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L155-L156,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Minor features > :mod:`django.contrib.auth`,"* The new :class:`~django.contrib.auth.forms.BaseUserCreationForm` is now the
+  recommended base class for customizing the user creation form.",The new django.contrib.auth.forms.BaseUserCreationForm is now the recommended base class for customizing the user creation form.
+dj-44e31593a028e605,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L397-L399,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > Models,"* On MariaDB 10.7+, ``UUIDField`` is now created as ``UUID`` column rather than
+  ``CHAR(32)`` column. See the migration guide above for more details on
+  :ref:`migrating-uuidfield`.","On MariaDB 10.7+, UUIDField is now created as UUID column rather than CHAR(32) column. See the migration guide above for more details on migrating-uuidfield."
+dj-0cef0c8c7053b673,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L365-L367,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.1 > Miscellaneous,"* In order to improve accessibility, the admin's footer is now rendered in
+  a ``<footer>`` tag instead of a ``<div>``, and also moved below the
+  ``<div id=""main"">`` element.","In order to improve accessibility, the admin's footer is now rendered in a <footer> tag instead of a <div>, and also moved below the <div id=""main""> element."
+dj-5c237fcaabf7f13f,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L480-L481,47fe39af56ecd0ad73b9c7562511015e96b91b80,Features deprecated in 5.2 > Miscellaneous,"* The ``all`` argument for the ``django.contrib.staticfiles.finders.find()``
+  function is deprecated in favor of the ``find_all`` argument.",The all argument for the django.contrib.staticfiles.finders.find() function is deprecated in favor of the find_all argument.
+dj-3b38f31e42c8f79c,5.2.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt#L44-L47,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a data corruption possibility in ``file_move_safe()`` when
+  ``allow_overwrite=True``, where leftover content from a previously larger
+  file could remain after overwriting with a smaller one due to lack of
+  truncation (:ticket:`36298`).","Fixed a data corruption possibility in file_move_safe() when allow_overwrite=True, where leftover content from a previously larger file could remain after overwriting with a smaller one due to lack of truncation (36298)."
+dj-e44ca58068c6eaf7,5.2.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.2.txt#L52-L54,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a bug in Django 5.2 where calling ``QuerySet.in_bulk()`` with an
+  ``id_list`` argument on models with a ``CompositePrimaryKey`` failed to
+  observe database parameter limits (:ticket:`36416`).",Fixed a bug in Django 5.2 where calling QuerySet.in_bulk() with an id_list argument on models with a CompositePrimaryKey failed to observe database parameter limits (36416).
+dj-5ea54f89b8c35e14,5.2.5,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.5.txt#L19-L21,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a crash in Django 5.2 when validating a model that uses
+  ``GeneratedField`` or constraints composed of ``Q`` and ``Case`` lookups
+  (:ticket:`36518`).",Fixed a crash in Django 5.2 when validating a model that uses GeneratedField or constraints composed of Q and Case lookups (36518).
+dj-a4b7d37cb533d0a4,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L342-L343,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > Templates,"* The :ttag:`querystring` template tag now consistently prefixes the returned
+  query string with a ``?``, ensuring reliable link generation behavior.","The querystring template tag now consistently prefixes the returned query string with a ?, ensuring reliable link generation behavior."
+dj-6622909c675e5b94,6.0.1,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.1.txt#L42-L44,85eb963c5297fb285aecf4a90c97141a1b9c5bee,Bugfixes,"* Fixed a regression in Django 6.0 where the :attr:`.Widget.use_fieldset`
+  attribute of :class:`~django.forms.ClearableFileInput` was flipped
+  from ``False`` to ``True`` (:ticket:`36829`).",Fixed a regression in Django 6.0 where the Widget.use_fieldset attribute of django.forms.ClearableFileInput was flipped from False to True (36829).
+dj-dc88a878dc11c36a,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L434-L435,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 4.2 > Miscellaneous,"* The :option:`makemigrations --check` option no longer creates missing
+  migration files.",The makemigrations --check option no longer creates missing migration files.
+dj-4017b1ea8b70b1f2,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L577-L577,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.0 > Miscellaneous,* The minimum supported version of SQLite is increased from 3.21.0 to 3.27.0.,The minimum supported version of SQLite is increased from 3.21.0 to 3.27.0.
+dj-6706f6476c2cb5de,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L387-L388,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.1 > Miscellaneous,"* The undocumented ``django.urls.converters.get_converter()`` function is
+  removed.",The undocumented django.urls.converters.get_converter() function is removed.
+dj-958df5e44fe7eaa8,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L203-L206,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > :mod:`django.contrib.syndication`,"* All :class:`~django.utils.feedgenerator.SyndicationFeed` classes now support
+  a ``stylesheets`` attribute. If specified, an ``<? xml-stylesheet ?>``
+  processing instruction will be added to the top of the document for each
+  stylesheet in the given list. See :ref:`feed-stylesheets` for more details.","All django.utils.feedgenerator.SyndicationFeed classes now support a stylesheets attribute. If specified, an <? xml-stylesheet ?> processing instruction will be added to the top of the document for each stylesheet in the given list. See feed-stylesheets for more details."
