@@ -27,6 +27,7 @@ SOURCE_GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         ("6.0", "6.0.1"),
     ),
 )
+PILOT_RELEASES = ("4.2", "5.0", "5.1", "5.2", "6.0")
 
 FIELDNAMES = (
     "entry_id",
@@ -97,16 +98,26 @@ def clean_rst(raw: str) -> str:
     """Remove common inline RST markup without losing code identifiers."""
     text = _BULLET.sub("", raw.strip())
     text = _SPACE.sub(" ", text)
+    code_spans: list[str] = []
+
+    def protect_code(match: re.Match[str]) -> str:
+        code_spans.append(match.group(1))
+        return f"\ue000{len(code_spans) - 1}\ue001"
+
+    text = re.sub(r"``([^`]+)``", protect_code, text)
+
     def replace_role(match: re.Match[str]) -> str:
         content = match.group(1)
-        return content.split(" <", 1)[0].lstrip("~.")
+        display = content.split(" <", 1)[0].lstrip("~.")
+        return display.removeprefix("python:")
 
     text = _ROLE.sub(replace_role, text)
     text = _LINK.sub(r"\1", text)
-    text = re.sub(r"``([^`]+)``", r"\1", text)
     text = re.sub(r"\*\*([^*]+)\*\*", r"\1", text)
     text = re.sub(r"(?<!\w)\*([^*]+)\*", r"\1", text)
     text = re.sub(r"`([^`]+)`_{1,2}", r"\1", text)
+    text = re.sub(r"\ue000(\d+)\ue001", lambda match: code_spans[int(match.group(1))], text)
+    text = text.replace("``", "")
     return _SPACE.sub(" ", text).strip()
 
 
@@ -256,29 +267,41 @@ def deduplicate_exact(entries: list[Entry]) -> tuple[list[Entry], int]:
 
 
 def select_pilot(entries: list[Entry], size: int = 50) -> list[Entry]:
-    """Deterministically round-robin releases, without assigning any labels."""
-    if size < 0:
-        raise ValueError("size must be nonnegative")
-    by_release: dict[str, list[Entry]] = {}
+    """Select equal feature-release coverage, spreading sections and families."""
+    if size < 0 or size % len(PILOT_RELEASES):
+        raise ValueError(f"size must be a nonnegative multiple of {len(PILOT_RELEASES)}")
+    quota = size // len(PILOT_RELEASES)
+    by_release: dict[str, list[Entry]] = {release: [] for release in PILOT_RELEASES}
     for entry in entries:
         # Bullets usually state a complete change without relying on the
         # preceding paragraph.  Prose remains in the full candidate corpus.
-        if _BULLET.match(entry.raw_text) and 70 <= len(entry.text) <= 700:
-            by_release.setdefault(entry.release, []).append(entry)
+        if entry.release in by_release and _BULLET.match(entry.raw_text) and 70 <= len(entry.text) <= 700:
+            by_release[entry.release].append(entry)
+
+    selected: dict[str, list[Entry]] = {}
     for release, rows in by_release.items():
-        rows.sort(key=lambda row: hashlib.sha256(f"pilot-v1:{release}:{row.entry_id}".encode()).hexdigest())
-    pilot: list[Entry] = []
-    releases = list(by_release)
-    while releases and len(pilot) < size:
-        remaining: list[str] = []
-        for release in releases:
-            if len(pilot) >= size:
-                break
-            rows = by_release[release]
-            pilot.append(rows.pop())
-            if rows:
-                remaining.append(release)
-        releases = remaining
-    if len(pilot) < size:
-        raise ValueError(f"Only {len(pilot)} eligible pilot entries; requested {size}")
-    return pilot
+        if len(rows) < quota:
+            raise ValueError(f"Only {len(rows)} eligible {release} entries; requested {quota}")
+        remaining = rows.copy()
+        chosen: list[Entry] = []
+        used_paths: set[str] = set()
+        family_counts: dict[str, int] = {}
+        while len(chosen) < quota:
+            fresh = [row for row in remaining if row.section_path not in used_paths]
+            pool = fresh or remaining
+
+            def ranking(row: Entry) -> tuple[int, str]:
+                family = row.section_path.split(" > ", 1)[0]
+                stable = hashlib.sha256(f"pilot-v2:{release}:{row.entry_id}".encode()).hexdigest()
+                return family_counts.get(family, 0), stable
+
+            winner = min(pool, key=ranking)
+            chosen.append(winner)
+            remaining.remove(winner)
+            used_paths.add(winner.section_path)
+            family = winner.section_path.split(" > ", 1)[0]
+            family_counts[family] = family_counts.get(family, 0) + 1
+        selected[release] = chosen
+
+    # Interleave releases so the annotator sees varied notes from the start.
+    return [selected[release][index] for index in range(quota) for release in PILOT_RELEASES]

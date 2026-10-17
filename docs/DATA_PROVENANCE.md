@@ -21,34 +21,36 @@ From the repository root, run `python scripts/build_dataset.py`. After the first
 
 The CSV schema is `entry_id, release, source_url, source_revision, section_path, raw_text, text`. `raw_text` preserves the extracted RST note; `text` removes common inline RST roles and whitespace for later modeling. The model must use `text` only. Headings and release metadata are stored for review and splitting, not appended to model text. The `entry_id` hashes revision, release, first source line, and raw content. No target variable or inferred label is written by this step.
 
-The parser treats one substantive bullet or prose block as a candidate, keeps an indented continuation paragraph with its bullet, and skips headings, directives, literal code, very short blocks, and some editorial boilerplate. Exact duplicate cleaned texts are removed globally. This is a deterministic extraction rule, not a guarantee that every row is a self-contained change. The 50-row pilot is restricted to bullets of 70–700 characters and selected by stable hash order within each release, then round-robin across releases. Selection does not inspect or assign a class.
+The parser treats one substantive bullet or prose block as a candidate, keeps an indented continuation paragraph with its bullet, and skips headings, directives, literal code, very short blocks, and some editorial boilerplate. Exact duplicate cleaned texts are removed globally. This is a deterministic extraction rule, not a guarantee that every row is a self-contained change. Inline code identifiers retain leading `*` characters, and a Sphinx `python:` role prefix is removed from cleaned text. The raw source stays intact.
+
+The 50-row pilot is restricted to bullets of 70–700 characters: 10 from each feature release (4.2, 5.0, 5.1, 5.2, 6.0). Within a release, the sampler chooses distinct section paths before repeating any and spreads picks across top-level section families. SHA-256 of stable entry IDs resolves ties. The final queue interleaves releases. Selection does not inspect or assign a class.
 
 ## Counts from the current pinned build
 
 | Release | Candidates after exact dedup | Pilot rows |
 | --- | ---: | ---: |
-| 4.2 | 107 | 5 |
-| 5.0 | 127 | 5 |
-| 5.1 | 89 | 5 |
-| 5.2 | 71 | 5 |
-| 5.2.1 | 16 | 4 |
-| 5.2.2 | 12 | 4 |
-| 5.2.3 | 3 | 3 |
-| 5.2.4 | 3 | 3 |
-| 5.2.5 | 5 | 4 |
-| 5.2.6 | 2 | 1 |
-| 5.2.7 | 3 | 1 |
-| 5.2.8 | 5 | 2 |
-| 6.0 | 118 | 4 |
-| 6.0.1 | 10 | 4 |
+| 4.2 | 107 | 10 |
+| 5.0 | 127 | 10 |
+| 5.1 | 89 | 10 |
+| 5.2 | 71 | 10 |
+| 5.2.1 | 16 | 0 |
+| 5.2.2 | 12 | 0 |
+| 5.2.3 | 3 | 0 |
+| 5.2.4 | 3 | 0 |
+| 5.2.5 | 5 | 0 |
+| 5.2.6 | 2 | 0 |
+| 5.2.7 | 3 | 0 |
+| 5.2.8 | 5 | 0 |
+| 6.0 | 118 | 10 |
+| 6.0.1 | 10 | 0 |
 | **Total** | **571** | **50** |
 
-There were 571 extracted candidates before exact deduplication and zero exact duplicates by normalized `text`. Near duplicates have not yet been audited. These are **unlabeled** examples, so there are no class counts, model splits, or test metrics. Treat 6.0 as a possible release-level holdout, not a frozen test set until the human-label distribution is known. Do not tune or report five-way performance against automatically inferred labels.
+There were 571 extracted candidates before exact deduplication and zero exact duplicates by normalized `text`. Near duplicates have not yet been audited. These are **unlabeled** examples, so there are no class counts, model splits, or test metrics. No test release is frozen. The pilot now includes 6.0, so a later test split must account for the team's exposure to its pilot rows. Do not tune or report five-way performance against automatically inferred labels.
 
 ## Known extraction limits
 
 - A prose block can rely on an earlier paragraph; the pilot favors bullets to reduce this problem but still requires human review.
 - RST is richer than this block parser. Embedded directives, unusual nested lists, and cross-references may be omitted or imperfectly flattened.
-- Security and patch notes are much shorter than feature-release notes. Release-balanced pilot sampling does not imply class balance.
+- Security and patch notes are much shorter than feature-release notes, so the pilot uses feature releases only. Equal counts per feature release do not imply class balance.
 - Exact deduplication does not catch paraphrases or near-identical notes. Audit them before choosing release-level train/test groups.
 - The upstream notes describe Django changes, not observed downstream failures. The intended labels are reviewer judgments about which area to verify first.

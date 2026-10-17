@@ -79,7 +79,7 @@ def main() -> None:
         "counts_by_release": dict(sorted(Counter(entry.release for entry in entries).items())),
         "pilot_count": len(pilot),
         "pilot_entry_ids": [entry.entry_id for entry in pilot],
-        "pilot_selection": "pilot-v1 substantive bullets only, stable SHA-256 order within release, release round-robin, text length 70–700",
+        "pilot_selection": "pilot-v2: 10 substantive bullets per feature release (4.2, 5.0, 5.1, 5.2, 6.0); distinct section paths first; balance top-level section families; stable SHA-256 ties; text length 70–700; interleave releases",
         "labels_present": False,
     }
     args.output_dir.mkdir(parents=True, exist_ok=True)
