@@ -17,12 +17,12 @@ PatchProbe is a course NLP project for routing software release-note entries to 
 4. Show class metrics, concrete errors, and any abstention behavior.
 5. Display predictions alongside original source links for human review.
 
-The exact taxonomy and valid evaluation claim are pending the no-label feasibility review. See DECISIONS.md and PROJECT_STATUS.md.
+The five-label taxonomy is documented; guided human labeling is planned after the 50-entry pilot is prepared. See DECISIONS.md, PROJECT_STATUS.md, and docs/DATA_AND_LABELS.md.
 
 ## Source and research
 - Official Django release notes: https://docs.djangoproject.com/en/6.0/releases/
 - Django source files: https://github.com/django/django/tree/main/docs/releases
-- Earlier research: NEW_PROJECT_SHORTLIST.md and NOVELTY_AUDIT.md in the NLP Mid-Sem research folder.
+- Earlier research: NEW_PROJECT_SHORTLIST.md and NOVELTY_AUDIT.md in the NLP Mid-Sem research folder. The focused literature survey is in docs/LITERATURE_SURVEY.md.
 
 Closest work found in the earlier audit addresses release-note change types and action-required summaries. PatchProbe's intended output is a verification area. This is a scoped classroom originality claim, not a worldwide-first claim.
 
