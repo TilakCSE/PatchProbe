@@ -26,7 +26,7 @@ from patchprobe.annotation import (  # noqa: E402
 )
 
 
-DEFAULT_ENTRIES = "data/processed/entries.csv"
+DEFAULT_ENTRIES = "data/processed/pilot_queue.csv"
 DEFAULT_LABELS = "data/annotations/pilot_labels.csv"
 
 
@@ -113,16 +113,18 @@ def main() -> None:
 
     entry_id = row["entry_id"]
     st.subheader(f"Entry {entry_id}")
-    st.caption(f"Release: {row['release']} · Section: {row['section_path'] or '(none)'}")
+    st.caption(f"Release: {row['release']}")
     st.write(row["text"])
-    if row["raw_text"] and row["raw_text"] != row["text"]:
-        with st.expander("Original extracted text"):
-            st.write(row["raw_text"])
     if _safe_source_url(row["source_url"]):
         st.link_button("Open official source", row["source_url"])
     else:
         st.caption(f"Source URL unavailable: {row['source_url'] or '(empty)'}")
-    st.caption(f"Source revision: {row['source_revision'] or '(unknown)'}")
+    with st.expander("Source provenance", expanded=False):
+        st.write(f"Section path: {row['section_path'] or '(none)'}")
+        st.write(f"Source revision: {row['source_revision'] or '(unknown)'}")
+        if row["raw_text"] and row["raw_text"] != row["text"]:
+            st.write("Original extracted text:")
+            st.write(row["raw_text"])
 
     with st.expander("Ask an agent for help with this row"):
         st.caption("Copy this into your chat if the distinction is hard. The saved choice remains yours.")

@@ -2,13 +2,13 @@
 
 ## What the reviewer decides
 
-For each substantive Django release-note entry, answer: **Which one area should a developer verify first after upgrading an application that uses the affected feature?** Choose only from evidence in the note text. The section heading, release number, and source link provide context, but do not determine the label. The five choices and tie-break rules are in [DATA_AND_LABELS.md](DATA_AND_LABELS.md).
+For each substantive Django release-note entry, answer: **Which one area should a developer verify first after upgrading an application that uses the affected feature?** Choose only from evidence in the note text. The release number and source link provide provenance; the section heading is tucked into a collapsed provenance panel so it does not lead the choice. The five choices and tie-break rules are in [DATA_AND_LABELS.md](DATA_AND_LABELS.md).
 
 This is a human decision. The interface never guesses or saves a label on its own. A reviewer can ask an agent to explain a row and the label definitions, then make the choice personally. When two checks are equally primary, choose `UNCLEAR` and write why. `UNCLEAR` is a review state, not a sixth model class.
 
 ## Run the pilot
 
-1. Generate or obtain an entries CSV with columns `entry_id, release, source_url, source_revision, section_path, raw_text, text`. The planned default path is `data/processed/entries.csv`; the sidebar can point to another file. Begin with a varied 50-entry pilot.
+1. Generate or obtain an entries CSV with columns `entry_id, release, source_url, source_revision, section_path, raw_text, text`. The default path is `data/processed/pilot_queue.csv`, the varied 50-entry pilot. The sidebar can point to `data/processed/entries.csv` or another file for later review.
 2. From the project root, install project dependencies and run `streamlit run app.py`.
 3. Enter the reviewer name. Read the note and the definitions, open the official source when needed, then select one label and click **Save decision**. `UNCLEAR` needs a review note. **Skip for now** moves to the next row without saving a label.
 4. Saved decisions are written to `data/annotations/pilot_labels.csv` by default, with columns `entry_id, label, annotator, review_note, annotated_at`. Restarting the app resumes after saved rows. Skips are only temporary in that browser session; use **Return to skipped entries** to revisit them.
