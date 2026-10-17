@@ -22,6 +22,12 @@ Time the 50-entry pilot, including source lookups and discussion, rather than as
 
 Do not train or report five-class performance until independent human labels exist and the evaluation split is fixed. A pilot with too few examples of a class may support a demo of the annotation workflow but not a credible five-class score. `UNCLEAR` rows stay out of five-class training, and their count must be reported.
 
+## Prediction review for the presentation
+
+The sidebar offers **Prediction review** only after the local training command has produced both `artifacts/model/model.joblib` and a matching `artifacts/model/metrics.json`. Without them, the sidebar explains that no trained model is available; the annotation queue still works. The app accepts one pasted release-note entry and shows a suggested first-check area with all five class rows. Classes absent from pilot training show **Not trained in this pilot**, not a made-up zero. All displayed scores are explicitly uncalibrated model outputs, not correctness probabilities.
+
+The app reads only the fixed artifact path inside this project and refuses symbolic-link artifact paths. `joblib` deserialization can execute code, so run inference only with an artifact you generated locally and trust. The free-text prediction is a temporary review preview; it does not create a human label or enter the evaluation set. Use Guided annotation to save a source-linked human decision.
+
 ## Data handling limits
 
 The app is a local reviewer aid, not a shared multi-user annotation server. It rewrites one CSV atomically on each save, but simultaneous sessions writing the same file can lose edits. Assign separate output files to simultaneous reviewers and reconcile them deliberately. The label CSV contains reviewer names; follow the team's data-sharing preference before committing it. The original source URL and revision remain in the entry CSV so each decision can be traced to the source.

@@ -1,4 +1,4 @@
-"""Guided, one-entry-at-a-time human annotation interface.
+"""Guided human annotation and optional local-model review interface.
 
 Run with: streamlit run app.py
 """
@@ -24,10 +24,16 @@ from patchprobe.annotation import (  # noqa: E402
     progress,
     save_annotation,
 )
+from patchprobe.inference import (  # noqa: E402
+    artifact_status,
+    load_local_model,
+    predict_review,
+)
 
 
 DEFAULT_ENTRIES = "data/processed/pilot_queue.csv"
 DEFAULT_LABELS = "data/annotations/pilot_labels.csv"
+PROJECT_ROOT = Path(__file__).resolve().parent
 
 
 def _safe_source_url(url: str) -> bool:
@@ -35,8 +41,56 @@ def _safe_source_url(url: str) -> bool:
     return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
 
 
+def _prediction_view(metrics: dict) -> None:
+    st.title("PatchProbe: prediction review")
+    st.caption("Paste a Django release-note entry to see a suggested first check area. A developer still reviews the note and plans the actual checks.")
+    if metrics.get("status") == "pilot":
+        st.warning("This is a pilot model. Class support is below the planned evaluation threshold; treat every output as a demonstration suggestion.")
+    else:
+        st.info("The model has a recorded five-class evaluation. Check metrics.json and the model card for test support and failure cases.")
+    counts = metrics.get("counts", {})
+    if isinstance(counts, dict):
+        st.caption(f"Labeled dataset: {counts.get('accepted', 'unknown')} accepted rows; {counts.get('unclear', 'unknown')} UNCLEAR rows excluded.")
+
+    with st.form("prediction_input"):
+        note_text = st.text_area("Release-note text", height=180, placeholder="Paste one substantive release-note bullet or short paragraph.")
+        submitted = st.form_submit_button("Suggest first check area", type="primary")
+    if not submitted:
+        return
+    try:
+        model = load_local_model(PROJECT_ROOT)
+        result = predict_review(model, note_text)
+    except Exception as error:  # A damaged local joblib artifact may raise several deserialization errors.
+        st.error(f"Prediction unavailable: {error}")
+        return
+
+    st.subheader(f"Suggested area: {result.predicted_label}")
+    st.warning("Review the original note before acting. This suggestion does not prove an upgrade is safe or that every app needs this check.")
+    st.markdown("**Full class scores (uncalibrated)**")
+    st.table([
+        {"First check area": label, "Uncalibrated model score": f"{score:.1%}" if score is not None else "Not trained in this pilot"}
+        for label, score in result.scores.items()
+    ])
+    st.caption("Scores are logistic-regression outputs, not calibrated probabilities of correctness. A class absent from pilot training has no score.")
+    st.caption("For a source-linked entry and a saved human decision, use Guided annotation.")
+
+
 def main() -> None:
     st.set_page_config(page_title="PatchProbe review", page_icon="🧩", layout="centered")
+    model_status = artifact_status(PROJECT_ROOT)
+    with st.sidebar:
+        st.header("PatchProbe mode")
+        choices = ["Guided annotation"]
+        if model_status.available:
+            choices.append("Prediction review")
+        workspace_mode = st.radio("Choose a mode", choices)
+        if not model_status.available:
+            st.info(model_status.reason)
+
+    if workspace_mode == "Prediction review":
+        _prediction_view(model_status.metrics or {})
+        return
+
     st.title("PatchProbe: release-note review")
     st.caption("Choose the first downstream area to verify based on the note text. This is a human decision, not a model prediction.")
 
