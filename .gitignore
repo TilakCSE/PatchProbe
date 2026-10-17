@@ -8,3 +8,5 @@ __pycache__/
 data/raw/
 artifacts/
 models/
+src/patchprobe.egg-info/
+data/annotations/

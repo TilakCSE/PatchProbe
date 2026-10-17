@@ -1,29 +1,43 @@
 # PatchProbe
 
-PatchProbe is a course NLP project for routing software release-note entries to a suggested area of downstream verification. The intended user is a developer or QA reviewer planning checks after a dependency upgrade.
-
-**Status: project setup.** The previous research plan proposed five human-created labels on Django release-note paragraphs. The team has said it cannot currently label examples, so the final target and source of evaluation labels must be resolved before training. There are no model results yet.
+PatchProbe classifies a software release-note entry into the **first downstream area a developer should verify** after an upgrade. It is a course NLP MVP centered on official, version-pinned Django release notes. The classifier suggests a review priority; it does not prove an upgrade is safe.
 
 ## Team
+
 - Tilaksinh Chauhan (23000740)
 - Kavya Jariwala (23000543)
 - Bhargav Panchal (23000502)
 - Om Nathani (23000883)
 
-## MVP contract
-1. Obtain versioned Django release-note text with provenance.
-2. Form document entries and labels from an explicitly documented source.
-3. Train a CPU-friendly classifier with a release-aware split.
-4. Show class metrics, concrete errors, and any abstention behavior.
-5. Display predictions alongside original source links for human review.
+## Current state
 
-The five-label taxonomy is documented; guided human labeling is planned after the 50-entry pilot is prepared. See DECISIONS.md, PROJECT_STATUS.md, and docs/DATA_AND_LABELS.md.
+The repository contains 571 extracted **unlabeled** candidate entries from 14 release-note files, a 50-entry guided review pilot, and a CPU-only classification/evaluation pipeline. There are no human labels or real classification metrics yet. The five intended labels and an `UNCLEAR` review state are defined in [docs/DATA_AND_LABELS.md](docs/DATA_AND_LABELS.md). Read [PROJECT_STATUS.md](PROJECT_STATUS.md) for the remaining work.
 
-## Source and research
-- Official Django release notes: https://docs.djangoproject.com/en/6.0/releases/
-- Django source files: https://github.com/django/django/tree/main/docs/releases
-- Earlier research: NEW_PROJECT_SHORTLIST.md and NOVELTY_AUDIT.md in the NLP Mid-Sem research folder. The focused literature survey is in docs/LITERATURE_SURVEY.md.
+## Run locally
 
-Closest work found in the earlier audit addresses release-note change types and action-required summaries. PatchProbe's intended output is a verification area. This is a scoped classroom originality claim, not a worldwide-first claim.
+From the project root with Python 3.11 or newer:
 
-The authoritative code folder is D:/Development/Projects/PatchProbe.
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
+.\.venv\Scripts\python.exe -m pytest
+.\.venv\Scripts\python.exe -m streamlit run app.py
+```
+
+Open the local URL printed by Streamlit. Enter your name, read one entry, choose the first area to verify, and save. The app resumes from `data/annotations/pilot_labels.csv`; that file is personal review data and is not committed by default. If a row is ambiguous, save `UNCLEAR` with a reason. The app offers a copyable prompt so an agent can explain the row while the reviewer retains the decision.
+
+The committed `data/processed/` files make the review demo work offline. To rebuild the source dataset, run `python scripts/build_dataset.py` once with internet access. It caches pinned upstream RST sources under ignored `data/raw/django/`. Later, `python scripts/build_dataset.py --offline` uses that cache. Source revisions, hashes, counts, and selection rules are in [docs/DATA_PROVENANCE.md](docs/DATA_PROVENANCE.md) and `data/processed/manifest.json`.
+
+After a sufficient set of human decisions exists, run:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\train_model.py
+```
+
+Training deliberately stops if the labels file is absent, too small, or lacks enough release groups. A completed run writes an ignored `artifacts/model/` directory with the split manifest, metrics, predictions, and fitted model. No metric from unlabeled data should be reported as classifier quality.
+
+## Pipeline
+
+Pinned Django RST → deterministic entry extraction and provenance → human annotation → release-grouped train/dev/test split → train-only word and character TF-IDF → balanced logistic regression → majority and keyword baselines → review of per-class results and errors. The Streamlit app currently supports **annotation**; a prediction interface follows once a validated model exists.
+
+See [DECISIONS.md](DECISIONS.md) for why we chose these parts, [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how they connect, [docs/LITERATURE_SURVEY.md](docs/LITERATURE_SURVEY.md) for related work and the originality boundary, [docs/PRESENTATION_QA.md](docs/PRESENTATION_QA.md) for likely professor questions, and [docs/CLOUD_WORKFLOW.md](docs/CLOUD_WORKFLOW.md) for cloud/phone setup.

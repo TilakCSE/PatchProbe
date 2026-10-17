@@ -1,28 +1,55 @@
 # Decision log
 
-Each entry records the decision, its basis, alternatives, and what would change it. Status can be accepted, provisional, or open. Do not turn a provisional choice into an experimental result.
+Each decision records the choice, evidence, alternatives, and what would change it. A model configuration is not an experimental result; measured performance enters this log only after human labeling and a frozen evaluation.
 
 ## D001 — Project and source domain (accepted, 2026-10-17)
-**Choice:** Build PatchProbe around versioned Django release notes for a course MVP.
-**Why:** The user selected PatchProbe after an originality audit. Django publishes official, discrete release-note entries, source files, and release identifiers; an offline demo requires no paid API.
-**Alternatives:** CrisisQueue and other shortlist projects were set aside by the user.
-**Risk:** A classifier may reflect Django writing conventions rather than generalize to other ecosystems. External transfer is future work.
 
-## D002 — Human-label assumption and pivot (open, 2026-10-17)
-**Earlier proposal:** Manually label 600–800 entries into five regression-check areas, beginning with a 50-entry pilot.
-**New evidence:** Tilaksinh cannot label while away for several hours, but is willing to label later if the agent explains the task row by row. The team will measure pilot labeling time before committing to 600–800 rows. Without independent labels, five-way performance cannot be honestly reported.
-**Current direction:** Keep the original five-label target and build a guided one-row-at-a-time annotation queue. Prepare a 50-entry pilot now; wait for human decisions before training and reporting five-class results.
-**Alternatives under evaluation:** If the pilot is too slow or agreement is poor, consider a narrower taxonomy or a heading-derived proxy task. Heading labels would measure editorial categories, not actual regression-check correctness.
-**Pivot trigger:** If pilot labeling is too slow, the five classes lack enough examples, or annotators cannot apply the guide consistently, narrow the scope or change the target rather than fabricate gold labels.
+**Choice:** Build PatchProbe for software release-note verification triage using version-pinned Django notes.
 
-## D003 — Model family (provisional, 2026-10-17)
-**Starting point:** TF-IDF word and character n-grams with logistic regression or a linear SVM; compare with a majority baseline.
-**Why:** Short technical entries contain identifiers, spelling variants, and sparse cues. These models run on a CPU and expose feature weights for a presentation.
-**Unchosen for MVP:** Transformer fine-tuning, RAG, and LLM classification add compute, cost, or uncontrolled behavior before a valid target is established.
-**Open details:** Vocabulary limits, n-gram ranges, regularization, and any embedding dimension are not selected. Record them after training-only tuning and measurement.
+**Why:** The user chose this classification task after an originality audit. Official Django notes provide discrete entries, stable source revisions, and an offline demo without paid APIs.
 
-## D004 — Evaluation (provisional, 2026-10-17)
-**Plan:** Hold out entire release versions; report class counts, majority baseline, macro-F1, per-class precision and recall, confusion matrix, and example errors.
-**Why:** Adjacent entries in one release can share wording, and random paragraph splits risk optimistic results.
-**Limit:** If labels come from headings, metrics estimate heading-proxy prediction on held-out releases, not correctness of downstream test recommendations.
-**Open details:** Exact versions, dates, and split sizes depend on source audit and class support.
+**Boundary:** Prior work covers release-note change types and action-required summaries; PatchProbe targets a first downstream verification area. This is a scoped classroom originality claim, not a worldwide-first claim. Training on Django alone cannot show cross-ecosystem generalization.
+
+## D002 — Labels and human review (accepted for pilot, 2026-10-17)
+
+**Choice:** Keep five suggested verification areas and a separate `UNCLEAR` review state. A person chooses the label from the note text. Start with a guided 50-entry pilot and measure effort before scaling.
+
+**Why:** Tilaksinh is unavailable for several hours but is willing to label with row-by-row explanation later. No one has authorized the agent to fabricate human ground truth. A small pilot tests whether the definitions are usable and how much review time is realistic. The current working estimate is 45–90 minutes for 50 rows, to be replaced with observed time.
+
+**Alternatives:** Labels inferred from Django section headings would be cheaper, but would answer an editorial-topic task rather than the proposed verification question. LLM-generated labels without independent review would not be a valid gold set.
+
+**Pivot trigger:** If the pilot is too slow, ambiguous, or class-sparse, narrow the taxonomy or report only the annotation pilot. Record any pivot here before retraining; do not silently change the target.
+
+## D003 — Source snapshot and extraction (accepted, 2026-10-17)
+
+**Choice:** Fetch 14 official Django release-note RST files from two immutable Git commits. Extract substantive bullet and prose entries, preserve source URL/revision and raw text, remove exact normalized-text duplicates, and commit the small unlabeled output.
+
+**Why:** Pinned files and hashes make the dataset auditable; committed processed CSVs support an offline classroom demo. The current extraction yields 571 candidate entries, not 571 labeled examples. See `data/processed/manifest.json` and [docs/DATA_PROVENANCE.md](docs/DATA_PROVENANCE.md).
+
+**Limit:** RST flattening may miss or distort unusual markup; entries can depend on context. Human reviewers should inspect uncertain rows. Pilot selection seeks release and section variety; it is not class balancing.
+
+## D004 — Model representation and family (accepted baseline, 2026-10-17)
+
+**Choice:** Use a word TF-IDF vectorizer with 1–2-grams and a `char_wb` TF-IDF vectorizer with 3–5-grams, joined in a scikit-learn feature union. Fit logistic regression with `class_weight="balanced"`, `C=1.0`, and `max_iter=1000`. Compare with majority and transparent keyword baselines.
+
+**Why:** Short technical notes contain identifiers, spelling variants, and sparse phrases. Word features capture phrases; character features tolerate token variation. Logistic regression runs on a CPU and supports feature inspection. Balanced weighting reduces dominance from frequent classes, though it cannot cure missing classes.
+
+**Dimension:** There is no fixed embedding dimension. Each TF-IDF vocabulary is learned from training text; record the fitted feature count after a real training run. No transformer fine-tuning, RAG, or LLM is required for the MVP.
+
+**Change rule:** This is a fixed starting configuration, not a tuned winner. Any tuning must use training/development data and be recorded before test evaluation.
+
+## D005 — Evaluation and release split (accepted protocol, 2026-10-17)
+
+**Choice:** Split by release group, fit vectorizers on training rows only, reject identical text that crosses splits, and save the split manifest. Report class support, majority and keyword baselines, macro-F1, per-class precision/recall, confusion matrix, and traceable errors when human labels exist.
+
+**Why:** Notes within a release share vocabulary and context. Random row splits can make evaluation too optimistic. Exact split memberships are generated with seed 42 and will be saved with each trained run; five labeled release groups are the minimum for the program to proceed.
+
+**Limit:** A release-grouped score tests held-out Django releases, not later chronological upgrades or other projects. If a class lacks sufficient support, the run is marked a pilot rather than presented as a valid five-class result. There are no real metrics yet.
+
+## D006 — User interface and privacy (accepted, 2026-10-17)
+
+**Choice:** Use a local Streamlit one-row review screen that saves reviewer name, timestamp, decision, and optional note to a CSV. Keep labels, raw upstream cache, and trained artifacts out of Git by default.
+
+**Why:** The user requested one-by-one help while labeling later. A local interface makes progress visible, allows correction, and keeps the human decision explicit. Streamlit is quick to run for a presentation.
+
+**Limit:** Concurrent reviewers must use distinct label files; the CSV is not a shared production annotation service. The current screen is for annotation, not model inference, until a validated model exists.
