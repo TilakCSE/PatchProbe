@@ -66,6 +66,31 @@ class InferenceTests(unittest.TestCase):
         self.assertIsNone(result.scores["Data/schema migration"])
         self.assertEqual(len(result.trained_classes), 2)
 
+    def test_real_saved_pipeline_can_be_reviewed(self) -> None:
+        import joblib
+        from patchprobe.model import make_pipeline
+
+        with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[1]) as folder:
+            root = Path(folder)
+            output = root / "artifacts" / "model"
+            output.mkdir(parents=True)
+            model = make_pipeline().fit(
+                [
+                    "The function accepts a new argument.",
+                    "The API method returns an exception.",
+                    "The admin form displays a new field.",
+                    "The template renders a different response.",
+                ],
+                ["API/code compatibility"] * 2 + ["UI/output behavior"] * 2,
+            )
+            joblib.dump(model, output / "model.joblib")
+            (output / "metrics.json").write_text(
+                json.dumps({"status": "pilot", "labels": list(EXPECTED_LABELS)}), encoding="utf-8"
+            )
+            prediction = predict_review(load_local_model(root), "The function now has an argument.")
+            self.assertIn(prediction.predicted_label, model.classes_)
+            self.assertEqual(len(prediction.trained_classes), 2)
+            self.assertIsNone(prediction.scores["Data/schema migration"])
     def test_rejects_empty_input_and_invalid_model_contract(self) -> None:
         with self.assertRaisesRegex(InferenceError, "Enter a release-note"):
             predict_review(FakeModel(), " \n ")

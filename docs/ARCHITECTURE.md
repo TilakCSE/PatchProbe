@@ -22,6 +22,8 @@ Official Django release-note RST at pinned Git commits
 | `src/patchprobe/ingest.py`, `scripts/build_dataset.py` | Fetch pinned upstream files, parse entries, deduplicate exact text, select the pilot, write provenance. |
 | `src/patchprobe/annotation.py`, `app.py` | Validate inputs, guide one decision at a time, save and resume review. |
 | `src/patchprobe/model.py`, `scripts/train_model.py` | Validate human labels, make grouped splits, fit baselines and classifier, write auditable evaluation artifacts. |
+| `src/patchprobe/inference.py`, `app.py` | Guard local model loading and show review-only predictions once a trained artifact exists. |
+| `scripts/audit_near_duplicates.py` | Flag similar notes from different releases for human leakage review. |
 | `data/processed/` | Small committed unlabeled dataset and manifest for an offline demo. |
 | `data/annotations/`, `artifacts/`, `data/raw/` | Local reviewer decisions, trained outputs, and upstream cache; excluded from Git. |
 

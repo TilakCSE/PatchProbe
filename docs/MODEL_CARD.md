@@ -20,11 +20,15 @@ The initial fixed candidate combines word 1–2 gram and character 3–5 gram TF
 
 Release IDs are assigned deterministically to train, dev, and test with seed 42, and a split manifest is saved. At least five labeled release groups are required. Repeated cleaned text across splits stops training. Report the five-class macro-F1, accuracy, per-class precision/recall/support, and a confusion matrix for held-out releases. `metrics.json` also records input file hashes, class support, exclusions, and absent test classes. If any class has fewer than five train, two dev, or five test examples, describe the result as a pilot. These thresholds are reporting guards, not statistical guarantees. The fixed keyword baseline is a deliberately simple heuristic; it is not ground truth. See [EVALUATION.md](EVALUATION.md).
 
+## Presentation inference
+
+The Streamlit app exposes Prediction review only after local training writes a model and matching metrics. It displays a suggested area and all five class rows, marking classes absent from pilot training as untrained. Its scores are uncalibrated and should not be read as probabilities of correctness. Pasted text does not become a human label or a test example.
+
 ## Known limitations
 
 - Human labels are pending. No measured quality or production suitability can be claimed yet.
 - A single text entry can imply multiple checks. The guide allows `UNCLEAR`; forcing one area would conceal ambiguity.
-- Release-group splitting reduces one leakage source but does not guarantee generalization to other libraries or writing styles.
+- Release-group splitting reduces one leakage source but does not guarantee generalization to other libraries or writing styles. A separate similarity audit flags 20 cross-release candidate pairs in the current corpus at threshold 0.88; review any pairs crossing a future split before reporting metrics.
 - Annotator identity is recorded in the CSV; software cannot independently verify that a person made the decision.
 - The fixed word/character features and class balancing may work poorly when label support is very small.
 - This classifier offers no calibrated confidence or abstention threshold yet. Its maximum predicted probability in the audit output is uncalibrated and only helps prioritize error review.
