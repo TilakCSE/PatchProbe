@@ -11,7 +11,7 @@ PatchProbe classifies a software release-note entry into the **first downstream 
 
 ## Current state
 
-The repository contains 571 extracted **unlabeled** candidate entries from 14 release-note files, a 50-entry guided review pilot, and a CPU-only classification/evaluation pipeline. There are no human labels or real classification metrics yet. The five intended labels and an `UNCLEAR` review state are defined in [docs/DATA_AND_LABELS.md](docs/DATA_AND_LABELS.md). Read [PROJECT_STATUS.md](PROJECT_STATUS.md) for the remaining work.
+The repository contains 571 extracted candidate entries from 14 release-note files. The 50-entry guided pilot is now human-confirmed with agent assistance: 49 usable model labels and one `UNCLEAR` review state are saved locally. A reviewer-name-free export is committed at `data/processed/pilot_reviewed_labels.csv` so others can reproduce the pilot. A CPU-only pilot model has been trained; its held-out result is a small-sample diagnostic, not validated five-class quality. The five intended labels and an `UNCLEAR` review state are defined in [docs/DATA_AND_LABELS.md](docs/DATA_AND_LABELS.md). Read [PROJECT_STATUS.md](PROJECT_STATUS.md) for the remaining work.
 
 ## Run locally
 
@@ -30,16 +30,16 @@ The committed `data/processed/` files make the review demo work offline. To rebu
 
 Run `python scripts/audit_near_duplicates.py` to list highly similar notes from different releases in ignored `artifacts/data_audit/near_duplicates.csv`. Review these pairs before interpreting a release-held-out score; the script does not delete or relabel entries.
 
-After a sufficient set of human decisions exists, run:
+With the confirmed pilot decisions, reproduce the pilot training run:
 
 ```powershell
-.\.venv\Scripts\python.exe scripts\train_model.py
+.\.venv\Scripts\python.exe scripts\train_model.py --labels data\processed\pilot_reviewed_labels.csv
 ```
 
-Training deliberately stops if the labels file is absent, too small, or lacks enough release groups. A completed run writes an ignored `artifacts/model/` directory with the split manifest, metrics, predictions, and fitted model. No metric from unlabeled data should be reported as classifier quality.
+The committed label export records only a reviewer alias and date; the original name and exact timestamps remain in the ignored local annotation file. To show the 50/50 annotation count in a fresh clone, copy the export to `data/annotations/pilot_labels.csv` before starting the app. Training stops if the selected labels file is absent or lacks enough release groups. A completed run writes an ignored `artifacts/model/` directory with the split manifest, metrics, predictions, and fitted model. The current run has only 49 usable labels across four observed classes; see [docs/MODEL_CARD.md](docs/MODEL_CARD.md) before citing a number.
 
 ## Pipeline
 
-Pinned Django RST → deterministic entry extraction and provenance → human annotation → release-grouped train/dev/test split → train-only word and character TF-IDF → balanced logistic regression → majority and keyword baselines → review of per-class results and errors. The Streamlit app supports guided annotation now and unlocks **Prediction review** only after local training creates a model and matching metrics. No prediction is shown while human labels are absent.
+Pinned Django RST → deterministic entry extraction and provenance → human annotation → release-grouped train/dev/test split → train-only word and character TF-IDF → balanced logistic regression → majority and keyword baselines → review of per-class results and errors. The Streamlit app supports guided annotation and **Prediction review**. The local pilot model and matching metrics now unlock the latter on this machine. A clean clone without the ignored labels and model artifacts starts with annotation only.
 
-See [DECISIONS.md](DECISIONS.md) for why we chose these parts, [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how they connect, [docs/LITERATURE_SURVEY.md](docs/LITERATURE_SURVEY.md) for related work and the originality boundary, [docs/PRESENTATION_QA.md](docs/PRESENTATION_QA.md) for likely professor questions, and [docs/CLOUD_WORKFLOW.md](docs/CLOUD_WORKFLOW.md) for cloud/phone setup.
+For the classroom walkthrough, use [docs/DEMO_RUNBOOK.md](docs/DEMO_RUNBOOK.md). See [DECISIONS.md](DECISIONS.md) for why we chose these parts, [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how they connect, [docs/LITERATURE_SURVEY.md](docs/LITERATURE_SURVEY.md) for related work and the originality boundary, [docs/PRESENTATION_QA.md](docs/PRESENTATION_QA.md) for likely professor questions, and [docs/CLOUD_WORKFLOW.md](docs/CLOUD_WORKFLOW.md) for cloud/phone setup.

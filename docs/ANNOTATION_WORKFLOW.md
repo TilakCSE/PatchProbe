@@ -20,7 +20,7 @@ If the dataset does not exist or has no rows, the app explains what is missing. 
 
 Time the 50-entry pilot, including source lookups and discussion, rather than assuming a fixed number of minutes per row. Record total time, `UNCLEAR` count, class counts, difficult examples, and any changes to the guide. A second reviewer can independently annotate a subset to assess whether the definitions are usable; each reviewer should use a separate labels CSV to avoid overwriting one another.
 
-Do not train or report five-class performance until independent human labels exist and the evaluation split is fixed. A pilot with too few examples of a class may support a demo of the annotation workflow but not a credible five-class score. `UNCLEAR` rows stay out of five-class training, and their count must be reported.
+A human-confirmed, agent-assisted pilot may be trained to verify the end-to-end pipeline, but do not present its class-sparse score as validated five-class quality. Independent second review and broader class support are needed for a stronger evaluation. `UNCLEAR` rows stay out of five-class training, and their count must be reported.
 
 ## Prediction review for the presentation
 
@@ -31,3 +31,6 @@ The app reads only the fixed artifact path inside this project and refuses symbo
 ## Data handling limits
 
 The app is a local reviewer aid, not a shared multi-user annotation server. It rewrites one CSV atomically on each save, but simultaneous sessions writing the same file can lose edits. Assign separate output files to simultaneous reviewers and reconcile them deliberately. The label CSV contains reviewer names; follow the team's data-sharing preference before committing it. The original source URL and revision remain in the entry CSV so each decision can be traced to the source.
+## Chat-assisted pilot review
+
+For this pilot, the agent showed source entries, recommended areas, and explained the evidence. Tilaksinh confirmed rows 1–9 individually and then all recommendations for rows 10–50 from the full review sheet. The agent then saves only that explicit human choice using the same annotation helper as the app, with `annotator`, UTC timestamp, and a review note identifying the agent assistance. `UNCLEAR` requires the human's reason. The original `data/annotations/pilot_labels.csv` remains ignored by Git. A separate name-free export at `data/processed/pilot_reviewed_labels.csv` is committed for reproducible training. This is **human-confirmed, agent-assisted** labeling, not blind independent annotation or an automated gold set. A second reviewer should label a subset without seeing recommendations if the team wants an agreement estimate.

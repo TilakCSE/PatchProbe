@@ -4,7 +4,7 @@
 Build a presentation-ready NLP classifier that routes Django release-note entries to suggested areas of downstream verification. Predictions are review suggestions, never proof that an upgrade is safe.
 
 ## Read first
-Read README.md, DECISIONS.md, and PROJECT_STATUS.md before changing scope. The five-label manual annotation plan remains the target. A guided 50-entry pilot is committed for later human review. The 571 candidate entries are unlabeled. Do not train or report five-class results until independent human labels exist.
+Read README.md, DECISIONS.md, and PROJECT_STATUS.md before changing scope. The five-label human review plan remains the target. A guided 50-entry pilot is committed; all 50 decisions were human-confirmed with agent assistance and saved in the ignored local annotations CSV. The 571 candidate entries are unlabeled source text until a reviewer explicitly confirms individual labels. Do not report five-class results before reviewed labels and a defensible split exist.
 
 ## Working rules
 - Keep the MVP narrow: reproducible data collection, transparent labels, a defensible split, a baseline model, measured evaluation, and a small demo.

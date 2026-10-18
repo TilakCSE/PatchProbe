@@ -14,3 +14,7 @@ A model cannot be validated against the same rules that generated its labels and
 ## Near-duplicate audit
 
 Run `python scripts/audit_near_duplicates.py` before freezing the split. The script compares cleaned entry text from different releases with character `char_wb` TF-IDF 3–5 grams and cosine similarity; the default threshold is 0.88. It writes candidate pairs to ignored `artifacts/data_audit/near_duplicates.csv` for manual review. The pinned 571-entry corpus currently yields **20 cross-release candidate pairs** at that threshold. Several are deprecation/removal updates for the same API; they may be legitimately distinct, so similarity does not automatically remove a row. Inspect any pairs crossing train/dev/test after human labeling, and document exclusions or retained pairs before reporting held-out metrics.
+
+## First pilot audit
+
+The 50-decision pilot has 49 usable model labels. At the default 0.88 corpus-wide similarity threshold, one flagged pair has both entries labeled and crosses the dev/test split: `dj-b142f460d25e91a9` (Django 5.1, dev, deprecation) and `dj-d6a87abb10b5e5c1` (Django 6.0, test, removal), similarity 0.890675. There is no flagged train/test pair among labeled rows at this threshold. No parameter tuning used the dev set, but the pair still makes the tiny test less independent in topic. Retain both in the first pilot result and disclose the issue; review the pair and define a duplicate-family policy before a final evaluation.

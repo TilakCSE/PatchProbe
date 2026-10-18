@@ -20,7 +20,7 @@ The earlier targeted search found adjacent release-note category work and test-s
 - Published notes may contain several changes in one paragraph; extraction and UNCLEAR handling matter.
 - Django release headings can leak a likely answer. Keep them as provenance only.
 - A random paragraph split may share wording from one release across train and test. Hold out releases.
-- Genuine five-class evaluation requires human decisions. Agent suggestions or heading-derived labels are not interchangeable with an independent gold set.
+- Genuine five-class evaluation requires human decisions. Agent suggestions alone or heading-derived labels are not ground truth. This pilot uses explicit human confirmation after an agent recommendation; report that assistance and, if possible, have a second reviewer independently label a subset.
 - A simple sparse-text model gives a transparent benchmark before considering a larger model.
 
 ## Source reuse

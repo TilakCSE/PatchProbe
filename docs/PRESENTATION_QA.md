@@ -9,10 +9,10 @@ PatchProbe helps a developer review a dependency upgrade by routing each release
 ## Five-minute walkthrough
 
 1. State the task boundary: classify one published Django release-note entry into one of four verification areas or `No targeted check stated`. `UNCLEAR` is a human review state, not a sixth model label.
-2. Show the source manifest: 14 pinned release-note RST files, 571 unlabeled extracted entries, source URLs/hashes, and a 50-entry pilot with 10 from each of Django 4.2, 5.0, 5.1, 5.2, and 6.0.
+2. Show the source manifest: 14 pinned release-note RST files, 571 extracted candidate entries, source URLs/hashes, and a completed 50-entry human-confirmed, agent-assisted pilot with 10 from each of Django 4.2, 5.0, 5.1, 5.2, and 6.0.
 3. Open `python -m streamlit run app.py`. Read one entry, consult the label guide, make a human choice, save, and show resume/revisit. Demonstrate `UNCLEAR` for an ambiguous note.
 4. Explain the model pipeline: note `text` only → release-grouped split → training-only word 1–2 and character 3–5 TF-IDF → balanced logistic regression → majority and keyword baselines → per-class metrics and errors. No stopword-removal step is required. No dense embedding dimension exists.
-5. If a human-labeled model has been trained, show its real held-out results and a prediction in the app. If labels are still pending, show the deliberate training gate and describe the annotation pilot as the current deliverable. Never substitute synthetic test fixtures for measured accuracy.
+5. Show the real pilot result and a prediction in the app. Say plainly that 49 usable labels cover only four classes, test has 10 rows, and the model predicts API/code for 9 of them. Test accuracy is 0.60 and five-label macro-F1 is 0.276; these are diagnostics, not validated product quality.
 
 ## Likely questions
 
@@ -20,7 +20,7 @@ PatchProbe helps a developer review a dependency upgrade by routing each release
 
 **Who uses it?** Developers, QA engineers, and maintainers planning upgrade checks. They retain the final decision.
 
-**What exactly is in the dataset?** One row is a candidate note entry, usually a substantive bullet or prose block, extracted from official release notes. Each has an ID, release, exact source URL/revision, section path, raw RST, and cleaned text. The 571 current rows have **no target labels**. A separate CSV stores explicit reviewer decisions.
+**What exactly is in the dataset?** One row is a candidate note entry, usually a substantive bullet or prose block, extracted from official release notes. Each has an ID, release, exact source URL/revision, section path, raw RST, and cleaned text. The 571 source rows have no labels in the extraction CSV. A separate local CSV now stores 50 human-confirmed, agent-assisted decisions; 49 are usable for the model.
 
 **Why these five labels?** Four practical downstream check surfaces cover API/code, configuration/deployment, data/schema, and UI/output behavior. `No targeted check stated` prevents inventing a check when a note does not support one. `UNCLEAR` preserves ambiguity instead of forcing a class.
 
@@ -34,6 +34,8 @@ PatchProbe helps a developer review a dependency upgrade by routing each release
 
 **What if labels are missing or classes are rare?** The training command stops without human labels. A small or class-sparse run is marked a pilot, not a validated five-class result. The 50-row pilot measures annotation time and guide clarity before the team commits to a larger review set.
 
+**Does the trained model beat the baselines?** It beats majority on the 10-row test by macro-F1 (0.276 versus 0.133) but does not beat the fixed keyword baseline (0.280). The test and class support are too small to rank methods confidently. This is a working MVP and an honest error analysis, not a performance claim.
+
 **What are the main limitations?** A note may imply several checks; RST extraction can lose context; Django-only writing style limits transfer; labels can vary between reviewers; classifier scores are not calibrated. The product recommends a first review area, not a compatibility guarantee.
 
-Record the actual presentation date, rubric, labeling time, class counts, split sizes, model feature count, and held-out errors here when they are known.
+Current class counts: API/code 29, configuration/deployment 6, data/schema 5, UI/output 9, No targeted check stated 0, and one `UNCLEAR`. The split is 30/9/10 train/dev/test, and the fitted feature count is 5,838. Record the actual presentation date, rubric, and labeling time when known.

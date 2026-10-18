@@ -14,7 +14,7 @@ Each decision records the choice, evidence, alternatives, and what would change 
 
 **Choice:** Keep five suggested verification areas and a separate `UNCLEAR` review state. A person chooses the label from the note text. Start with a guided 50-entry pilot and measure effort before scaling.
 
-**Why:** Tilaksinh is unavailable for several hours but is willing to label with row-by-row explanation later. No one has authorized the agent to fabricate human ground truth. A small pilot tests whether the definitions are usable and how much review time is realistic. The current working estimate is 45–90 minutes for 50 rows, to be replaced with observed time.
+**Why:** Tilaksinh chose a row-by-row workflow in which the agent recommends a label and explains the text, then he confirms or corrects it. The agent saves only an explicit human decision, with an assistance note and timestamp. These are human-confirmed, agent-assisted labels; they must not be presented as blind independent annotation. A small pilot tests guide clarity, class support, and review time. The provisional estimate is 45–90 minutes for 50 rows, to be replaced with observed time.
 
 **Alternatives:** Labels inferred from Django section headings would be cheaper, but would answer an editorial-topic task rather than the proposed verification question. LLM-generated labels without independent review would not be a valid gold set.
 
@@ -44,7 +44,7 @@ Each decision records the choice, evidence, alternatives, and what would change 
 
 **Why:** Notes within a release share vocabulary and context. Random row splits can make evaluation too optimistic. Exact split memberships are generated with seed 42 and will be saved with each trained run; five labeled release groups are the minimum for the program to proceed.
 
-**Limit:** A release-grouped score tests held-out Django releases, not later chronological upgrades or other projects. If a class lacks sufficient support, the run is marked a pilot rather than presented as a valid five-class result. There are no real metrics yet.
+**Limit:** A release-grouped score tests held-out Django releases, not later chronological upgrades or other projects. If a class lacks sufficient support, the run is marked a pilot rather than presented as a valid five-class result. The 2026-10-18 run is a class-sparse pilot; see D008 and the model card.
 
 ## D006 — User interface and privacy (accepted, 2026-10-17)
 
@@ -61,3 +61,19 @@ Each decision records the choice, evidence, alternatives, and what would change 
 **Why:** Deprecation and later removal notes can refer to the same API. If near-matching notes land in different splits, a grouped score may still benefit from familiar wording. A saved candidate list makes the risk visible.
 
 **Limit:** Similarity alone cannot decide that two notes are equivalent. Human reviewers must decide whether cross-split pairs should be excluded or retained before final evaluation; the audit does not alter source rows or labels.
+
+## D008 — First reviewed pilot and class gap (2026-10-18)
+
+**Evidence:** Tilaksinh explicitly confirmed agent recommendations for rows 1–9 individually and rows 10–50 after receiving the full review draft. Each local CSV row records his name, timestamp, and agent-assistance note; this is human-confirmed review, not blind independent labeling. Of 50 decisions, one is `UNCLEAR` and 49 are model-usable. The five class counts are API/code 29, configuration/deployment 6, data/schema 5, UI/output 9, and No targeted check stated 0.
+
+**Choice:** Train the fixed baseline for an end-to-end MVP demonstration, mark its result as `pilot`, and keep the fifth label visible as untrained. Do not tune on the ten-row test release or claim five-class performance. Seed 42 yields train/dev/test sizes 30/9/10 across disjoint Django releases; test accuracy is 0.60 and five-label macro-F1 is 0.276. The model predicts API/code on 9 of 10 test rows. The keyword baseline is slightly higher on macro-F1 (0.280). These numbers show the workflow runs and expose severe class support limits.
+
+**Next decision:** If more review time is available, deliberately sample notes that might meet `No targeted check stated`, have a reviewer decide them using the fixed guide, and review minority-class examples across releases. If that class remains absent, evaluate a four-class target only after recording a separate taxonomy decision and retraining from a fresh frozen split. Do not relabel the current data merely to fill a class.
+
+## D009 — Shareable pilot labels (2026-10-18)
+
+**Choice:** Keep the original reviewer CSV with name, exact UTC timestamps, and detailed notes local and ignored. Commit `data/processed/pilot_reviewed_labels.csv` as a shareable export of the same 50 confirmed decisions, replacing the reviewer name with `Human reviewer (agent-assisted)` and truncating timestamps to the true review date.
+
+**Why:** A clean GitHub clone can reproduce the pilot model without publishing the detailed local annotation record. The export preserves label values, entry IDs, and technical review notes, and openly discloses agent assistance. Training from this export reproduces the same 30/9/10 split and 0.276 test five-label macro-F1.
+
+**Limit:** The public export is a release artifact, not a separate independent annotation. If a decision changes locally, regenerate and validate the export before a new model run. The original reviewer identity and exact review time are not reconstructable from the export.

@@ -23,7 +23,7 @@ The CSV schema is `entry_id, release, source_url, source_revision, section_path,
 
 The parser treats one substantive bullet or prose block as a candidate, keeps an indented continuation paragraph with its bullet, and skips headings, directives, literal code, very short blocks, and some editorial boilerplate. Exact duplicate cleaned texts are removed globally. This is a deterministic extraction rule, not a guarantee that every row is a self-contained change. Inline code identifiers retain leading `*` characters, and a Sphinx `python:` role prefix is removed from cleaned text. The raw source stays intact.
 
-The 50-row pilot is restricted to bullets of 70–700 characters: 10 from each feature release (4.2, 5.0, 5.1, 5.2, 6.0). Within a release, the sampler chooses distinct section paths before repeating any and spreads picks across top-level section families. SHA-256 of stable entry IDs resolves ties. The final queue interleaves releases. Selection does not inspect or assign a class.
+The completed 50-row pilot is restricted to bullets of 70–700 characters: 10 from each feature release (4.2, 5.0, 5.1, 5.2, 6.0). Within a release, the sampler chooses distinct section paths before repeating any and spreads picks across top-level section families. SHA-256 of stable entry IDs resolves ties. The final queue interleaves releases. Selection does not inspect or assign a class.
 
 ## Counts from the current pinned build
 
@@ -45,7 +45,7 @@ The 50-row pilot is restricted to bullets of 70–700 characters: 10 from each f
 | 6.0.1 | 10 | 0 |
 | **Total** | **571** | **50** |
 
-There were 571 extracted candidates before exact deduplication and zero exact duplicates by normalized `text`. Near duplicates have not yet been audited. These are **unlabeled** examples, so there are no class counts, model splits, or test metrics. No test release is frozen. The pilot now includes 6.0, so a later test split must account for the team's exposure to its pilot rows. Do not tune or report five-way performance against automatically inferred labels.
+There were 571 extracted candidates before exact deduplication and zero exact duplicates by normalized `text`. A later character TF-IDF audit flagged 20 high-similarity cross-release candidate pairs for human review. The extraction CSV remains **unlabeled source data**; a separate local CSV holds 50 human-confirmed, agent-assisted pilot decisions. A committed reviewer-name-free export in `data/processed/pilot_reviewed_labels.csv` contains the same labels, a generic reviewer alias, and date-only timestamps. One is `UNCLEAR`, leaving 49 model-usable examples. The first seed-42 pilot split holds out Django 6.0 (10 rows) as test and 5.1 (9) as dev; train has 30 rows. These exposed pilot releases do not simulate a future unseen upgrade, and class support is too small for a five-class claim. See [MODEL_CARD.md](MODEL_CARD.md).
 
 ## Known extraction limits
 
