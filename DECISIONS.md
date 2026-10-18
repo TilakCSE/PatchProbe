@@ -52,4 +52,13 @@ Each decision records the choice, evidence, alternatives, and what would change 
 
 **Why:** The user requested one-by-one help while labeling later. A local interface makes progress visible, allows correction, and keeps the human decision explicit. Streamlit is quick to run for a presentation.
 
-**Limit:** Concurrent reviewers must use distinct label files; the CSV is not a shared production annotation service. The current screen is for annotation, not model inference, until a validated model exists.
+**Limit:** Concurrent reviewers must use distinct label files; the CSV is not a shared production annotation service. Prediction review appears only when a local trained artifact and matching metrics exist; scores are uncalibrated and remain review suggestions.
+
+## D007 — Cross-release near-duplicate audit (accepted, 2026-10-18)
+
+**Choice:** Keep exact deduplication during extraction and add a separate review-only similarity audit across releases (character TF-IDF 3–5 grams, cosine threshold 0.88). The current 571-entry corpus flags 20 candidate pairs.
+
+**Why:** Deprecation and later removal notes can refer to the same API. If near-matching notes land in different splits, a grouped score may still benefit from familiar wording. A saved candidate list makes the risk visible.
+
+**Limit:** Similarity alone cannot decide that two notes are equivalent. Human reviewers must decide whether cross-split pairs should be excluded or retained before final evaluation; the audit does not alter source rows or labels.
+

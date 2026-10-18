@@ -17,7 +17,7 @@ Read README.md, DECISIONS.md, and PROJECT_STATUS.md before changing scope. The f
 - Prefer a simple CPU-friendly baseline before adding a transformer, LLM, or RAG.
 - Keep data acquisition and training runnable without secret credentials. Never commit secrets, virtual environments, downloaded corpora, or model binaries.
 - Write focused tests for parsing, splitting, and results that could otherwise be misleading. Run the documented quality gate before merging.
-- Each agent should work in its assigned worktree and branch; avoid editing another agent's files.
+- Keep implementation, data, and documentation in the primary `D:\Development\Projects\PatchProbe` checkout. Do not create sibling worktree folders unless the user requests them. Coordinate file ownership for parallel edits.
 - Do not claim the project is globally first. Describe the exact task and limits of the originality search.
 
 ## Delivery gate

@@ -10,3 +10,7 @@
 8. Report exclusions and abstentions; do not hide them from the demo.
 
 A model cannot be validated against the same rules that generated its labels and called independently correct. If the gold set is too small or some classes lack support, report a pilot result with its limitation rather than a misleading percentage.
+
+## Near-duplicate audit
+
+Run `python scripts/audit_near_duplicates.py` before freezing the split. The script compares cleaned entry text from different releases with character `char_wb` TF-IDF 3–5 grams and cosine similarity; the default threshold is 0.88. It writes candidate pairs to ignored `artifacts/data_audit/near_duplicates.csv` for manual review. The pinned 571-entry corpus currently yields **20 cross-release candidate pairs** at that threshold. Several are deprecation/removal updates for the same API; they may be legitimately distinct, so similarity does not automatically remove a row. Inspect any pairs crossing train/dev/test after human labeling, and document exclusions or retained pairs before reporting held-out metrics.

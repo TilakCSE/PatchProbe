@@ -54,3 +54,7 @@ There were 571 extracted candidates before exact deduplication and zero exact du
 - Security and patch notes are much shorter than feature-release notes, so the pilot uses feature releases only. Equal counts per feature release do not imply class balance.
 - Exact deduplication does not catch paraphrases or near-identical notes. Audit them before choosing release-level train/test groups.
 - The upstream notes describe Django changes, not observed downstream failures. The intended labels are reviewer judgments about which area to verify first.
+
+## Near-duplicate review
+
+`python scripts/audit_near_duplicates.py` is a reproducible, non-destructive audit. On the pinned 571 entries it flags 20 cross-release pairs at character TF-IDF cosine similarity ≥ 0.88. This is a candidate list, not proof that 20 rows are erroneous. The output is ignored by Git and must be reviewed before interpreting a future grouped test result.

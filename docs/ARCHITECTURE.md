@@ -29,4 +29,4 @@ Official Django release-note RST at pinned Git commits
 
 Python 3.11+, pandas, scikit-learn, numpy, joblib, and Streamlit are declared in `pyproject.toml`; pytest is an optional development dependency. The app and baseline model run on a CPU. No embedding dimension is chosen: TF-IDF uses a sparse vocabulary whose size is learned from the training split. No LLM, RAG, GPU, paid API, or runtime secret is needed for the offline MVP.
 
-The annotation UI is deliberately local and writes a CSV; simultaneous reviewers should use separate output files. The current UI does not serve model predictions because there is no labeled model to display. See [EVALUATION.md](EVALUATION.md) and [MODEL_CARD.md](MODEL_CARD.md) for gates and limits.
+The annotation UI is deliberately local and writes a CSV; simultaneous reviewers should use separate output files. A prediction mode is implemented but appears only after a locally trained model and matching metrics are present. There is no labeled model yet, so the current demo shows guided annotation and the training gate. See [EVALUATION.md](EVALUATION.md) and [MODEL_CARD.md](MODEL_CARD.md) for gates and limits.
