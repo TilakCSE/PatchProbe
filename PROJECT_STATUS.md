@@ -2,6 +2,8 @@
 
 Updated 2026-10-18.
 
+Presentations start Monday 2026-10-19. Team 8 may be called on 19, 21, or 23 October; prepare for the earliest date.
+
 ## Working now
 
 - The authoritative checkout is `D:\Development\Projects\PatchProbe`. Earlier sibling worktrees were temporary Git checkouts for parallel agent work; their code was integrated and the three extra folders were removed. The local feature branches remain as recovery points.
@@ -16,7 +18,7 @@ Updated 2026-10-18.
 1. Tilaksinh or teammates review the 50-entry pilot with row-by-row help, measure actual time, and resolve confusing definitions. The provisional estimate is 45–90 minutes for 50 entries.
 2. Review enough additional entries for class coverage across releases. Freeze the guide and split, then train and report actual per-class metrics and errors. If support remains small, present it honestly as a pilot.
 3. Finish the virtual-environment install, smoke-test the Streamlit app, and prepare a concise presentation walkthrough and slides.
-4. Confirm the presentation date and rubric when available.
+4. Obtain the rubric if one is provided. The presentation slot is not yet confirmed beyond the possible dates above.
 
 ## Boundaries
 

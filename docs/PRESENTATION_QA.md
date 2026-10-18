@@ -1,5 +1,7 @@
 # Presentation guide and likely professor questions
 
+Team 8 should be ready for the earliest possible date, Monday 2026-10-19. The turn may instead be 21 or 23 October; the rubric has not been supplied.
+
 ## One sentence
 
 PatchProbe helps a developer review a dependency upgrade by routing each release-note entry to a suggested area for the first downstream verification check.
