@@ -1,18 +1,15 @@
 # PatchProbe presentation
 
-[Open the 13-slide PowerPoint](PatchProbe_University_Crimson_13slides.pptx). The deck is 16:9, uses the University Crimson palette and Navrachana University logo, and includes speaker notes with talk tracks and sources.
+[Open the 13-slide PowerPoint](PatchProbe_University_Crimson_13slides.pptx) or [study and speaking guide](PatchProbe_Study_and_Speaking_Guide.pdf). The deck is 16:9, uses the University Crimson palette and Navrachana University logo, and includes speaker notes with talk tracks and sources.
 
 ## Speakers
 
 | Slides | Presenter | Focus |
 | --- | --- | --- |
-| 1 | Whole team | Title and introductions |
-| 2, 4 | Kavya Jariwala | Problem; dataset and labels |
-| 3, 5 | Bhargav Panchal | Related work and novelty; methodology |
-| 6, 7, 8, 9, 11, 13 | Tilaksinh Chauhan | Stack; VS Code walkthrough; demo; deliverable |
-| 10, 12 | Om Nathani | Evaluation; limitations and roadmap |
-
-Tilaksinh has six content slides. Slide 1 is shared.
+| 1, 2, 3 | Bhargav Panchal | Title, problem and related work |
+| 4, 5, 6 | Kavya Jariwala | Dataset, methodology and tech stack |
+| 7, 8, 9, 11 | Tilaksinh Chauhan | VS Code walkthrough and demo |
+| 10, 12, 13 | Om Nathani | Evaluation, roadmap and final deliverable |
 
 ## Before presenting
 
