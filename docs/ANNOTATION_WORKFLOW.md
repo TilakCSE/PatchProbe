@@ -34,3 +34,12 @@ The app is a local reviewer aid, not a shared multi-user annotation server. It r
 ## Chat-assisted pilot review
 
 For this pilot, the agent showed source entries, recommended areas, and explained the evidence. Tilaksinh confirmed rows 1–9 individually and then all recommendations for rows 10–50 from the full review sheet. The agent then saves only that explicit human choice using the same annotation helper as the app, with `annotator`, UTC timestamp, and a review note identifying the agent assistance. `UNCLEAR` requires the human's reason. The original `data/annotations/pilot_labels.csv` remains ignored by Git. A separate name-free export at `data/processed/pilot_reviewed_labels.csv` is committed for reproducible training. This is **human-confirmed, agent-assisted** labeling, not blind independent annotation or an automated gold set. A second reviewer should label a subset without seeing recommendations if the team wants an agreement estimate.
+
+
+## Batch review after the pilot (2026-10-28)
+
+Kavya reviewed all 50 suggestions in [KAVYA_BATCH_01_REVIEW.md](KAVYA_BATCH_01_REVIEW.md) and confirmed them, including three `UNCLEAR` rows (32, 36, 46). The original local file `data/annotations/kavya_batch_01_labels.csv` records her name and exact timestamps and remains ignored by Git. `data/processed/kavya_batch_01_reviewed_labels.csv` is a name-free, date-only export of the same 50 decisions. There are 47 new model labels and three review-only `UNCLEAR` decisions. The suggestion sheet was visible to the reviewer, so this is a human-confirmed batch review, not independent blind labeling.
+
+Bhargav's next 50 entries are in [BHARGAV_BATCH_01_REVIEW.md](BHARGAV_BATCH_01_REVIEW.md), with source links, draft recommendations, and reasons. `data/review_batches/bhargav_batch_01_suggestions.csv` has blank human-decision fields. These rows must not be joined into training until Bhargav confirms or changes them. They do not overlap the first 100 reviewed entries. Reviewers can respond with all confirmed except specific row numbers; `UNCLEAR` may remain unresolved with its reason.
+
+When combining batches, count `UNCLEAR` separately and exclude it from model fitting. Recheck near-duplicate text across releases and freeze a new release-grouped split, because this broader review includes releases that were held out in the first pilot run.

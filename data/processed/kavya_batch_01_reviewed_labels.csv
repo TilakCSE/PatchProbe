@@ -1,0 +1,51 @@
+entry_id,label,annotator,review_note,annotated_at
+dj-d3570ba37c8bc12b,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The --debug-sql option changes the format of command output.,2026-10-28
+dj-e7b11a458905612e,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The validator's updated password list can change the validation result shown to a user.,2026-10-28
+dj-b2c39bdcf4235a76,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The admin's visible light/dark theme can be toggled.,2026-10-28
+dj-6713095c15a87138,Configuration/deployment,Human reviewer,Human-confirmed in the full 50-row review. The makemessages command changes which locale identifiers can be used in localization setup.,2026-10-28
+dj-fbb7c1421766a652,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. The transaction.on_commit call gains a robust argument that application code can use.,2026-10-28
+dj-c307f51e0535fea5,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. Code using either deprecated form-renderer class should be reviewed.,2026-10-28
+dj-a252d1ef9f2fd2b9,Configuration/deployment,Human reviewer,Human-confirmed in the full 50-row review. Supported Python runtime versions affect the deployed environment.,2026-10-28
+dj-f3490d11c3475a05,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. ORM prefetch behavior changes for GenericForeignKey results.,2026-10-28
+dj-8673a32b15b0dea4,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. Custom database-backend code must set the DatabaseFeatures attribute correctly.,2026-10-28
+dj-74cf99026e320f83,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. Calls to the removed ping_google function or management command need review.,2026-10-28
+dj-865fc2d64a44ed50,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. Signer and TimestampSigner calls can no longer pass positional arguments.,2026-10-28
+dj-194e281625231181,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. Test code can pass a new query_params argument to the named request/client APIs.,2026-10-28
+dj-c29c4c6c6f12e4f5,Configuration/deployment,Human reviewer,Human-confirmed in the full 50-row review. SQLite connection OPTIONS can now include an init_command setting.,2026-10-28
+dj-b9e44943fdc6c444,Configuration/deployment,Human reviewer,Human-confirmed in the full 50-row review. A changed password-hasher parallelism default affects runtime configuration and resource use.,2026-10-28
+dj-ff470db325ec04ae,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. The BTreeIndex option concerns the database index definition.,2026-10-28
+dj-b3a66e64b763ddb5,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. A URLField value is now displayed as a link.,2026-10-28
+dj-c6206bca65cdf600,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. Application code can call the new body_contains method and inspect its boolean result.,2026-10-28
+dj-7e273df3a515e3d4,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. method_decorator can now wrap asynchronous view methods in code.,2026-10-28
+dj-a3ee5613a0b29927,Configuration/deployment,Human reviewer,Human-confirmed in the full 50-row review. The minimum gettext version is an environment/dependency requirement.,2026-10-28
+dj-05e646fb4126cb97,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. TelInput renders a different HTML input type for a form.,2026-10-28
+dj-c0f7b469ad475d3a,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. A template tag's accepted arguments affect URL output in rendered templates; review this boundary with API/code.,2026-10-28
+dj-873e2269223ab9f9,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. The change concerns how squashed database migrations are handled.,2026-10-28
+dj-671dc25095b57eaa,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. EmailMessage.attach callers using MIMEBase must move to MIMEPart.,2026-10-28
+dj-365b7a57281cc79a,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The default URL scheme produced by a form field changes from http to https.,2026-10-28
+dj-877a59446c8810d4,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. The Aggregate class attribute controls whether code may pass order_by.,2026-10-28
+dj-c919e8dfa06d3024,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The bug affected serialization of email alternatives and attachments.,2026-10-28
+dj-71b5ff8aa21de072,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. strip_tags now raises a named exception for certain inputs; callers may need to handle it.,2026-10-28
+dj-e606fe01e26e47a5,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. Composite-primary-key introspection reported the wrong database field type.,2026-10-28
+dj-74a46ea71c7acbbc,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. Prefetching a nullable foreign key changed the ORM query behavior.,2026-10-28
+dj-d0b976ec9546869e,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. bulk_create with nullable geometry fields affects database writes.,2026-10-28
+dj-e44ca58068c6eaf7,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. in_bulk with a composite primary key affects query limits and ORM data access.,2026-10-28
+dj-553e2d214321e914,UNCLEAR,Human reviewer,Human-confirmed in the full 50-row review. The note points to both log output and downstream log-consumer safety; the guide does not clearly rank those areas.,2026-10-28
+dj-541ed350a6e738ac,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. Accept-header handling changes the media type chosen for an HTTP response.,2026-10-28
+dj-10de6c2bdb15e0f5,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. Admin form buttons changed what happens when Enter submits a form.,2026-10-28
+dj-bf96fbc55535db84,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. OuterRef inside an Aggregate filter affects ORM query behavior.,2026-10-28
+dj-995c215eb38f1d96,UNCLEAR,Human reviewer,Human-confirmed in the full 50-row review. The note points to both response-log output and operational log safety; a reviewer should choose the first area.,2026-10-28
+dj-84348ed14b32c161,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. The internal MediaType.params property lost and regained the q parameter.,2026-10-28
+dj-957a60cba32b80bb,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. bulk_update changes whether None becomes JSON null or SQL NULL in stored data.,2026-10-28
+dj-0c6449b08f70ef20,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. A composite-primary-key lookup with a subquery affects ORM query behavior.,2026-10-28
+dj-dd6b62a0b3da89eb,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. JSONField expression serialization changes SQL NULL versus JSON null semantics.,2026-10-28
+dj-5ea54f89b8c35e14,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. GeneratedField and constraint validation concern model data rules.,2026-10-28
+dj-a2e4bfc6268a921b,Configuration/deployment,Human reviewer,Human-confirmed in the full 50-row review. Compatibility with docutils 0.22 affects an installed dependency version.,2026-10-28
+dj-85f0f7d648a513a2,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. QuerySet.annotate/alias callers expanding an untrusted dictionary into kwargs need code review.,2026-10-28
+dj-419ced0e3b3b5c9a,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. values()/values_list() returned the wrong shape for ForeignObject results; consuming code should be checked.,2026-10-28
+dj-92551a1c0008a325,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. QuerySet callers expanding an untrusted dictionary into kwargs need code review.,2026-10-28
+dj-761f5a147134517c,UNCLEAR,Human reviewer,Human-confirmed in the full 50-row review. The archive.extract function and project-template commands are both named; code use and project setup are plausible first checks.,2026-10-28
+dj-1d102276fe2b1fc1,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. The affected interfaces are redirect response classes and redirect(); review calls that accept large untrusted inputs.,2026-10-28
+dj-af54932e4defb838,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. first()/last() on aggregate queries with composite primary keys affects ORM data access.,2026-10-28
+dj-b134568af8ec0626,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The change affects visible color in management-command help output.,2026-10-28
+dj-ad64d6f07ff6548f,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The note explicitly describes a visual regression in admin form fields.,2026-10-28

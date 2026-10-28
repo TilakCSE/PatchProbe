@@ -77,3 +77,12 @@ Each decision records the choice, evidence, alternatives, and what would change 
 **Why:** A clean GitHub clone can reproduce the pilot model without publishing the detailed local annotation record. The export preserves label values, entry IDs, and technical review notes, and openly discloses agent assistance. Training from this export reproduces the same 30/9/10 split and 0.276 test five-label macro-F1.
 
 **Limit:** The public export is a release artifact, not a separate independent annotation. If a decision changes locally, regenerate and validate the export before a new model run. The original reviewer identity and exact review time are not reconstructable from the export.
+
+
+## D010 — Second human review batch and new evaluation boundary (2026-10-28)
+
+**Evidence:** Kavya explicitly confirmed 50 separate source-linked suggestions, keeping three mixed rows as `UNCLEAR`. The resulting batch has 47 five-class labels. A new Bhargav batch contains 50 different source rows and remains draft until his review. The local named record and a reviewer-name-free export are separate, as in D009.
+
+**Choice:** Preserve the reviewed Kavya labels, exclude `UNCLEAR` from training, and present the next reviewer with suggested labels plus reasons while saving no decision before confirmation. Sample different releases and sections and reject obvious near-duplicates; do not force the absent fifth class.
+
+**Evaluation consequence:** The original test release has now been viewed during broader annotation. Keep its reported score as a pilot diagnostic only. Before a final model claim, audit near-duplicates and freeze a fresh release-grouped evaluation split; record class support and baselines again.

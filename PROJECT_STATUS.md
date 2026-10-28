@@ -1,8 +1,16 @@
 # Project status
 
-Updated 2026-10-18.
+Updated 2026-10-28.
 
-Presentations start Monday 2026-10-19. Team 8 may be called on 19, 21, or 23 October; prepare for the earliest date.
+## Current annotation status
+
+- The original 50-row pilot is complete: 49 five-class labels and one `UNCLEAR`. Its existing model score is only a pilot diagnostic.
+- Kavya reviewed a separate 50-row batch on 2026-10-28 and confirmed all suggestions: 47 five-class labels and three `UNCLEAR`. Her private reviewer CSV stays in `data/annotations/`; a reviewer-name-free export is committed at `data/processed/kavya_batch_01_reviewed_labels.csv`.
+- There are now **100 human-confirmed decisions: 96 model-usable and four `UNCLEAR`**. The fifth class, `No targeted check stated`, still has no confirmed examples.
+- Bhargav has a separate 50-row suggestion sheet at `docs/BHARGAV_BATCH_01_REVIEW.md`. These are draft suggestions until he explicitly confirms or corrects them.
+- The published 0.276 five-label macro-F1 belongs to the **original 49-label pilot only**. New labels include entries from the old held-out release, so the project must make a fresh release-grouped split and near-duplicate audit before reporting a final model score.
+
+## Historical MVP snapshot from 2026-10-18
 
 ## Working now
 
