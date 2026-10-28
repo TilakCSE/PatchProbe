@@ -4,11 +4,11 @@ Updated 2026-10-28.
 
 ## Current annotation status
 
-- The original 50-row pilot is complete: 49 five-class labels and one `UNCLEAR`. Its existing model score is only a pilot diagnostic.
-- Kavya reviewed a separate 50-row batch on 2026-10-28 and confirmed all suggestions: 47 five-class labels and three `UNCLEAR`. Her private reviewer CSV stays in `data/annotations/`; a reviewer-name-free export is committed at `data/processed/kavya_batch_01_reviewed_labels.csv`.
-- There are now **100 human-confirmed decisions: 96 model-usable and four `UNCLEAR`**. The fifth class, `No targeted check stated`, still has no confirmed examples.
-- Bhargav has a separate 50-row suggestion sheet at `docs/BHARGAV_BATCH_01_REVIEW.md`. These are draft suggestions until he explicitly confirms or corrects them.
-- The published 0.276 five-label macro-F1 belongs to the **original 49-label pilot only**. New labels include entries from the old held-out release, so the project must make a fresh release-grouped split and near-duplicate audit before reporting a final model score.
+- The original pilot, Kavya's batch, and Bhargav's batch each contain 50 human-confirmed decisions. The merged shareable file is `data/processed/reviewed_labels.csv` and can be regenerated with `python scripts/merge_reviewed_labels.py`.
+- Across all 150 reviewed rows, **144 have a model label and six remain `UNCLEAR`**. The observed model-label counts are API/code 64, configuration/deployment 22, data/schema 26, UI/output 32, and No targeted check stated 0. The source corpus has 571 entries, leaving 421 unreviewed.
+- The named reviewer files remain ignored locally. The three shareable batch exports contain reviewer aliases and date-only timestamps. Bhargav confirmed all 50 suggestions, including two `UNCLEAR` rows.
+- A distinct 50-row fourth batch is at `docs/BATCH_04_REVIEW.md`. It is a draft with no assigned reviewer or saved human decisions.
+- The published 0.276 five-label macro-F1 belongs to the **original 49-label pilot only**. New labels include entries from the old held-out release. Freeze a fresh release-grouped split and audit near-duplicates before reporting a final model score. The fifth class still has zero support; do not invent labels to fill it.
 
 ## Historical MVP snapshot from 2026-10-18
 

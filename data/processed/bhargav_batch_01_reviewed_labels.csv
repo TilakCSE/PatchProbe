@@ -1,0 +1,51 @@
+entry_id,label,annotator,review_note,annotated_at
+dj-41274f447b6aa9d2,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. json_script gains a callable encoder parameter; check code that passes or wraps it.,2026-10-28
+dj-6b5f892973151526,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The mysqlclient minimum version is an installed dependency requirement.,2026-10-28
+dj-c3af907b99f386e0,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The PostgreSQL server_side_binding option belongs in database connection configuration.,2026-10-28
+dj-a81abc4bead1cab1,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The changed hasher work factor affects runtime cost and password-hasher configuration.,2026-10-28
+dj-70c2211eff7797d9,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Code using RawSQL aggregations on MySQL must change because that use is unsupported.,2026-10-28
+dj-57dc2e80bb05a092,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The admin confirmation template gains blocks and hooks that affect template customization.,2026-10-28
+dj-aff6af34e2fac918,UNCLEAR,Human reviewer,Human-confirmed in full 50-row review. The replacement names both a Python model field and a database collation; code and schema checks are both plausible first steps.,2026-10-28
+dj-c61084cd8a05ad8c,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The note explicitly calls for a transitional FORMS_URLFIELD_ASSUME_HTTPS setting.,2026-10-28
+dj-d8cf5078a9d75264,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Imports of the moved exception classes must use their new module.,2026-10-28
+dj-377da69d918b9c36,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The default value of a Django setting changes; check the application's setting.,2026-10-28
+dj-07d486f925b67af3,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. An AdminSite method is added for code that customizes the log-entry queryset.,2026-10-28
+dj-7a57243eb1f0c26d,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. ExclusionConstraint gains a Python attribute controlling a ValidationError code.,2026-10-28
+dj-1290ffa57cd99944,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. The new ClosestPoint function is a callable interface used in GIS code.,2026-10-28
+dj-2faca5a05d4d2636,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Test Client and AsyncClient gain named async methods for code to call.,2026-10-28
+dj-9621260a12d66045,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. refresh_from_db gains a named argument that application code can use.,2026-10-28
+dj-b1651aff0f4fbafe,Configuration/deployment,Human reviewer,"Human-confirmed in full 50-row review. Collect support depends on the deployed MySQL version, 8.0.24 or later.",2026-10-28
+dj-7e925deb98cd6af6,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. PostgreSQL connection pooling is a database connection setup choice.,2026-10-28
+dj-6bbbc8a088188e4d,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Saving a nameless FileField now raises FieldError; caller exception handling may change.,2026-10-28
+dj-d959af03ec5ba16d,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Callers of the deprecated GeoIP2.coords method should use lon_lat.,2026-10-28
+dj-a164a11a27166e80,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The querystring template tag changes the URLs rendered in page links.,2026-10-28
+dj-bd050fedc89aba5f,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. The removed CI model field classes require code references to change; historical migrations remain supported.,2026-10-28
+dj-6fa40a5f9d9c888a,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Calls using the deprecated ordering keyword should switch to order_by.,2026-10-28
+dj-5c5d2b04ae2173a1,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The note states which Python runtimes are supported for deployment.,2026-10-28
+dj-d3edaa87ce8b253a,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. The new django.forms.Script object is a Python interface for form media customization.,2026-10-28
+dj-0cc1acf852043dd7,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. Error-report output now hides more setting values as sensitive.,2026-10-28
+dj-ec3e5e75bc45b053,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. The generated SELECT and combined queryset behavior change ORM data results.,2026-10-28
+dj-0b3c7c48bbee90ab,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The default MySQL connection character set changes; check database connection setup.,2026-10-28
+dj-dc0f40c9b1aa4825,API/code compatibility,Human reviewer,"Human-confirmed in full 50-row review. Attachment tuple objects change shape to named tuples, affecting consuming code.",2026-10-28
+dj-7339e91a634f4dda,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. Serialization of ZoneInfo instances is a migration-data behavior.,2026-10-28
+dj-336f88e0d839a604,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The new template loop variable changes what a rendered template can show.,2026-10-28
+dj-ddba9b903cdaeed4,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. GIS widgets render with a new template layout and no inline JavaScript.,2026-10-28
+dj-011546728c329f4d,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. The removed module and function require import or call sites to change.,2026-10-28
+dj-d5bdeb4d58793c93,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. New translations affect the language visible in the interface.,2026-10-28
+dj-084daac63d98e842,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. ADMINS and MANAGERS must use a new settings value format.,2026-10-28
+dj-1d4b9ff2c767f776,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The shell command now shows common utilities already imported in its interactive namespace.,2026-10-28
+dj-59245797e13cfb5e,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The querystring tag now preserves multi-value query parameters in generated URLs.,2026-10-28
+dj-c7bd7fe39300849a,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. The fix changes fields selected by an ORM query using alias after values.,2026-10-28
+dj-04a3fe93d7b8d201,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. The fix concerns an ORM aggregate query with OuterRef.,2026-10-28
+dj-df0e5e3fd9cd3d49,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The fix restores the visible color contrast of admin widgets.,2026-10-28
+dj-6aaeff8cf7961fc4,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. A ManyToManyField with a composite primary key is a model data relationship check.,2026-10-28
+dj-e25c824b03887d30,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. The system check concerns proxy models with composite primary keys.,2026-10-28
+dj-bbc20fda80685fcc,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The selected media type can change the HTTP response behavior seen by a client.,2026-10-28
+dj-ba412e63aeda0cd0,Data/schema migration,Human reviewer,"Human-confirmed in full 50-row review. The migration changed persisted Permission names and codenames, including unrelated objects.",2026-10-28
+dj-4a8efa894f79d51e,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. The affected subquery now raises ValueError for an invalid column count.,2026-10-28
+dj-3ff986b6ec1f8f96,UNCLEAR,Human reviewer,Human-confirmed in full 50-row review. The note explicitly names both the strip_tags function and striptags template filter; code and template checks are both plausible.,2026-10-28
+dj-6622909c675e5b94,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The widget's fieldset setting affects the rendered file input form.,2026-10-28
+dj-b80011775cf9c280,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. Renaming a ManyToManyField now takes effect when applying migrations.,2026-10-28
+dj-53764143ae68d36e,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. QuerySet.union with no arguments previously crashed; check such method calls.,2026-10-28
+dj-92d2ac7ed0baf73b,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. RemoteUserMiddleware subclasses that override process_request are the affected code interface.,2026-10-28
+dj-b84631950773a092,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Calling repr on a LazyNonce object is the affected Python interface.,2026-10-28

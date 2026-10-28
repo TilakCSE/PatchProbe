@@ -43,3 +43,10 @@ Kavya reviewed all 50 suggestions in [KAVYA_BATCH_01_REVIEW.md](KAVYA_BATCH_01_R
 Bhargav's next 50 entries are in [BHARGAV_BATCH_01_REVIEW.md](BHARGAV_BATCH_01_REVIEW.md), with source links, draft recommendations, and reasons. `data/review_batches/bhargav_batch_01_suggestions.csv` has blank human-decision fields. These rows must not be joined into training until Bhargav confirms or changes them. They do not overlap the first 100 reviewed entries. Reviewers can respond with all confirmed except specific row numbers; `UNCLEAR` may remain unresolved with its reason.
 
 When combining batches, count `UNCLEAR` separately and exclude it from model fitting. Recheck near-duplicate text across releases and freeze a new release-grouped split, because this broader review includes releases that were held out in the first pilot run.
+
+
+## Three-batch merge and fourth batch (2026-10-28)
+
+Bhargav reviewed all 50 rows in [BHARGAV_BATCH_01_REVIEW.md](BHARGAV_BATCH_01_REVIEW.md) and confirmed them, leaving rows 07 and 45 as `UNCLEAR`. His ignored local CSV holds the named and timestamped record; `data/processed/bhargav_batch_01_reviewed_labels.csv` is the reviewer-name-free, date-only export. Together with the pilot and Kavya exports, [the merged annotated CSV](../data/processed/reviewed_labels.csv) has 150 distinct source IDs, 144 model-usable labels, and six `UNCLEAR` decisions. Run `python scripts/merge_reviewed_labels.py` to validate and regenerate it.
+
+[Batch 04](BATCH_04_REVIEW.md) holds 50 new draft suggestions with blank reviewer-decision fields. A teammate must review them and provide their name before any labels are saved. The first 150 IDs are excluded. The two latest batches used non-blind human review of agent suggestions; do not use them as an independent agreement estimate.

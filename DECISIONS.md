@@ -86,3 +86,12 @@ Each decision records the choice, evidence, alternatives, and what would change 
 **Choice:** Preserve the reviewed Kavya labels, exclude `UNCLEAR` from training, and present the next reviewer with suggested labels plus reasons while saving no decision before confirmation. Sample different releases and sections and reject obvious near-duplicates; do not force the absent fifth class.
 
 **Evaluation consequence:** The original test release has now been viewed during broader annotation. Keep its reported score as a pilot diagnostic only. Before a final model claim, audit near-duplicates and freeze a fresh release-grouped evaluation split; record class support and baselines again.
+
+
+## D011 — Merge 150 reviewed entries and continue bounded batches (2026-10-28)
+
+**Evidence:** Bhargav explicitly confirmed all 50 proposed decisions, retaining two `UNCLEAR` rows. The three reviewed batches contain 150 distinct source IDs: 144 model-usable labels and six `UNCLEAR`. The observed model classes have counts 64/22/26/32/0 in guide order.
+
+**Choice:** Keep each named review file local and ignored, publish a date-only alias export per batch, and regenerate `data/processed/reviewed_labels.csv` with a validator that rejects duplicate or unknown IDs. Prepare a separate 50-row fourth suggestion batch without assigning a reviewer or treating those suggestions as labels.
+
+**Limit:** The fourth batch is not a random test sample. The fifth class still has zero reviewed examples; do not force it. If further review finds none, make an explicit four-class taxonomy decision and fresh evaluation plan before presenting final classification quality. The old pilot test score remains a historical diagnostic.

@@ -1,0 +1,151 @@
+entry_id,label,annotator,review_note,annotated_at
+dj-41274f447b6aa9d2,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. json_script gains a callable encoder parameter; check code that passes or wraps it.,2026-10-28
+dj-6b5f892973151526,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The mysqlclient minimum version is an installed dependency requirement.,2026-10-28
+dj-c3af907b99f386e0,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The PostgreSQL server_side_binding option belongs in database connection configuration.,2026-10-28
+dj-a81abc4bead1cab1,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The changed hasher work factor affects runtime cost and password-hasher configuration.,2026-10-28
+dj-70c2211eff7797d9,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Code using RawSQL aggregations on MySQL must change because that use is unsupported.,2026-10-28
+dj-57dc2e80bb05a092,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The admin confirmation template gains blocks and hooks that affect template customization.,2026-10-28
+dj-aff6af34e2fac918,UNCLEAR,Human reviewer,Human-confirmed in full 50-row review. The replacement names both a Python model field and a database collation; code and schema checks are both plausible first steps.,2026-10-28
+dj-c61084cd8a05ad8c,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The note explicitly calls for a transitional FORMS_URLFIELD_ASSUME_HTTPS setting.,2026-10-28
+dj-d8cf5078a9d75264,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Imports of the moved exception classes must use their new module.,2026-10-28
+dj-377da69d918b9c36,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The default value of a Django setting changes; check the application's setting.,2026-10-28
+dj-07d486f925b67af3,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. An AdminSite method is added for code that customizes the log-entry queryset.,2026-10-28
+dj-7a57243eb1f0c26d,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. ExclusionConstraint gains a Python attribute controlling a ValidationError code.,2026-10-28
+dj-1290ffa57cd99944,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. The new ClosestPoint function is a callable interface used in GIS code.,2026-10-28
+dj-2faca5a05d4d2636,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Test Client and AsyncClient gain named async methods for code to call.,2026-10-28
+dj-9621260a12d66045,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. refresh_from_db gains a named argument that application code can use.,2026-10-28
+dj-b1651aff0f4fbafe,Configuration/deployment,Human reviewer,"Human-confirmed in full 50-row review. Collect support depends on the deployed MySQL version, 8.0.24 or later.",2026-10-28
+dj-7e925deb98cd6af6,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. PostgreSQL connection pooling is a database connection setup choice.,2026-10-28
+dj-6bbbc8a088188e4d,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Saving a nameless FileField now raises FieldError; caller exception handling may change.,2026-10-28
+dj-d959af03ec5ba16d,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Callers of the deprecated GeoIP2.coords method should use lon_lat.,2026-10-28
+dj-a164a11a27166e80,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The querystring template tag changes the URLs rendered in page links.,2026-10-28
+dj-bd050fedc89aba5f,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. The removed CI model field classes require code references to change; historical migrations remain supported.,2026-10-28
+dj-6fa40a5f9d9c888a,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Calls using the deprecated ordering keyword should switch to order_by.,2026-10-28
+dj-5c5d2b04ae2173a1,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The note states which Python runtimes are supported for deployment.,2026-10-28
+dj-d3edaa87ce8b253a,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. The new django.forms.Script object is a Python interface for form media customization.,2026-10-28
+dj-0cc1acf852043dd7,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. Error-report output now hides more setting values as sensitive.,2026-10-28
+dj-ec3e5e75bc45b053,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. The generated SELECT and combined queryset behavior change ORM data results.,2026-10-28
+dj-0b3c7c48bbee90ab,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. The default MySQL connection character set changes; check database connection setup.,2026-10-28
+dj-dc0f40c9b1aa4825,API/code compatibility,Human reviewer,"Human-confirmed in full 50-row review. Attachment tuple objects change shape to named tuples, affecting consuming code.",2026-10-28
+dj-7339e91a634f4dda,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. Serialization of ZoneInfo instances is a migration-data behavior.,2026-10-28
+dj-336f88e0d839a604,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The new template loop variable changes what a rendered template can show.,2026-10-28
+dj-ddba9b903cdaeed4,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. GIS widgets render with a new template layout and no inline JavaScript.,2026-10-28
+dj-011546728c329f4d,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. The removed module and function require import or call sites to change.,2026-10-28
+dj-d5bdeb4d58793c93,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. New translations affect the language visible in the interface.,2026-10-28
+dj-084daac63d98e842,Configuration/deployment,Human reviewer,Human-confirmed in full 50-row review. ADMINS and MANAGERS must use a new settings value format.,2026-10-28
+dj-1d4b9ff2c767f776,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The shell command now shows common utilities already imported in its interactive namespace.,2026-10-28
+dj-59245797e13cfb5e,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The querystring tag now preserves multi-value query parameters in generated URLs.,2026-10-28
+dj-c7bd7fe39300849a,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. The fix changes fields selected by an ORM query using alias after values.,2026-10-28
+dj-04a3fe93d7b8d201,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. The fix concerns an ORM aggregate query with OuterRef.,2026-10-28
+dj-df0e5e3fd9cd3d49,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The fix restores the visible color contrast of admin widgets.,2026-10-28
+dj-6aaeff8cf7961fc4,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. A ManyToManyField with a composite primary key is a model data relationship check.,2026-10-28
+dj-e25c824b03887d30,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. The system check concerns proxy models with composite primary keys.,2026-10-28
+dj-bbc20fda80685fcc,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The selected media type can change the HTTP response behavior seen by a client.,2026-10-28
+dj-ba412e63aeda0cd0,Data/schema migration,Human reviewer,"Human-confirmed in full 50-row review. The migration changed persisted Permission names and codenames, including unrelated objects.",2026-10-28
+dj-4a8efa894f79d51e,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. The affected subquery now raises ValueError for an invalid column count.,2026-10-28
+dj-3ff986b6ec1f8f96,UNCLEAR,Human reviewer,Human-confirmed in full 50-row review. The note explicitly names both the strip_tags function and striptags template filter; code and template checks are both plausible.,2026-10-28
+dj-6622909c675e5b94,UI/output behavior,Human reviewer,Human-confirmed in full 50-row review. The widget's fieldset setting affects the rendered file input form.,2026-10-28
+dj-b80011775cf9c280,Data/schema migration,Human reviewer,Human-confirmed in full 50-row review. Renaming a ManyToManyField now takes effect when applying migrations.,2026-10-28
+dj-53764143ae68d36e,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. QuerySet.union with no arguments previously crashed; check such method calls.,2026-10-28
+dj-92d2ac7ed0baf73b,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. RemoteUserMiddleware subclasses that override process_request are the affected code interface.,2026-10-28
+dj-b84631950773a092,API/code compatibility,Human reviewer,Human-confirmed in full 50-row review. Calling repr on a LazyNonce object is the affected Python interface.,2026-10-28
+dj-d3570ba37c8bc12b,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The --debug-sql option changes the format of command output.,2026-10-28
+dj-e7b11a458905612e,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The validator's updated password list can change the validation result shown to a user.,2026-10-28
+dj-b2c39bdcf4235a76,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The admin's visible light/dark theme can be toggled.,2026-10-28
+dj-6713095c15a87138,Configuration/deployment,Human reviewer,Human-confirmed in the full 50-row review. The makemessages command changes which locale identifiers can be used in localization setup.,2026-10-28
+dj-fbb7c1421766a652,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. The transaction.on_commit call gains a robust argument that application code can use.,2026-10-28
+dj-c307f51e0535fea5,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. Code using either deprecated form-renderer class should be reviewed.,2026-10-28
+dj-a252d1ef9f2fd2b9,Configuration/deployment,Human reviewer,Human-confirmed in the full 50-row review. Supported Python runtime versions affect the deployed environment.,2026-10-28
+dj-f3490d11c3475a05,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. ORM prefetch behavior changes for GenericForeignKey results.,2026-10-28
+dj-8673a32b15b0dea4,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. Custom database-backend code must set the DatabaseFeatures attribute correctly.,2026-10-28
+dj-74cf99026e320f83,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. Calls to the removed ping_google function or management command need review.,2026-10-28
+dj-865fc2d64a44ed50,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. Signer and TimestampSigner calls can no longer pass positional arguments.,2026-10-28
+dj-194e281625231181,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. Test code can pass a new query_params argument to the named request/client APIs.,2026-10-28
+dj-c29c4c6c6f12e4f5,Configuration/deployment,Human reviewer,Human-confirmed in the full 50-row review. SQLite connection OPTIONS can now include an init_command setting.,2026-10-28
+dj-b9e44943fdc6c444,Configuration/deployment,Human reviewer,Human-confirmed in the full 50-row review. A changed password-hasher parallelism default affects runtime configuration and resource use.,2026-10-28
+dj-ff470db325ec04ae,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. The BTreeIndex option concerns the database index definition.,2026-10-28
+dj-b3a66e64b763ddb5,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. A URLField value is now displayed as a link.,2026-10-28
+dj-c6206bca65cdf600,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. Application code can call the new body_contains method and inspect its boolean result.,2026-10-28
+dj-7e273df3a515e3d4,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. method_decorator can now wrap asynchronous view methods in code.,2026-10-28
+dj-a3ee5613a0b29927,Configuration/deployment,Human reviewer,Human-confirmed in the full 50-row review. The minimum gettext version is an environment/dependency requirement.,2026-10-28
+dj-05e646fb4126cb97,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. TelInput renders a different HTML input type for a form.,2026-10-28
+dj-c0f7b469ad475d3a,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. A template tag's accepted arguments affect URL output in rendered templates; review this boundary with API/code.,2026-10-28
+dj-873e2269223ab9f9,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. The change concerns how squashed database migrations are handled.,2026-10-28
+dj-671dc25095b57eaa,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. EmailMessage.attach callers using MIMEBase must move to MIMEPart.,2026-10-28
+dj-365b7a57281cc79a,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The default URL scheme produced by a form field changes from http to https.,2026-10-28
+dj-877a59446c8810d4,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. The Aggregate class attribute controls whether code may pass order_by.,2026-10-28
+dj-c919e8dfa06d3024,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The bug affected serialization of email alternatives and attachments.,2026-10-28
+dj-71b5ff8aa21de072,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. strip_tags now raises a named exception for certain inputs; callers may need to handle it.,2026-10-28
+dj-e606fe01e26e47a5,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. Composite-primary-key introspection reported the wrong database field type.,2026-10-28
+dj-74a46ea71c7acbbc,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. Prefetching a nullable foreign key changed the ORM query behavior.,2026-10-28
+dj-d0b976ec9546869e,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. bulk_create with nullable geometry fields affects database writes.,2026-10-28
+dj-e44ca58068c6eaf7,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. in_bulk with a composite primary key affects query limits and ORM data access.,2026-10-28
+dj-553e2d214321e914,UNCLEAR,Human reviewer,Human-confirmed in the full 50-row review. The note points to both log output and downstream log-consumer safety; the guide does not clearly rank those areas.,2026-10-28
+dj-541ed350a6e738ac,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. Accept-header handling changes the media type chosen for an HTTP response.,2026-10-28
+dj-10de6c2bdb15e0f5,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. Admin form buttons changed what happens when Enter submits a form.,2026-10-28
+dj-bf96fbc55535db84,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. OuterRef inside an Aggregate filter affects ORM query behavior.,2026-10-28
+dj-995c215eb38f1d96,UNCLEAR,Human reviewer,Human-confirmed in the full 50-row review. The note points to both response-log output and operational log safety; a reviewer should choose the first area.,2026-10-28
+dj-84348ed14b32c161,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. The internal MediaType.params property lost and regained the q parameter.,2026-10-28
+dj-957a60cba32b80bb,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. bulk_update changes whether None becomes JSON null or SQL NULL in stored data.,2026-10-28
+dj-0c6449b08f70ef20,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. A composite-primary-key lookup with a subquery affects ORM query behavior.,2026-10-28
+dj-dd6b62a0b3da89eb,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. JSONField expression serialization changes SQL NULL versus JSON null semantics.,2026-10-28
+dj-5ea54f89b8c35e14,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. GeneratedField and constraint validation concern model data rules.,2026-10-28
+dj-a2e4bfc6268a921b,Configuration/deployment,Human reviewer,Human-confirmed in the full 50-row review. Compatibility with docutils 0.22 affects an installed dependency version.,2026-10-28
+dj-85f0f7d648a513a2,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. QuerySet.annotate/alias callers expanding an untrusted dictionary into kwargs need code review.,2026-10-28
+dj-419ced0e3b3b5c9a,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. values()/values_list() returned the wrong shape for ForeignObject results; consuming code should be checked.,2026-10-28
+dj-92551a1c0008a325,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. QuerySet callers expanding an untrusted dictionary into kwargs need code review.,2026-10-28
+dj-761f5a147134517c,UNCLEAR,Human reviewer,Human-confirmed in the full 50-row review. The archive.extract function and project-template commands are both named; code use and project setup are plausible first checks.,2026-10-28
+dj-1d102276fe2b1fc1,API/code compatibility,Human reviewer,Human-confirmed in the full 50-row review. The affected interfaces are redirect response classes and redirect(); review calls that accept large untrusted inputs.,2026-10-28
+dj-af54932e4defb838,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. first()/last() on aggregate queries with composite primary keys affects ORM data access.,2026-10-28
+dj-b134568af8ec0626,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The change affects visible color in management-command help output.,2026-10-28
+dj-ad64d6f07ff6548f,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The note explicitly describes a visual regression in admin form fields.,2026-10-28
+dj-6f8aef63d2316942,Configuration/deployment,Human reviewer (agent-assisted),Human-confirmed in chat after an agent recommendation; dependency minimum version is the first deployment check.,2026-10-18
+dj-2b6eca4153122802,API/code compatibility,Human reviewer (agent-assisted),Human-confirmed in chat after an agent recommendation; explicit change is a Python constraint attribute and ValidationError code.,2026-10-18
+dj-b142f460d25e91a9,API/code compatibility,Human reviewer (agent-assisted),Human-confirmed in chat after an agent recommendation; deprecated methods and replacement subclass methods require a code check.,2026-10-18
+dj-26fe598f8ce348b8,API/code compatibility,Human reviewer (agent-assisted),Human-confirmed in chat after an agent recommendation; application code must use attach_alternative().,2026-10-18
+dj-d6a87abb10b5e5c1,API/code compatibility,Human reviewer (agent-assisted),Human-confirmed in chat after an agent recommendation; removed methods require code review. Similar to the row 3 deprecation note and flagged for split leakage audit.,2026-10-18
+dj-92db7b78039a40ab,API/code compatibility,Human reviewer (agent-assisted),Human-confirmed in chat after an agent recommendation; deprecated password-generator method is a code API change.,2026-10-18
+dj-4a7170cd5286b622,Data/schema migration,Human reviewer (agent-assisted),"Human-confirmed in chat after an agent recommendation; query-result semantics change on affected databases, without a schema change.",2026-10-18
+dj-5197d1ecfeab46d5,Configuration/deployment,Human reviewer (agent-assisted),Human-confirmed in chat after an agent recommendation; SQLite OPTIONS is a project configuration surface.,2026-10-18
+dj-5778734cce4a6e23,API/code compatibility,Human reviewer (agent-assisted),Human-confirmed in chat after an agent recommendation; optional async interface for custom auth backend integration.,2026-10-18
+dj-62c9c04ea8006bd7,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 10. Reason: New method argument.,2026-10-18
+dj-e744a542e8b55b86,UI/output behavior,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 11. Reason: Admin template and breadcrumbs.,2026-10-18
+dj-faf06c341401109f,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 12. Reason: Previously allowed ORM call is rejected.,2026-10-18
+dj-96c433688c1ec956,Configuration/deployment,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 13. Reason: Minimum SQLite runtime version.,2026-10-18
+dj-8b2683ec04f3fb67,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 14. Reason: Authentication call behavior deprecated.,2026-10-18
+dj-312bb34a285c17a9,Data/schema migration,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 15. Reason: Column-drop schema behavior.,2026-10-18
+dj-79ea176281399cc6,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 16. Reason: New test-client argument.,2026-10-18
+dj-5383a6add0be2853,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 17. Reason: Database backend hook deprecated.,2026-10-18
+dj-8ca14ed0351b2b45,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 18. Reason: JSONField input form removed.,2026-10-18
+dj-cd9896246810fc21,UI/output behavior,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 19. Reason: Rendered form input changes.,2026-10-18
+dj-455ace6bb9b7859d,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 20. Reason: Test database method signature deprecated.,2026-10-18
+dj-9086209e24adfa8b,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 21. Reason: Backend feature attribute removed.,2026-10-18
+dj-5069b808ee2deb69,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 22. Reason: Backend feature flag implementation.,2026-10-18
+dj-0118ebc5ce4ee9c7,UNCLEAR,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 23. Reason: Storage constructor argument and persistent file overwrite both matter.,2026-10-18
+dj-81bad9efd1571090,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 24. Reason: New model method.,2026-10-18
+dj-f2a8d77d8c902d2a,UI/output behavior,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 25. Reason: Command-line output changes.,2026-10-18
+dj-fd60b9a082fee4b5,Configuration/deployment,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 26. Reason: Supported GeoIP database file.,2026-10-18
+dj-1598bd372f3ecde6,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 27. Reason: New password-checking functions.,2026-10-18
+dj-3236ce1642383f91,Configuration/deployment,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 28. Reason: GeoIP database path selection.,2026-10-18
+dj-7b2516f20720b9c4,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 29. Reason: Custom command override hook.,2026-10-18
+dj-9831271fae0a7216,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 30. Reason: Mail function calling convention.,2026-10-18
+dj-8bc48d8aefdc9d0a,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 31. Reason: New ModelForm Meta option.,2026-10-18
+dj-e179b6acba38f271,UI/output behavior,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 32. Reason: Rendered form HTML changes.,2026-10-18
+dj-dcba054996a98aa9,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 33. Reason: New QuerySet.explain argument.,2026-10-18
+dj-6435a257d8b506e8,UI/output behavior,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 34. Reason: Test failure display changes.,2026-10-18
+dj-b51dd3f36a9c7e8f,UI/output behavior,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 35. Reason: Serialized JSON output changes.,2026-10-18
+dj-482e5be6b925549b,Data/schema migration,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 36. Reason: Database timestamp precision changes.,2026-10-18
+dj-7754bfcedbfc323b,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 37. Reason: Exception class removed.,2026-10-18
+dj-faf881f4f687072b,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 38. Reason: New test assertion method.,2026-10-18
+dj-bf8d8f467dd441ab,Data/schema migration,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 39. Reason: Database expression evaluation changes.,2026-10-18
+dj-af9e8f10afd9250a,Configuration/deployment,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 40. Reason: Parallel test process mode.,2026-10-18
+dj-cf5dbe6a09647679,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 41. Reason: New ORM lookup and expressions.,2026-10-18
+dj-c74294c1530dd073,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 42. Reason: New signal dispatch methods.,2026-10-18
+dj-2c626259dbf65222,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 43. Reason: GeoIP input types accepted.,2026-10-18
+dj-1db7c48f6c1f2732,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 44. Reason: Returned alternatives tuple type changes.,2026-10-18
+dj-4560ba3935a7aa1f,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 45. Reason: Mail properties no longer supported.,2026-10-18
+dj-685743b7807fccd2,UI/output behavior,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 46. Reason: Generated HTTP header value.,2026-10-18
+dj-ea8a4b3db9ca42d0,API/code compatibility,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 47. Reason: New paginator argument.,2026-10-18
+dj-6adf916cf27f4d3f,UI/output behavior,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 48. Reason: Rendered error-page HTML changes.,2026-10-18
+dj-dc03a5ae696d4d53,UI/output behavior,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 49. Reason: Redirect response and HTTP method behavior; also exposes a new API argument.,2026-10-18
+dj-b1a2a162dc7f12a0,Data/schema migration,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 50. Reason: SQLite JSON query semantics.,2026-10-18
