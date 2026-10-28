@@ -4,11 +4,11 @@ Updated 2026-10-28.
 
 ## Current annotation status
 
-- The original pilot, Kavya's batch, and Bhargav's batch each contain 50 human-confirmed decisions. The merged shareable file is `data/processed/reviewed_labels.csv` and can be regenerated with `python scripts/merge_reviewed_labels.py`.
-- Across all 150 reviewed rows, **144 have a model label and six remain `UNCLEAR`**. The observed model-label counts are API/code 64, configuration/deployment 22, data/schema 26, UI/output 32, and No targeted check stated 0. The source corpus has 571 entries, leaving 421 unreviewed.
-- The named reviewer files remain ignored locally. The three shareable batch exports contain reviewer aliases and date-only timestamps. Bhargav confirmed all 50 suggestions, including two `UNCLEAR` rows.
-- A distinct 50-row fourth batch is at `docs/BATCH_04_REVIEW.md`. It is assigned to Om Nathani for review and has no saved human decisions yet.
-- The published 0.276 five-label macro-F1 belongs to the **original 49-label pilot only**. New labels include entries from the old held-out release. Freeze a fresh release-grouped split and audit near-duplicates before reporting a final model score. The fifth class still has zero support; do not invent labels to fill it.
+- The original pilot and the Kavya, Bhargav, and Om batches each contain 50 human-confirmed decisions. The merged shareable file is `data/processed/reviewed_labels.csv` and can be regenerated with `python scripts/merge_reviewed_labels.py`.
+- Across all 200 reviewed rows, **194 have a model label and six remain `UNCLEAR`**. The confirmed model-label counts are API/code 89, configuration/deployment 29, data/schema 36, UI/output 40, and No targeted check stated 0. The source corpus has 571 entries, leaving 371 unreviewed.
+- The named reviewer files remain ignored locally. Four shareable batch exports contain reviewer aliases and date-only timestamps. Om confirmed his full 50-row sheet with no changes or `UNCLEAR` rows.
+- The published 0.276 five-label macro-F1 belongs to the **original 49-label pilot only**. The newer labels include entries from the old held-out release. Freeze a fresh release-grouped split and audit near-duplicates before reporting a final model score. The fifth class still has zero support; do not invent labels to fill it.
+- The next project steps are to review more entries, resolve the five-versus-four-class taxonomy based on evidence, rerun defensible evaluation, and polish the final user interface and deployment plan.
 
 ## Historical MVP snapshot from 2026-10-18
 

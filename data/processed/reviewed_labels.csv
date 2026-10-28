@@ -99,6 +99,56 @@ dj-1d102276fe2b1fc1,API/code compatibility,Human reviewer,Human-confirmed in the
 dj-af54932e4defb838,Data/schema migration,Human reviewer,Human-confirmed in the full 50-row review. first()/last() on aggregate queries with composite primary keys affects ORM data access.,2026-10-28
 dj-b134568af8ec0626,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The change affects visible color in management-command help output.,2026-10-28
 dj-ad64d6f07ff6548f,UI/output behavior,Human reviewer,Human-confirmed in the full 50-row review. The note explicitly describes a visual regression in admin form fields.,2026-10-28
+dj-85f9bf45589dc7f0,UI/output behavior,Human reviewer,Human-confirmed in complete 50-row review. The admin search box no longer renders with autofocus; check the visible form behavior.,2026-10-28
+dj-2f25f32a43f316f4,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. Code importing or inheriting the deprecated CIText mixin needs review.,2026-10-28
+dj-a3554bb0e93400f9,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. The opt-in requires a ManifestStaticFilesStorage subclass and a named attribute in code.,2026-10-28
+dj-8dbfa8a114c4c41a,Data/schema migration,Human reviewer,Human-confirmed in complete 50-row review. Prefetch with sliced querysets changes ORM data retrieval behavior.,2026-10-28
+dj-583ba5e4cbae7447,Data/schema migration,Human reviewer,Human-confirmed in complete 50-row review. Serialization of enum.Flag values is a migration-data behavior.,2026-10-28
+dj-ee8ad56ac42ae5df,Configuration/deployment,Human reviewer,Human-confirmed in complete 50-row review. The PostgreSQL session role is set through database connection OPTIONS.,2026-10-28
+dj-86c8ddcddbb7b9ae,Configuration/deployment,Human reviewer,Human-confirmed in complete 50-row review. MySQL 8 or later is a database deployment requirement.,2026-10-28
+dj-e8edcfa8118ff3dd,UI/output behavior,Human reviewer,Human-confirmed in complete 50-row review. The development debug page displays exception notes and error locations differently.,2026-10-28
+dj-62a0019778368b21,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. References to the removed OpenLayersWidget class must change.,2026-10-28
+dj-d2e264b91074e4fb,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. Code using the removed admin.helpers.checkbox helper must change.,2026-10-28
+dj-bf7f2d9a8f82d7eb,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. Imports or references to the renamed metaclass need review.,2026-10-28
+dj-9af1304b59dbc724,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. The sensitive_variables and sensitive_post_parameters decorators now accept async functions.,2026-10-28
+dj-07fee769eaae1964,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. The new asynchronous prefetch function is an interface for application code.,2026-10-28
+dj-1faf5d1443fe8159,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. The new AdminSite.get_model_admin method is a Python interface.,2026-10-28
+dj-859dd9ff55a99b70,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. StepValueValidator gains an offset argument for code to pass.,2026-10-28
+dj-3c588bb1fa8f22fa,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. update_or_create callers using a create_defaults field need a new lookup spelling.,2026-10-28
+dj-8dbeb41ca821e623,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. CheckConstraint callers should replace the deprecated check keyword with condition.,2026-10-28
+dj-864456b917259879,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. GeoIP2.city return values gain keys; consuming code may use or inspect them.,2026-10-28
+dj-e9d57652e1f54388,Configuration/deployment,Human reviewer,Human-confirmed in complete 50-row review. PostgreSQL 13 or later is a database deployment requirement.,2026-10-28
+dj-eb5a216b1cc321e5,UI/output behavior,Human reviewer,Human-confirmed in complete 50-row review. The output message from two test assertions gains a colon and space.,2026-10-28
+dj-993e9162c8561f1e,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. Session engines gain named asynchronous methods for code to call.,2026-10-28
+dj-14d381d4d287f26a,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. Calls to the removed assertFormsetError method must change.,2026-10-28
+dj-787851d13b60a5ba,Configuration/deployment,Human reviewer,Human-confirmed in complete 50-row review. The note describes which authentication redirect settings middleware respects.,2026-10-28
+dj-7ec0704bb28f09f2,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. RowRange accepts additional numeric argument values in Python code.,2026-10-28
+dj-143f120d29d72b98,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. HttpRequest gains a method returning the client's preferred media type.,2026-10-28
+dj-99db6b856a30068e,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. A management-command subclass can override the new autodetector attribute.,2026-10-28
+dj-ee99eee96eb85ab7,Data/schema migration,Human reviewer,Human-confirmed in complete 50-row review. AlterConstraint changes how a migration alters a database constraint.,2026-10-28
+dj-9a669d4336b847cb,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. SafeString.__add__ now returns NotImplemented for a non-string value.,2026-10-28
+dj-47e91bf7b32294d6,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. Password-validator subclasses can override the new get_error_message method.,2026-10-28
+dj-cc01b4964f593da0,Data/schema migration,Human reviewer,Human-confirmed in complete 50-row review. JSONArray changes the values returned by a database expression.,2026-10-28
+dj-8d46c19101e65282,Configuration/deployment,Human reviewer,Human-confirmed in complete 50-row review. Oracle connection pooling is enabled through database OPTIONS.,2026-10-28
+dj-5c237fcaabf7f13f,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. Callers of staticfiles.find should replace all with find_all.,2026-10-28
+dj-9f72b7b846547e50,Data/schema migration,Human reviewer,Human-confirmed in complete 50-row review. AnyValue changes the values produced by an ORM aggregate query.,2026-10-28
+dj-0147760521c98dd3,UI/output behavior,Human reviewer,Human-confirmed in complete 50-row review. Template partials change what fragments a template can render.,2026-10-28
+dj-28ebbe91ba0f85e7,Configuration/deployment,Human reviewer,Human-confirmed in complete 50-row review. MariaDB 10.6 or later is a database deployment requirement.,2026-10-28
+dj-1270fb8e2268e8e2,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. Code using the removed get_prefetch_queryset method needs review.,2026-10-28
+dj-05392308b8db8af5,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. Imports or uses of PostgreSQL StringAgg should move to the general class.,2026-10-28
+dj-0ede19711f34187e,Configuration/deployment,Human reviewer,Human-confirmed in complete 50-row review. The change concerns HTTP/2 Cookie handling in an ASGI deployment.,2026-10-28
+dj-e404be26e5b5904c,UI/output behavior,Human reviewer,Human-confirmed in complete 50-row review. Admin message levels have different icons and CSS styling.,2026-10-28
+dj-42c1a4a8e9dadaf5,UI/output behavior,Human reviewer,Human-confirmed in complete 50-row review. The geometry widget's map base layer changes visible map tiles.,2026-10-28
+dj-af36753c3de0efc4,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. Code defining translated path routes is the affected interface.,2026-10-28
+dj-4f7e7d1bde6bf560,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. values_list returned an incorrect value shape for duplicate field names.,2026-10-28
+dj-0db04252c24ebb63,Data/schema migration,Human reviewer,Human-confirmed in complete 50-row review. The fix changes ORM bulk_create behavior for foreign keys.,2026-10-28
+dj-ac4c0b147df26ca4,Data/schema migration,Human reviewer,Human-confirmed in complete 50-row review. The fix changes ORM prefetch behavior for a foreign-key relationship.,2026-10-28
+dj-3a97d56b7824b9dd,API/code compatibility,Human reviewer,Human-confirmed in complete 50-row review. Untrusted dictionary expansion into named ORM methods is the code path to check.,2026-10-28
+dj-8074ff66d177ca80,UI/output behavior,Human reviewer,Human-confirmed in complete 50-row review. The wordwrap template filter changes the rendered text's blank lines.,2026-10-28
+dj-18fb764d36310e70,Data/schema migration,Human reviewer,Human-confirmed in complete 50-row review. select_related with a composite primary key affects ORM data retrieval.,2026-10-28
+dj-827b6fdbaaeaf250,Data/schema migration,Human reviewer,Human-confirmed in complete 50-row review. select_for_update with expressions changes ORM query behavior.,2026-10-28
+dj-f7e13b7d851a4c88,Data/schema migration,Human reviewer,Human-confirmed in complete 50-row review. The fix concerns ORM update queries with related-model filters and annotations.,2026-10-28
+dj-2a56e41e477c0ad9,UI/output behavior,Human reviewer,Human-confirmed in complete 50-row review. Password-validation error text is now translated for non-English locales.,2026-10-28
 dj-6f8aef63d2316942,Configuration/deployment,Human reviewer (agent-assisted),Human-confirmed in chat after an agent recommendation; dependency minimum version is the first deployment check.,2026-10-18
 dj-2b6eca4153122802,API/code compatibility,Human reviewer (agent-assisted),Human-confirmed in chat after an agent recommendation; explicit change is a Python constraint attribute and ValidationError code.,2026-10-18
 dj-b142f460d25e91a9,API/code compatibility,Human reviewer (agent-assisted),Human-confirmed in chat after an agent recommendation; deprecated methods and replacement subclass methods require a code check.,2026-10-18

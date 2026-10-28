@@ -5,19 +5,19 @@
 | Original pilot | 50 | 49 | 1 | Confirmed |
 | Kavya batch 01 | 50 | 47 | 3 | Confirmed |
 | Bhargav batch 01 | 50 | 48 | 2 | Confirmed |
-| **Total** | **150** | **144** | **6** | **Confirmed** |
-| Batch 04 (Om) | 0 | 0 | 0 | Assigned; 50 draft suggestions, not labels |
+| Om batch 01 | 50 | 50 | 0 | Confirmed |
+| **Total** | **200** | **194** | **6** | **Confirmed** |
 
-The source CSV has 571 entries. Exactly 421 source entries have no human decision yet. Each confirmed entry appears once in [the merged label CSV](../data/processed/reviewed_labels.csv). The named local reviewer records are ignored by Git; committed exports use reviewer aliases and date-only timestamps.
+The source CSV has 571 entries. Exactly 371 source entries have no human decision yet. Each confirmed entry appears once in [the merged label CSV](../data/processed/reviewed_labels.csv). The named local reviewer records are ignored by Git; committed exports use reviewer aliases and date-only timestamps.
 
 ## Confirmed label support
 
 | Label | Count |
 | --- | ---: |
-| API/code compatibility | 64 |
-| Configuration/deployment | 22 |
-| Data/schema migration | 26 |
-| UI/output behavior | 32 |
+| API/code compatibility | 89 |
+| Configuration/deployment | 29 |
+| Data/schema migration | 36 |
+| UI/output behavior | 40 |
 | No targeted check stated | 0 |
 | `UNCLEAR` (excluded from model fitting) | 6 |
 
@@ -25,4 +25,4 @@ The fifth model class remains unobserved. Reviewers should apply [the guide](DAT
 
 ## Reproduce the aggregate
 
-From the repository root, run `python scripts/merge_reviewed_labels.py`. It reads the three `data/processed/*_reviewed_labels.csv` exports, checks source IDs and duplicates, and writes `data/processed/reviewed_labels.csv`. For a future model run, pass `--labels data/processed/reviewed_labels.csv` to `scripts/train_model.py` only after a fresh release-grouped split and near-duplicate audit are planned. The existing model card and score refer to the original pilot, not these 150 decisions.
+From the repository root, run `python scripts/merge_reviewed_labels.py`. It reads the four `data/processed/*_reviewed_labels.csv` exports, checks source IDs and duplicates, and writes `data/processed/reviewed_labels.csv`. For a future model run, pass `--labels data/processed/reviewed_labels.csv` to `scripts/train_model.py` only after a fresh release-grouped split and near-duplicate audit are planned. The existing model card and score refer to the original pilot, not these 200 decisions.

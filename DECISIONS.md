@@ -95,3 +95,12 @@ Each decision records the choice, evidence, alternatives, and what would change 
 **Choice:** Keep each named review file local and ignored, publish a date-only alias export per batch, and regenerate `data/processed/reviewed_labels.csv` with a validator that rejects duplicate or unknown IDs. Prepare a separate 50-row fourth suggestion batch without assigning a reviewer or treating those suggestions as labels.
 
 **Limit:** The fourth batch is not a random test sample. The fifth class still has zero reviewed examples; do not force it. If further review finds none, make an explicit four-class taxonomy decision and fresh evaluation plan before presenting final classification quality. The old pilot test score remains a historical diagnostic.
+
+
+## D012 — Fourth human review batch (2026-10-28)
+
+**Evidence:** Om explicitly confirmed all 50 source-linked suggestions in Batch 04. There were no changed labels and no `UNCLEAR` decisions in this batch. The four batches now contain 200 distinct confirmed IDs: 194 model-usable labels and six `UNCLEAR`. Label support is 89/29/36/40/0 in the guide's five-class order.
+
+**Choice:** Save Om's named, timestamped record only in ignored local annotations, publish a reviewer-name-free export, and regenerate the validated merged CSV from all four shareable batch exports. Keep the fifth class visible but untrained while further evidence is collected; do not manufacture examples.
+
+**Next decision:** Review the remaining 371 source entries in manageable batches or select a defensible smaller set for final training. Before a final score, resolve the absent fifth class, audit cross-release near-duplicates, and freeze a new release-grouped evaluation. The previous score describes only the original pilot.
