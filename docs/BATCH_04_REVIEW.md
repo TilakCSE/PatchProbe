@@ -1,12 +1,12 @@
-# Batch 04: 50 draft label suggestions
+# Batch 04 (Om): 50 draft label suggestions
 
-> **DRAFT - AGENT SUGGESTIONS ONLY.** No reviewer is assigned yet. These 50 rows are not human-confirmed labels and must not enter model training until a named teammate reviews them.
+> **DRAFT - AGENT SUGGESTIONS ONLY.** Assigned to Om Nathani for review. These 50 rows are not human-confirmed labels and must not enter model training until he confirms or corrects them.
 
 Prepared: 2026-10-28. The batch uses pinned official Django release-note entries. It is for annotation, not a representative test set.
 
 **Selection:** Eight entries each from feature releases 4.2, 5.0, 5.1, 5.2, and 6.0, plus ten patch-release entries. The sampler excluded all 150 reviewed IDs, incomplete flattened fragments, and obvious near-duplicates, then preferred varied sections and patch releases with a fixed hash order. Selection did not use class labels. The current 150-row aggregate is `data/processed/reviewed_labels.csv`.
 
-**How to review:** Read the full source text and my reason, then confirm or change each label using [the guide](DATA_AND_LABELS.md). Reply with `Confirm all except: 03 -> Configuration/deployment; 40 -> API/code compatibility` if those are your corrections, or confirm a smaller range. Say who reviewed the batch so the local record credits the right person. `UNCLEAR` is allowed for a genuinely mixed note, with a reason; do not force a class to fill a quota.
+**How to review:** Read the full source text and my reason, then confirm or change each label using [the guide](DATA_AND_LABELS.md). Reply with `Confirm all except: 03 -> Configuration/deployment; 40 -> API/code compatibility` if those are your corrections, or confirm a smaller range. Your confirmed decisions will be credited to Om Nathani in the local record. `UNCLEAR` is allowed for a genuinely mixed note, with a reason; do not force a class to fill a quota.
 
 Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/schema migration: 10; UI/output behavior: 8; UNCLEAR: 0. No row clearly merits `No targeted check stated` from its text alone.
 
@@ -77,7 +77,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L431-L432)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 02. Django 4.2 - `dj-2f25f32a43f316f4`
 
@@ -89,7 +89,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L600-L600)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 03. Django 4.2 - `dj-a3554bb0e93400f9`
 
@@ -101,7 +101,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L209-L213)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 04. Django 4.2 - `dj-8dbfa8a114c4c41a`
 
@@ -113,7 +113,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L279-L280)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 05. Django 4.2 - `dj-583ba5e4cbae7447`
 
@@ -125,7 +125,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L270-L270)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 06. Django 4.2 - `dj-ee8ad56ac42ae5df`
 
@@ -137,7 +137,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L222-L223)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 07. Django 4.2 - `dj-86c8ddcddbb7b9ae`
 
@@ -149,7 +149,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L393-L394)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 08. Django 4.2 - `dj-e8edcfa8118ff3dd`
 
@@ -161,7 +161,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L232-L233)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 09. Django 5.0 - `dj-62a0019778368b21`
 
@@ -173,7 +173,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L748-L748)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 10. Django 5.0 - `dj-d2e264b91074e4fb`
 
@@ -185,7 +185,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L540-L540)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 11. Django 5.0 - `dj-bf7f2d9a8f82d7eb`
 
@@ -197,7 +197,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L642-L643)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 12. Django 5.0 - `dj-9af1304b59dbc724`
 
@@ -209,7 +209,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L328-L330)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 13. Django 5.0 - `dj-07fee769eaae1964`
 
@@ -221,7 +221,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L391-L392)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 14. Django 5.0 - `dj-1faf5d1443fe8159`
 
@@ -233,7 +233,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L223-L224)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 15. Django 5.0 - `dj-859dd9ff55a99b70`
 
@@ -245,7 +245,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L442-L444)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 16. Django 5.0 - `dj-3c588bb1fa8f22fa`
 
@@ -257,7 +257,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L493-L496)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 17. Django 5.1 - `dj-8dbeb41ca821e623`
 
@@ -269,7 +269,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L441-L442)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 18. Django 5.1 - `dj-864456b917259879`
 
@@ -281,7 +281,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L154-L157)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 19. Django 5.1 - `dj-e9d57652e1f54388`
 
@@ -293,7 +293,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L356-L357)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 20. Django 5.1 - `dj-eb5a216b1cc321e5`
 
@@ -305,7 +305,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L378-L380)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 21. Django 5.1 - `dj-993e9162c8561f1e`
 
@@ -317,7 +317,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L197-L199)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 22. Django 5.1 - `dj-14d381d4d287f26a`
 
@@ -329,7 +329,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L482-L482)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 23. Django 5.1 - `dj-787851d13b60a5ba`
 
@@ -341,7 +341,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L95-L99)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 24. Django 5.1 - `dj-7ec0704bb28f09f2`
 
@@ -353,7 +353,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L255-L256)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 25. Django 5.2 - `dj-143f120d29d72b98`
 
@@ -365,7 +365,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L334-L335)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 26. Django 5.2 - `dj-99db6b856a30068e`
 
@@ -377,7 +377,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L283-L285)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 27. Django 5.2 - `dj-ee99eee96eb85ab7`
 
@@ -389,7 +389,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L294-L295)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 28. Django 5.2 - `dj-9a669d4336b847cb`
 
@@ -401,7 +401,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L383-L386)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 29. Django 5.2 - `dj-47e91bf7b32294d6`
 
@@ -413,7 +413,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L185-L187)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 30. Django 5.2 - `dj-cc01b4964f593da0`
 
@@ -425,7 +425,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L320-L322)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 31. Django 5.2 - `dj-8d46c19101e65282`
 
@@ -437,7 +437,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L215-L216)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 32. Django 5.2 - `dj-5c237fcaabf7f13f`
 
@@ -449,7 +449,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L480-L481)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 33. Django 6.0 - `dj-9f72b7b846547e50`
 
@@ -461,7 +461,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L307-L309)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 34. Django 6.0 - `dj-0147760521c98dd3`
 
@@ -473,7 +473,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L81-L85)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 35. Django 6.0 - `dj-28ebbe91ba0f85e7`
 
@@ -485,7 +485,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L387-L388)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 36. Django 6.0 - `dj-1270fb8e2268e8e2`
 
@@ -497,7 +497,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L595-L596)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 37. Django 6.0 - `dj-05392308b8db8af5`
 
@@ -509,7 +509,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L511-L512)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 38. Django 6.0 - `dj-0ede19711f34187e`
 
@@ -521,7 +521,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L333-L334)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 39. Django 6.0 - `dj-e404be26e5b5904c`
 
@@ -533,7 +533,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L168-L172)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 40. Django 6.0 - `dj-42c1a4a8e9dadaf5`
 
@@ -545,7 +545,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L190-L191)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 41. Django 6.0.1 - `dj-af36753c3de0efc4`
 
@@ -557,7 +557,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.1.txt#L38-L40)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 42. Django 5.2.1 - `dj-4f7e7d1bde6bf560`
 
@@ -569,7 +569,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt#L53-L55)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 43. Django 5.2.5 - `dj-0db04252c24ebb63`
 
@@ -581,7 +581,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.5.txt#L12-L14)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 44. Django 5.2.2 - `dj-ac4c0b147df26ca4`
 
@@ -593,7 +593,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.2.txt#L61-L63)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 45. Django 5.2.8 - `dj-3a97d56b7824b9dd`
 
@@ -605,7 +605,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.8.txt#L24-L26)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 46. Django 5.2.1 - `dj-8074ff66d177ca80`
 
@@ -617,7 +617,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt#L65-L67)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 47. Django 5.2.2 - `dj-18fb764d36310e70`
 
@@ -629,7 +629,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.2.txt#L27-L28)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 48. Django 5.2.1 - `dj-827b6fdbaaeaf250`
 
@@ -641,7 +641,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt#L49-L51)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 49. Django 5.2.1 - `dj-f7e13b7d851a4c88`
 
@@ -653,7 +653,7 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt#L72-L74)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________
 
 ### 50. Django 5.2.1 - `dj-2a56e41e477c0ad9`
 
@@ -665,4 +665,4 @@ Draft counts: API/code compatibility: 25; Configuration/deployment: 7; Data/sche
 
 [Official source](https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt#L57-L59)
 
-**Reviewer decision:** Confirm / Change to: __________   **Note:** __________
+**Om's decision:** Confirm / Change to: __________   **Note:** __________

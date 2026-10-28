@@ -6,7 +6,7 @@
 | Kavya batch 01 | 50 | 47 | 3 | Confirmed |
 | Bhargav batch 01 | 50 | 48 | 2 | Confirmed |
 | **Total** | **150** | **144** | **6** | **Confirmed** |
-| Batch 04 | 0 | 0 | 0 | 50 draft suggestions, not labels |
+| Batch 04 (Om) | 0 | 0 | 0 | Assigned; 50 draft suggestions, not labels |
 
 The source CSV has 571 entries. Exactly 421 source entries have no human decision yet. Each confirmed entry appears once in [the merged label CSV](../data/processed/reviewed_labels.csv). The named local reviewer records are ignored by Git; committed exports use reviewer aliases and date-only timestamps.
 
