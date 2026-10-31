@@ -1,6 +1,6 @@
 # Project status
 
-Updated 2026-10-28.
+Updated 2026-11-01.
 
 ## Current annotation status
 
@@ -8,6 +8,7 @@ Updated 2026-10-28.
 - Across all 200 reviewed rows, **194 have a model label and six remain `UNCLEAR`**. The confirmed model-label counts are API/code 89, configuration/deployment 29, data/schema 36, UI/output 40, and No targeted check stated 0. The source corpus has 571 entries, leaving 371 unreviewed.
 - The named reviewer files remain ignored locally. Four shareable batch exports contain reviewer aliases and date-only timestamps. Om confirmed his full 50-row sheet with no changes or `UNCLEAR` rows.
 - The published 0.276 five-label macro-F1 belongs to the **original 49-label pilot only**. The newer labels include entries from the old held-out release. Freeze a fresh release-grouped split and audit near-duplicates before reporting a final model score. The fifth class still has zero support; do not invent labels to fill it.
+- Tilak has a new 100-row draft suggestion sheet at `docs/TILAK_BATCH_02_REVIEW.md`. These entries do not overlap the 200 confirmed IDs. They are **not** human labels until he reviews them; the confirmed count remains 200.
 - The next project steps are to review more entries, resolve the five-versus-four-class taxonomy based on evidence, rerun defensible evaluation, and polish the final user interface and deployment plan.
 
 ## Historical MVP snapshot from 2026-10-18

@@ -1,0 +1,287 @@
+entry_id,release,source_url,source_revision,section_path,raw_text,text
+dj-c9f1d86b95decabb,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L460-L461,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 4.2 > Miscellaneous,"* The minimum supported version of ``argon2-cffi`` is increased  from 19.1.0 to
+  19.2.0.",The minimum supported version of argon2-cffi is increased from 19.1.0 to 19.2.0.
+dj-bc6ecfae352920de,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L182-L185,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Minor features > :mod:`django.contrib.gis`,"* The new :class:`FromWKB() <django.contrib.gis.db.models.functions.FromWKB>`
+  and :class:`FromWKT() <django.contrib.gis.db.models.functions.FromWKT>`
+  functions allow creating geometries from Well-known binary (WKB) and
+  Well-known text (WKT) representations.",The new FromWKB() and FromWKT() functions allow creating geometries from Well-known binary (WKB) and Well-known text (WKT) representations.
+dj-b64c56240aa3d4d2,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L125-L127,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Minor features > :mod:`django.contrib.admin`,"* The admin's font stack now prefers system UI fonts and no longer requires
+  downloading fonts. Additionally, CSS variables are available to more easily
+  override the default font families.","The admin's font stack now prefers system UI fonts and no longer requires downloading fonts. Additionally, CSS variables are available to more easily override the default font families."
+dj-4a43b0aa07c74863,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L38-L41,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Psycopg 3 support,"Django now supports `psycopg`_ version 3.1.8 or higher. To update your code,
+install the :pypi:`psycopg library <psycopg>`, you don't need to change the
+:setting:`ENGINE <DATABASE-ENGINE>` as ``django.db.backends.postgresql``
+supports both libraries.","Django now supports psycopg version 3.1.8 or higher. To update your code, install the psycopg library, you don't need to change the ENGINE as django.db.backends.postgresql supports both libraries."
+dj-7ba587321c7cea8c,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L491-L492,47fe39af56ecd0ad73b9c7562511015e96b91b80,Features deprecated in 4.2 > ``index_together`` option is deprecated in favor of ``indexes``,"The ``Meta.index_together`` option is deprecated in favor of the
+:attr:`~django.db.models.Options.indexes` option.",The Meta.index_together option is deprecated in favor of the django.db.models.Options.indexes option.
+dj-b0cece5dd42a4eea,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L255-L256,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Minor features > Logging,"* The :ref:`django-db-logger` logger now logs transaction management queries
+  (``BEGIN``, ``COMMIT``, and ``ROLLBACK``) at the ``DEBUG`` level.","The django-db-logger logger now logs transaction management queries (BEGIN, COMMIT, and ROLLBACK) at the DEBUG level."
+dj-7552789ddda7dc35,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L299-L301,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Minor features > Models,"* ``Model`` now provides asynchronous versions of some methods that use the
+  database, using an ``a`` prefix: :meth:`~.Model.adelete`,
+  :meth:`~.Model.arefresh_from_db`, and :meth:`~.Model.asave`.","Model now provides asynchronous versions of some methods that use the database, using an a prefix: Model.adelete, Model.arefresh_from_db, and Model.asave."
+dj-dca902e4b419c816,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L264-L265,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Minor features > Management Commands,"* The new :option:`makemigrations --update` option merges model changes into
+  the latest migration and optimizes the resulting operations.",The new makemigrations --update option merges model changes into the latest migration and optimizes the resulting operations.
+dj-b95f515917eab967,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L528-L530,47fe39af56ecd0ad73b9c7562511015e96b91b80,Features deprecated in 4.2 > Passing encoded JSON string literals to ``JSONField`` is deprecated,"``JSONField`` and its associated lookups and aggregates used to allow passing
+JSON encoded string literals which caused ambiguity on whether string literals
+were already encoded from database backend's perspective.",JSONField and its associated lookups and aggregates used to allow passing JSON encoded string literals which caused ambiguity on whether string literals were already encoded from database backend's perspective.
+dj-597808d7d1899ca6,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L405-L410,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 4.2 > Setting ``update_fields`` in ``Model.save()`` may now be required,"In order to avoid updating unnecessary columns,
+:meth:`.QuerySet.update_or_create` now passes ``update_fields`` to the
+:meth:`Model.save() <django.db.models.Model.save>` calls. As a consequence, any
+fields modified in the custom ``save()`` methods should be added to the
+``update_fields`` keyword argument before calling ``super()``. See
+:ref:`overriding-model-methods` for more details.","In order to avoid updating unnecessary columns, QuerySet.update_or_create now passes update_fields to the Model.save() calls. As a consequence, any fields modified in the custom save() methods should be added to the update_fields keyword argument before calling super(). See overriding-model-methods for more details."
+dj-2341f64ca23aea16,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L614-L615,47fe39af56ecd0ad73b9c7562511015e96b91b80,Features deprecated in 4.2 > Miscellaneous,"* The ``DEFAULT_FILE_STORAGE`` setting is deprecated in favor of
+  ``STORAGES[""default""]``.","The DEFAULT_FILE_STORAGE setting is deprecated in favor of STORAGES[""default""]."
+dj-d215f2a7e069be24,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L108-L111,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Custom file storages,"The new :setting:`STORAGES` setting allows configuring multiple custom file
+storage backends. It also controls storage engines for managing
+:doc:`files </topics/files>` (the ``""default""`` key) and :doc:`static files
+</ref/contrib/staticfiles>` (the ``""staticfiles""`` key).","The new STORAGES setting allows configuring multiple custom file storage backends. It also controls storage engines for managing files (the ""default"" key) and static files (the ""staticfiles"" key)."
+dj-726eb907dae5be02,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L197-L198,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Minor features > :mod:`django.contrib.postgres`,"* The :lookup:`arrayfield.overlap` lookup now supports ``QuerySet.values()``
+  and ``values_list()`` as a right-hand side.",The arrayfield.overlap lookup now supports QuerySet.values() and values_list() as a right-hand side.
+dj-e2e1d6cefd3845f2,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L85-L87,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Comments on columns and tables,"Also, the new :class:`~django.db.migrations.operations.AlterModelTableComment`
+operation allows changing table comments defined in the
+:attr:`Meta.db_table_comment <django.db.models.Options.db_table_comment>`.","Also, the new django.db.migrations.operations.AlterModelTableComment operation allows changing table comments defined in the Meta.db_table_comment."
+dj-84715c40f992e27f,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L92-L95,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Mitigation for the BREACH attack,":class:`~django.middleware.gzip.GZipMiddleware` now includes a mitigation for
+the BREACH attack. It will add up to 100 random bytes to gzip responses to make
+BREACH attacks harder. Read more about the mitigation technique in the `Heal
+The Breach (HTB) paper`_.",django.middleware.gzip.GZipMiddleware now includes a mitigation for the BREACH attack. It will add up to 100 random bytes to gzip responses to make BREACH attacks harder. Read more about the mitigation technique in the Heal The Breach (HTB) paper.
+dj-6489551cc6a6453f,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L250-L250,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Minor features > Internationalization,* Added support and translations for the Central Kurdish (Sorani) language.,Added support and translations for the Central Kurdish (Sorani) language.
+dj-e9848db3721fe466,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L380-L382,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 4.2 > Database backend API,"* :djadmin:`inspectdb` now uses ``display_size`` from
+  ``DatabaseIntrospection.get_table_description()`` rather than
+  ``internal_size`` for ``CharField``.",inspectdb now uses display_size from DatabaseIntrospection.get_table_description() rather than internal_size for CharField.
+dj-fde6932bcb0ca6fc,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L315-L316,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Minor features > Requests and Responses,"* :class:`~django.http.StreamingHttpResponse` now supports async iterators
+  when Django is served via ASGI.",django.http.StreamingHttpResponse now supports async iterators when Django is served via ASGI.
+dj-53a26ce0817c6705,4.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/4.2.txt#L152-L153,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 4.2 > Minor features > :mod:`django.contrib.auth`,"* :class:`~django.contrib.auth.forms.UserCreationForm` now saves many-to-many
+  form fields for a custom user model.",django.contrib.auth.forms.UserCreationForm now saves many-to-many form fields for a custom user model.
+dj-86a1ecdd2043df42,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L353-L353,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > Internationalization,* Support and translations for the Uyghur language are now available.,Support and translations for the Uyghur language are now available.
+dj-21e4ef44e3d007e5,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L744-L746,47fe39af56ecd0ad73b9c7562511015e96b91b80,Features removed in 5.0,"* Passing a response object and a form/formset name to
+  ``SimpleTestCase.assertFormError()`` and ``assertFormSetError()`` is no
+  longer allowed.",Passing a response object and a form/formset name to SimpleTestCase.assertFormError() and assertFormSetError() is no longer allowed.
+dj-e470f7f664ff2bf0,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L112-L115,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Simplified templates for form field rendering,":meth:`~django.forms.BoundField.as_field_group` renders fields with the
+``""django/forms/field.html""`` template by default and can be customized on a
+per-project, per-field, or per-request basis. See
+:ref:`reusable-field-group-templates`.","django.forms.BoundField.as_field_group renders fields with the ""django/forms/field.html"" template by default and can be customized on a per-project, per-field, or per-request basis. See reusable-field-group-templates."
+dj-8319d6da9eb1f5ab,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L277-L279,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > :mod:`django.contrib.messages`,"* The new :meth:`.MessagesTestMixin.assertMessages` assertion method allows
+  testing :mod:`~django.contrib.messages` added to a
+  :class:`response <django.http.HttpResponse>`.",The new MessagesTestMixin.assertMessages assertion method allows testing django.contrib.messages added to a response.
+dj-e18113f343eaf133,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L341-L342,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > Forms,"* The new :attr:`~django.forms.URLField.assume_scheme` argument for
+  :class:`~django.forms.URLField` allows specifying a default URL scheme.",The new django.forms.URLField.assume_scheme argument for django.forms.URLField allows specifying a default URL scheme.
+dj-8e5670eefec63c29,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L588-L588,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.0 > Miscellaneous,* The minimum supported version of ``colorama`` is increased to 0.4.6.,The minimum supported version of colorama is increased to 0.4.6.
+dj-6bd35b7b8592bfa9,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L634-L635,47fe39af56ecd0ad73b9c7562511015e96b91b80,Features deprecated in 5.0 > Miscellaneous,"* Support for ``cx_Oracle`` is deprecated in favor of `oracledb`_ 1.3.2+ Python
+  driver.",Support for cx_Oracle is deprecated in favor of oracledb 1.3.2+ Python driver.
+dj-bfe7ac5e6607ea08,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L292-L294,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > Asynchronous views,"* Under ASGI, ``http.disconnect`` events are now handled. This allows views to
+  perform any necessary cleanup if a client disconnects before the response is
+  generated. See :ref:`async-handling-disconnect` for more details.","Under ASGI, http.disconnect events are now handled. This allows views to perform any necessary cleanup if a client disconnects before the response is generated. See async-handling-disconnect for more details."
+dj-22c340c7b9814198,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L244-L245,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > :mod:`django.contrib.auth`,"* ``AuthenticationMiddleware`` now adds an :meth:`.HttpRequest.auser`
+  asynchronous method that returns the currently logged-in user.",AuthenticationMiddleware now adds an HttpRequest.auser asynchronous method that returns the currently logged-in user.
+dj-01dbf017c6eeb1ea,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L433-L433,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > Tests,* :class:`~django.test.AsyncClient` now supports the ``follow`` parameter.,django.test.AsyncClient now supports the follow parameter.
+dj-d2ce1f5ac552b9d6,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L202-L205,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > More options for declaring field choices,"Under the hood the provided ``choices`` are normalized into a list of 2-tuples
+as the canonical form whenever the ``choices`` value is updated. For more
+information, please check the :ref:`model field reference on choices
+<field-choices>`.","Under the hood the provided choices are normalized into a list of 2-tuples as the canonical form whenever the choices value is updated. For more information, please check the model field reference on choices."
+dj-4f98d626fc69234a,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L365-L367,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > Models,"* The new ``create_defaults`` argument of :meth:`.QuerySet.update_or_create`
+  and :meth:`.QuerySet.aupdate_or_create` methods allows specifying a different
+  field values for the create operation.",The new create_defaults argument of QuerySet.update_or_create and QuerySet.aupdate_or_create methods allows specifying a different field values for the create operation.
+dj-73ce2c03d92cf9ad,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L335-L336,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > File Storage,"* :meth:`.File.open` now passes all positional (``*args``) and keyword
+  arguments (``**kwargs``) to Python's built-in :func:`python:open`.",File.open now passes all positional (*args) and keyword arguments (**kwargs) to Python's built-in open.
+dj-4e231316ad07dcad,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L487-L488,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.0 > Dropped support for MySQL < 8.0.11,"Support for pre-releases of MySQL 8.0.x series is removed. Django 5.0 supports
+MySQL 8.0.11 and higher.",Support for pre-releases of MySQL 8.0.x series is removed. Django 5.0 supports MySQL 8.0.11 and higher.
+dj-b273243d421ee60d,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L531-L532,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.0 > Migrating existing ``UUIDField`` on MariaDB 10.7+,"Running the :djadmin:`makemigrations` command will generate a migration
+containing a no-op ``AlterField`` operation.",Running the makemigrations command will generate a migration containing a no-op AlterField operation.
+dj-a69e50f7011856f0,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L216-L219,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > :mod:`django.contrib.admin`,"* The ``django.contrib.admin.AllValuesFieldListFilter``,
+  ``ChoicesFieldListFilter``, ``RelatedFieldListFilter``, and
+  ``RelatedOnlyFieldListFilter`` admin filters now handle multi-valued query
+  parameters.","The django.contrib.admin.AllValuesFieldListFilter, ChoicesFieldListFilter, RelatedFieldListFilter, and RelatedOnlyFieldListFilter admin filters now handle multi-valued query parameters."
+dj-2946844b8483f1a1,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L271-L272,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > :mod:`django.contrib.gis`,"* The new :meth:`.GEOSGeometry.equals_identical` method allows point-wise
+  equivalence checking of geometries.",The new GEOSGeometry.equals_identical method allows point-wise equivalence checking of geometries.
+dj-7f8247ead72eacfa,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L358-L360,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.0 > Minor features > Migrations,"* Serialization of functions decorated with :func:`functools.cache` or
+  :func:`functools.lru_cache` is now supported without the need to write a
+  custom serializer.",Serialization of functions decorated with functools.cache or functools.lru_cache is now supported without the need to write a custom serializer.
+dj-120492989b4cda79,5.0,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.0.txt#L29-L33,47fe39af56ecd0ad73b9c7562511015e96b91b80,Third-party library support for older version of Django,"Following the release of Django 5.0, we suggest that third-party app authors
+drop support for all versions of Django prior to 4.2. At that time, you should
+be able to run your package's tests using ``python -Wd`` so that deprecation
+warnings appear. After making the deprecation warning fixes, your app should be
+compatible with Django 5.0.","Following the release of Django 5.0, we suggest that third-party app authors drop support for all versions of Django prior to 4.2. At that time, you should be able to run your package's tests using python -Wd so that deprecation warnings appear. After making the deprecation warning fixes, your app should be compatible with Django 5.0."
+dj-e148b6d9e48a48f3,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L175-L176,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > :mod:`django.contrib.gis`,"* :attr:`.OGRGeometry.centroid` is now available on all supported geometry
+  types.",OGRGeometry.centroid is now available on all supported geometry types.
+dj-1ea0b1ec665f6b36,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L432-L433,47fe39af56ecd0ad73b9c7562511015e96b91b80,Features deprecated in 5.1 > Miscellaneous,"* Passing positional arguments to :meth:`.Model.save` and :meth:`.Model.asave`
+  is deprecated in favor of keyword-only arguments.",Passing positional arguments to Model.save and Model.asave is deprecated in favor of keyword-only arguments.
+dj-c47bb20fb2a41fdb,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L279-L281,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > Models,"* The new :attr:`.Expression.constraint_validation_compatible` attribute allows
+  specifying that the expression should be ignored during a constraint
+  validation.",The new Expression.constraint_validation_compatible attribute allows specifying that the expression should be ignored during a constraint validation.
+dj-647753226b554227,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L90-L93,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Middleware to require authentication by default,"The new :class:`~django.contrib.auth.middleware.LoginRequiredMiddleware`
+redirects all unauthenticated requests to a login page. Views can allow
+unauthenticated requests by using the new
+:func:`~django.contrib.auth.decorators.login_not_required` decorator.",The new django.contrib.auth.middleware.LoginRequiredMiddleware redirects all unauthenticated requests to a login page. Views can allow unauthenticated requests by using the new django.contrib.auth.decorators.login_not_required decorator.
+dj-59c73b0b265e0e49,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L192-L195,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > :mod:`django.contrib.sessions`,"* :class:`django.contrib.sessions.backends.cached_db.SessionStore` now handles
+  exceptions when storing session information in the cache, logging proper
+  error messages with their traceback via the newly added
+  :ref:`sessions logger <django-contrib-sessions-logger>`.","django.contrib.sessions.backends.cached_db.SessionStore now handles exceptions when storing session information in the cache, logging proper error messages with their traceback via the newly added sessions logger."
+dj-66f72e2ebbc08247,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L122-L126,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > :mod:`django.contrib.auth`,"* The new :class:`~django.contrib.auth.forms.AdminUserCreationForm` and
+  the existing :class:`~django.contrib.auth.forms.AdminPasswordChangeForm` now
+  support disabling password-based authentication by setting an unusable
+  password on form save. This is now available in the admin when visiting the
+  user creation and password change pages.",The new django.contrib.auth.forms.AdminUserCreationForm and the existing django.contrib.auth.forms.AdminPasswordChangeForm now support disabling password-based authentication by setting an unusable password on form save. This is now available in the admin when visiting the user creation and password change pages.
+dj-8e3ae4d2beee8433,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L244-L247,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > Migrations,"* The new ``Operation.category`` attribute allows specifying an
+  :class:`operation category
+  <django.db.migrations.operations.base.OperationCategory>` used by the
+  :djadmin:`makemigrations` to display a meaningful symbol for the operation.",The new Operation.category attribute allows specifying an operation category used by the makemigrations to display a meaningful symbol for the operation.
+dj-62afa19a6411cb13,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L369-L373,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.1 > Miscellaneous,"* In order to improve accessibility, the expandable widget used for
+  :attr:`ModelAdmin.fieldsets <django.contrib.admin.ModelAdmin.fieldsets>` and
+  :attr:`InlineModelAdmin.fieldsets <django.contrib.admin.InlineModelAdmin>`,
+  when the fieldset has a name and use the ``collapse`` class, now includes
+  ``<details>`` and ``<summary>`` elements.","In order to improve accessibility, the expandable widget used for ModelAdmin.fieldsets and InlineModelAdmin.fieldsets, when the fieldset has a name and use the collapse class, now includes <details> and <summary> elements."
+dj-ca9fce341ec17d38,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L296-L299,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > Tests,"* :meth:`~django.test.SimpleTestCase.assertContains`,
+  :meth:`~django.test.SimpleTestCase.assertNotContains`, and
+  :meth:`~django.test.SimpleTestCase.assertInHTML` assertions now add haystacks
+  to assertion error messages.","django.test.SimpleTestCase.assertContains, django.test.SimpleTestCase.assertNotContains, and django.test.SimpleTestCase.assertInHTML assertions now add haystacks to assertion error messages."
+dj-d599d9b309ff4e5a,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L321-L324,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > Validators,"* The new :class:`~django.core.validators.DomainNameValidator` validates domain
+  names, including internationalized domain names. The new
+  :func:`~django.core.validators.validate_domain_name` function returns an
+  instance of :class:`~django.core.validators.DomainNameValidator`.","The new django.core.validators.DomainNameValidator validates domain names, including internationalized domain names. The new django.core.validators.validate_domain_name function returns an instance of django.core.validators.DomainNameValidator."
+dj-ebbe289df2de19a1,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L484-L484,47fe39af56ecd0ad73b9c7562511015e96b91b80,Features removed in 5.1,* The ``TransactionTestCase.assertQuerysetEqual()`` method is removed.,The TransactionTestCase.assertQuerysetEqual() method is removed.
+dj-42ae7be519a47cbe,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L211-L212,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > Database backends,"* ``""pool""`` option is now supported in :setting:`OPTIONS` on PostgreSQL to
+  allow using :ref:`connection pools <postgresql-pool>`.","""pool"" option is now supported in OPTIONS on PostgreSQL to allow using connection pools."
+dj-b14b9502d2cbd3eb,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L237-L239,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > Management Commands,"* The :djadmin:`makemigrations` command now displays meaningful symbols for
+  each operation to highlight :class:`operation categories
+  <django.db.migrations.operations.base.OperationCategory>`.",The makemigrations command now displays meaningful symbols for each operation to highlight operation categories.
+dj-90191dc1142d59ab,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L230-L232,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > Forms,"* In order to improve accessibility and enable screen readers to associate
+  fieldsets with their help text, the form fieldset now includes the
+  ``aria-describedby`` HTML attribute.","In order to improve accessibility and enable screen readers to associate fieldsets with their help text, the form fieldset now includes the aria-describedby HTML attribute."
+dj-a6663c521e47bafb,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L286-L288,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > Templates,"* Custom tags may now set extra data on the ``Parser`` object that will later
+  be made available on the ``Template`` instance. Such data may be used, for
+  example, by the template loader, or other template clients.","Custom tags may now set extra data on the Parser object that will later be made available on the Template instance. Such data may be used, for example, by the template loader, or other template clients."
+dj-8038b8b0b35ac963,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L110-L111,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > :mod:`django.contrib.admin`,"* :attr:`.ModelAdmin.list_display` now supports using ``__`` lookups to list
+  fields from related models.",ModelAdmin.list_display now supports using __ lookups to list fields from related models.
+dj-abfc06ff06216ed9,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L178-L181,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > :mod:`django.contrib.gis`,"* :class:`FromWKB() <django.contrib.gis.db.models.functions.FromWKB>` and
+  :class:`FromWKT() <django.contrib.gis.db.models.functions.FromWKT>` functions
+  now support the optional ``srid`` argument (except for Oracle where it is
+  ignored).",FromWKB() and FromWKT() functions now support the optional srid argument (except for Oracle where it is ignored).
+dj-6a8ff4ba985cbfab,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L263-L264,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > Models,"* :meth:`.QuerySet.order_by` now supports ordering by annotation transforms
+  such as ``JSONObject`` keys and ``ArrayAgg`` indices.",QuerySet.order_by now supports ordering by annotation transforms such as JSONObject keys and ArrayAgg indices.
+dj-01d080c1626a83bf,5.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.1.txt#L151-L152,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.1 > Minor features > :mod:`django.contrib.gis`,"* :meth:`.GeoIP2.country` now exposes the ``continent_code``,
+  ``continent_name``, and ``is_in_european_union`` values.","GeoIP2.country now exposes the continent_code, continent_name, and is_in_european_union values."
+dj-245026eb59d3a39b,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L406-L407,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.2 > Database backend API,"* ``BaseDatabaseOperations.adapt_decimalfield_value()`` is now a no-op, simply
+  returning the given value.","BaseDatabaseOperations.adapt_decimalfield_value() is now a no-op, simply returning the given value."
+dj-2f1f40af9fddef5c,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L376-L378,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > URLs,"* :func:`~django.urls.reverse` and :func:`~django.urls.reverse_lazy` now accept
+  ``query`` and ``fragment`` keyword arguments, allowing the addition of a
+  query string and/or fragment identifier in the generated URL, respectively.","django.urls.reverse and django.urls.reverse_lazy now accept query and fragment keyword arguments, allowing the addition of a query string and/or fragment identifier in the generated URL, respectively."
+dj-0896989ac8c3c94e,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L468-L470,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.2 > Miscellaneous,"* Built-in aggregate functions accepting only one argument (``Avg``, ``Count``,
+  ``Max``, ``Min``, ``StdDev``, ``Sum``, and ``Variance``) now raise
+  :exc:`TypeError` when called with an incorrect number of arguments.","Built-in aggregate functions accepting only one argument (Avg, Count, Max, Min, StdDev, Sum, and Variance) now raise TypeError when called with an incorrect number of arguments."
+dj-6a0c228821685d31,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L278-L281,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > Management Commands,"* A new warning is displayed when running :djadmin:`runserver`, indicating that
+  it is unsuitable for production. This warning can be suppressed by setting
+  the :envvar:`DJANGO_RUNSERVER_HIDE_WARNING` environment variable to
+  ``""true""``.","A new warning is displayed when running runserver, indicating that it is unsuitable for production. This warning can be suppressed by setting the DJANGO_RUNSERVER_HIDE_WARNING environment variable to ""true""."
+dj-f00d25a9f516c502,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L313-L315,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > Models,"* :attr:`CharField.max_length <django.db.models.CharField.max_length>` is no
+  longer required to be set on SQLite, which supports unlimited ``VARCHAR``
+  columns.","CharField.max_length is no longer required to be set on SQLite, which supports unlimited VARCHAR columns."
+dj-437a0b96dc0778cd,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L350-L352,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > Serialization,"* Each serialization format now defines a ``Deserializer`` class, rather than a
+  function, to improve extensibility when defining a
+  :ref:`custom serialization format <custom-serialization-formats>`.","Each serialization format now defines a Deserializer class, rather than a function, to improve extensibility when defining a custom serialization format."
+dj-958df5e44fe7eaa8,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L203-L206,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > :mod:`django.contrib.syndication`,"* All :class:`~django.utils.feedgenerator.SyndicationFeed` classes now support
+  a ``stylesheets`` attribute. If specified, an ``<? xml-stylesheet ?>``
+  processing instruction will be added to the top of the document for each
+  stylesheet in the given list. See :ref:`feed-stylesheets` for more details.","All django.utils.feedgenerator.SyndicationFeed classes now support a stylesheets attribute. If specified, an <? xml-stylesheet ?> processing instruction will be added to the top of the document for each stylesheet in the given list. See feed-stylesheets for more details."
+dj-32b33a0e1871342f,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L337-L341,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > Requests and Responses,"* The new ``preserve_request`` argument for
+  :class:`~django.http.HttpResponseRedirect` and
+  :class:`~django.http.HttpResponsePermanentRedirect`
+  determines whether the HTTP status codes 302/307 or 301/308 are used,
+  respectively.","The new preserve_request argument for django.http.HttpResponseRedirect and django.http.HttpResponsePermanentRedirect determines whether the HTTP status codes 302/307 or 301/308 are used, respectively."
+dj-c7068115d2ed4748,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L388-L390,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > Utilities,"* :func:`~django.utils.html.format_html_join` now supports taking an iterable
+  of mappings, passing their contents as keyword arguments to
+  :func:`~django.utils.html.format_html`.","django.utils.html.format_html_join now supports taking an iterable of mappings, passing their contents as keyword arguments to django.utils.html.format_html."
+dj-4fb7e64520d2dffb,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L136-L138,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > :mod:`django.contrib.admin`,"* The ``admin/base.html`` template now has a new block
+  :ref:`extrabody <extrabody>` for adding custom code before the closing
+  ``</body>`` tag.",The admin/base.html template now has a new block extrabody for adding custom code before the closing </body> tag.
+dj-30c1ff70517f87c6,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L198-L198,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > :mod:`django.contrib.gis`,* :lookup:`coveredby` and :lookup:`covers` lookup are now supported on MySQL.,coveredby and covers lookup are now supported on MySQL.
+dj-6be4e414a62b8ad8,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L264-L265,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > Forms,"* An :attr:`~django.forms.BoundField.aria_describedby` property is added to
+  ``BoundField`` to ease use of this HTML attribute in templates.",An django.forms.BoundField.aria_describedby property is added to BoundField to ease use of this HTML attribute in templates.
+dj-fa875e72fd1eea4e,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L357-L359,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > Templates,"* The new :meth:`~django.template.Library.simple_block_tag` decorator enables
+  the creation of simple block tags, which can accept and use a section of the
+  template.","The new django.template.Library.simple_block_tag decorator enables the creation of simple block tags, which can accept and use a section of the template."
+dj-078c223b0a181fcf,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L368-L371,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > Tests,"* Data loaded from :attr:`~django.test.TransactionTestCase.fixtures` and from
+  migrations enabled with :ref:`serialized_rollback=True
+  <test-case-serialized-rollback>` are now available during
+  ``TransactionTestCase.setUpClass()``.",Data loaded from django.test.TransactionTestCase.fixtures and from migrations enabled with serialized_rollback=True are now available during TransactionTestCase.setUpClass().
+dj-21c91c9037b5e764,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L425-L428,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.2 > Changed MySQL connection character set default,"MySQL connections now default to using the ``utf8mb4`` character set, instead
+of ``utf8``, which is an alias for the deprecated character set ``utf8mb3``.
+``utf8mb3`` can be specified in the ``OPTIONS`` part of the ``DATABASES``
+setting, if needed for legacy databases.","MySQL connections now default to using the utf8mb4 character set, instead of utf8, which is an alias for the deprecated character set utf8mb3. utf8mb3 can be specified in the OPTIONS part of the DATABASES setting, if needed for legacy databases."
+dj-f8a40f7edb69080c,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L493-L495,47fe39af56ecd0ad73b9c7562511015e96b91b80,Features deprecated in 5.2 > Miscellaneous,"* Support for subclasses of ``RemoteUserMiddleware`` that override
+  ``process_request()`` without overriding ``aprocess_request()`` is
+  deprecated.",Support for subclasses of RemoteUserMiddleware that override process_request() without overriding aprocess_request() is deprecated.
+dj-1c46ed5022e97f72,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L58-L59,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Composite Primary Keys,"The new :class:`django.db.models.CompositePrimaryKey` allows tables to be
+created with a primary key consisting of multiple fields.",The new django.db.models.CompositePrimaryKey allows tables to be created with a primary key consisting of multiple fields.
+dj-b1cf4044c13415af,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L149-L150,47fe39af56ecd0ad73b9c7562511015e96b91b80,What's new in Django 5.2 > Minor features > :mod:`django.contrib.admindocs`,"* The :ref:`model pages <admindocs-model-reference>` are now restricted to
+  users with the corresponding view or change permissions.",The model pages are now restricted to users with the corresponding view or change permissions.
+dj-79e5d031414a7165,5.2,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.txt#L446-L447,47fe39af56ecd0ad73b9c7562511015e96b91b80,Backwards incompatible changes in 5.2 > Miscellaneous,"* The :func:`~django.template.context_processors.debug` context processor is no
+  longer included in the default project template.",The django.template.context_processors.debug context processor is no longer included in the default project template.
+dj-5a2ea893bde42a53,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L217-L219,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > :mod:`django.contrib.postgres`,"* Model fields, indexes, and constraints from :mod:`django.contrib.postgres`
+  now include system checks to verify that ``django.contrib.postgres`` is an
+  installed app.","Model fields, indexes, and constraints from django.contrib.postgres now include system checks to verify that django.contrib.postgres is an installed app."
+dj-7898dac145983c8b,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L150-L154,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Adoption of Python's modern email API,"Notably, the return type of the :meth:`EmailMessage.message()
+<django.core.mail.EmailMessage.message>` method is now an instance of Python's
+:class:`email.message.EmailMessage`. This supports the same API as the
+previous ``SafeMIMEText`` and ``SafeMIMEMultipart`` return types, but is not an
+instance of those now-deprecated classes.","Notably, the return type of the EmailMessage.message() method is now an instance of Python's email.message.EmailMessage. This supports the same API as the previous SafeMIMEText and SafeMIMEMultipart return types, but is not an instance of those now-deprecated classes."
+dj-4cd4d16d8e80e1e6,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L583-L584,85eb963c5297fb285aecf4a90c97141a1b9c5bee,Features removed in 6.0,"* The ``get_joining_columns()`` method of ``ForeignObject`` and
+  ``ForeignObjectRel`` is removed.",The get_joining_columns() method of ForeignObject and ForeignObjectRel is removed.
+dj-c86600580a2a6291,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L523-L523,85eb963c5297fb285aecf4a90c97141a1b9c5bee,Features deprecated in 6.0 > Miscellaneous,* The :setting:`URLIZE_ASSUME_HTTPS` transitional setting is deprecated.,The URLIZE_ASSUME_HTTPS transitional setting is deprecated.
+dj-b0abf963b55caeb3,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L183-L184,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > :mod:`django.contrib.gis`,"* The new :attr:`.GEOSGeometry.hasm` property checks whether the geometry has
+  the M dimension.",The new GEOSGeometry.hasm property checks whether the geometry has the M dimension.
+dj-fccc186303613cf1,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L280-L281,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > Models,"* :doc:`Constraints </ref/models/constraints>` now implement a ``check()``
+  method that is already registered with the check framework.",Constraints now implement a check() method that is already registered with the check framework.
+dj-9251157d15ef54ef,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L381-L382,85eb963c5297fb285aecf4a90c97141a1b9c5bee,Backwards incompatible changes in 6.0 > Database backend API,"* If the database supports ``UPDATE … RETURNING`` statements, backends can set
+  ``DatabaseFeatures.can_return_rows_from_update=True``.","If the database supports UPDATE … RETURNING statements, backends can set DatabaseFeatures.can_return_rows_from_update=True."
+dj-4477e12e473786f4,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L444-L446,85eb963c5297fb285aecf4a90c97141a1b9c5bee,Backwards incompatible changes in 6.0 > ``DEFAULT_AUTO_FIELD`` setting now defaults to ``BigAutoField``,"In Django 6.0, :setting:`DEFAULT_AUTO_FIELD` now defaults to
+:class:`django.db.models.BigAutoField` and the aforementioned lines in the
+project and app templates are removed.","In Django 6.0, DEFAULT_AUTO_FIELD now defaults to django.db.models.BigAutoField and the aforementioned lines in the project and app templates are removed."
+dj-7675e0e48b5d2cd6,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L101-L103,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Background Tasks,"Django now includes a built-in Tasks framework for running code outside the
+HTTP request–response cycle. This enables offloading work, such as sending
+emails or processing data, to background workers.","Django now includes a built-in Tasks framework for running code outside the HTTP request–response cycle. This enables offloading work, such as sending emails or processing data, to background workers."
+dj-1e5ce06380134918,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L165-L166,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > :mod:`django.contrib.admin`,"* The new :attr:`.AdminSite.password_change_form` attribute allows customizing
+  the form used in the admin site password change view.",The new AdminSite.password_change_form attribute allows customizing the form used in the admin site password change view.
+dj-a4b7d37cb533d0a4,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L342-L343,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > Templates,"* The :ttag:`querystring` template tag now consistently prefixes the returned
+  query string with a ``?``, ensuring reliable link generation behavior.","The querystring template tag now consistently prefixes the returned query string with a ?, ensuring reliable link generation behavior."
+dj-2e1d2abd3f648f2e,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L325-L328,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > Pagination,"* The new :class:`~django.core.paginator.AsyncPaginator` and
+  :class:`~django.core.paginator.AsyncPage` provide async implementations of
+  :class:`~django.core.paginator.Paginator` and
+  :class:`~django.core.paginator.Page` respectively.",The new django.core.paginator.AsyncPaginator and django.core.paginator.AsyncPage provide async implementations of django.core.paginator.Paginator and django.core.paginator.Page respectively.
+dj-55794410a09d9106,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L248-L250,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > Email,"* :meth:`EmailMessage.attach() <django.core.mail.EmailMessage.attach>` now
+  accepts a :class:`~email.message.MIMEPart` object from Python's modern email
+  API.",EmailMessage.attach() now accepts a email.message.MIMEPart object from Python's modern email API.
+dj-a15e682a99d0ed08,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L232-L234,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > :mod:`django.contrib.staticfiles`,"* :class:`~django.contrib.staticfiles.storage.ManifestStaticFilesStorage` now
+  ensures consistent path ordering in manifest files, making them more
+  reproducible and reducing unnecessary diffs.","django.contrib.staticfiles.storage.ManifestStaticFilesStorage now ensures consistent path ordering in manifest files, making them more reproducible and reducing unnecessary diffs."
+dj-b7dffeac71b02af5,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L260-L261,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > Management Commands,"* The :djadmin:`startproject` and :djadmin:`startapp` commands now create the
+  custom target directory if it doesn't exist.",The startproject and startapp commands now create the custom target directory if it doesn't exist.
+dj-f1d77b81d9ec4f95,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L500-L503,85eb963c5297fb285aecf4a90c97141a1b9c5bee,Features deprecated in 6.0 > Positional arguments in ``django.core.mail`` APIs,"* All parameters must be passed as keyword arguments when creating an
+  :class:`.EmailMessage` or :class:`.EmailMultiAlternatives` instance, except
+  for the first four (``subject``, ``body``, ``from_email``, and ``to``), which
+  may still be passed either as positional or keyword arguments.","All parameters must be passed as keyword arguments when creating an EmailMessage or EmailMultiAlternatives instance, except for the first four (subject, body, from_email, and to), which may still be passed either as positional or keyword arguments."
+dj-5ccaf6e861ba495e,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L43-L47,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Content Security Policy support,"Built-in support for the :ref:`Content Security Policy (CSP) <security-csp>`
+standard is now available, making it easier to protect web applications against
+content injection attacks such as cross-site scripting (XSS). CSP allows
+declaring trusted sources of content by giving browsers strict rules about
+which scripts, styles, images, or other resources can be loaded.","Built-in support for the Content Security Policy (CSP) standard is now available, making it easier to protect web applications against content injection attacks such as cross-site scripting (XSS). CSP allows declaring trusted sources of content by giving browsers strict rules about which scripts, styles, images, or other resources can be loaded."
+dj-e2e11e844245d968,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L420-L422,85eb963c5297fb285aecf4a90c97141a1b9c5bee,Backwards incompatible changes in 6.0 > Email,"* The undocumented ``encoding`` property of
+  :class:`~django.core.mail.EmailMessage` no longer supports Python legacy
+  :class:`email.charset.Charset` objects.",The undocumented encoding property of django.core.mail.EmailMessage no longer supports Python legacy email.charset.Charset objects.
+dj-dcf0e14c4bba7df0,6.0,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L274-L275,85eb963c5297fb285aecf4a90c97141a1b9c5bee,What's new in Django 6.0 > Minor features > Migrations,"* Serialization of deconstructible objects now supports keyword arguments with
+  names that are not valid Python identifiers.",Serialization of deconstructible objects now supports keyword arguments with names that are not valid Python identifiers.
+dj-3b38f31e42c8f79c,5.2.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt#L44-L47,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a data corruption possibility in ``file_move_safe()`` when
+  ``allow_overwrite=True``, where leftover content from a previously larger
+  file could remain after overwriting with a smaller one due to lack of
+  truncation (:ticket:`36298`).","Fixed a data corruption possibility in file_move_safe() when allow_overwrite=True, where leftover content from a previously larger file could remain after overwriting with a smaller one due to lack of truncation (36298)."
+dj-49b2515cbe8ef124,5.2.5,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.5.txt#L16-L17,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a crash in Django 5.2 when filtering against a composite primary key
+  using a tuple containing expressions (:ticket:`36522`).",Fixed a crash in Django 5.2 when filtering against a composite primary key using a tuple containing expressions (36522).
+dj-485803ee534b9de7,6.0.1,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.1.txt#L27-L29,85eb963c5297fb285aecf4a90c97141a1b9c5bee,Bugfixes,"* Fixed a regression in Django 6.0 that caused
+  :meth:`~django.db.models.query.QuerySet.bulk_create` to crash
+  when introspecting the connection on SQLite (:ticket:`36818`).",Fixed a regression in Django 6.0 that caused django.db.models.query.QuerySet.bulk_create to crash when introspecting the connection on SQLite (36818).
+dj-41502838e5207a6d,5.2.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt#L29-L31,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a regression in Django 5.2 that caused a crash when annotating
+  aggregate expressions over query that uses explicit grouping by transforms
+  followed by field references (:ticket:`36292`).",Fixed a regression in Django 5.2 that caused a crash when annotating aggregate expressions over query that uses explicit grouping by transforms followed by field references (36292).
+dj-47264f3af3f7a71d,5.2.1,https://github.com/django/django/blob/47fe39af56ecd0ad73b9c7562511015e96b91b80/docs/releases/5.2.1.txt#L61-L63,47fe39af56ecd0ad73b9c7562511015e96b91b80,Bugfixes,"* Fixed a regression in Django 5.2 that caused the ``object-tools`` block to be
+  rendered twice when using custom admin templates with overridden blocks due
+  to changes in the base admin page block structure (:ticket:`36331`).",Fixed a regression in Django 5.2 that caused the object-tools block to be rendered twice when using custom admin templates with overridden blocks due to changes in the base admin page block structure (36331).

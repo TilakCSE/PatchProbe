@@ -1,4 +1,4 @@
-# Annotation progress — 2026-10-28
+# Annotation progress — 2026-11-01
 
 | Batch | Human decisions | Model labels | `UNCLEAR` | Status |
 | --- | ---: | ---: | ---: | --- |
@@ -7,6 +7,7 @@
 | Bhargav batch 01 | 50 | 48 | 2 | Confirmed |
 | Om batch 01 | 50 | 50 | 0 | Confirmed |
 | **Total** | **200** | **194** | **6** | **Confirmed** |
+| Tilak batch 02 | 0 | 0 | 0 | 100 draft suggestions; awaiting review |
 
 The source CSV has 571 entries. Exactly 371 source entries have no human decision yet. Each confirmed entry appears once in [the merged label CSV](../data/processed/reviewed_labels.csv). The named local reviewer records are ignored by Git; committed exports use reviewer aliases and date-only timestamps.
 

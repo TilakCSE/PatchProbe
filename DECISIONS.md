@@ -104,3 +104,12 @@ Each decision records the choice, evidence, alternatives, and what would change 
 **Choice:** Save Om's named, timestamped record only in ignored local annotations, publish a reviewer-name-free export, and regenerate the validated merged CSV from all four shareable batch exports. Keep the fifth class visible but untrained while further evidence is collected; do not manufacture examples.
 
 **Next decision:** Review the remaining 371 source entries in manageable batches or select a defensible smaller set for final training. Before a final score, resolve the absent fifth class, audit cross-release near-duplicates, and freeze a new release-grouped evaluation. The previous score describes only the original pilot.
+
+
+## D013 — Larger fifth review batch (draft, 2026-11-01)
+
+**Choice:** Prepare 100 distinct unlabeled entries for Tilak to review in one sheet: 19 from each feature release 4.2, 5.0, 5.1, 5.2, and 6.0, and five patch-release notes. Exclude all 200 confirmed IDs, obvious near-duplicates, and incomplete flattened fragments. Attach a source link and a text-based reason to every draft suggestion. Save no human label before Tilak's explicit confirmation.
+
+**Why:** A larger batch reduces review handoffs while preserving source and release variety. It is an annotation work queue, not a random sample for final evaluation or a way to fill class quotas. Five mixed rows are proposed as `UNCLEAR`; no row clearly supports the still-unobserved fifth class.
+
+**Limit:** Reviewers may find additional extraction defects or disagree with the suggestions. `EXCLUDE` is a review instruction, not a model class. The confirmed dataset remains 200 rows until the review is complete, and the old model score still reflects only the original pilot.
