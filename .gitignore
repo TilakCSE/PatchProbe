@@ -10,3 +10,4 @@ artifacts/
 models/
 src/patchprobe.egg-info/
 data/annotations/
+.worktrees/
