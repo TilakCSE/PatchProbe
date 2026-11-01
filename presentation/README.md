@@ -1,5 +1,7 @@
 # PatchProbe presentation
 
+> **Pilot deck.** These slides and the speaking guide predate the completed 571-entry review. Current data counts are in [annotation progress](../docs/ANNOTATION_PROGRESS.md); update evaluation and demo slides after retraining.
+
 [Open the 13-slide PowerPoint](PatchProbe_University_Crimson_13slides.pptx) or [study and speaking guide](PatchProbe_Study_and_Speaking_Guide.pdf). The deck is 16:9, uses the University Crimson palette and Navrachana University logo, and includes speaker notes with talk tracks and sources.
 
 ## Speakers

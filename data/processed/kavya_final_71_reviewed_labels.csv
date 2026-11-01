@@ -1,0 +1,45 @@
+entry_id,label,annotator,review_note,annotated_at
+dj-8155f8094555f2d8,Data/schema migration,Human reviewer,Human-confirmed in the final 71-entry review. Column and table comments are database schema metadata; the example lead-in is incomplete but the change is stated.,2026-11-01
+dj-e630a54fcc28e73b,No targeted check stated,Human reviewer,Human-confirmed in the final 71-entry review. Only the bundled jQuery version is stated; the note names no concrete downstream behavior to verify.,2026-11-01
+dj-b7a2dba7c3fbca59,Data/schema migration,Human reviewer,Human-confirmed in the final 71-entry review. Unlimited PostgreSQL VARCHAR length changes model field and database schema options.,2026-11-01
+dj-e07f5ab4ed32bb3e,Configuration/deployment,Human reviewer,Human-confirmed in the final 71-entry review. The installed SQLite runtime must meet the new minimum version.,2026-11-01
+dj-37b04ba8e37ed1b0,Data/schema migration,Human reviewer,Human-confirmed in the final 71-entry review. Existing index_together definitions require a migration; the example lead-in is incomplete.,2026-11-01
+dj-8371b13dae6e758d,UI/output behavior,Human reviewer,Human-confirmed in the final 71-entry review. The deprecated template filter affects template rendering; the example tail is truncated.,2026-11-01
+dj-7a26560120e26fcd,Data/schema migration,Human reviewer,Human-confirmed in the final 71-entry review. Replacing CICharField requires a database collation and field schema review.,2026-11-01
+dj-5084ce202f4fdf73,Data/schema migration,Human reviewer,Human-confirmed in the final 71-entry review. db_default is a database-computed field default; the example lead-in is incomplete.,2026-11-01
+dj-c37c08bcaf63b52a,Data/schema migration,Human reviewer,Human-confirmed in the final 71-entry review. GeneratedField creates computed database columns; the example lead-in is incomplete.,2026-11-01
+dj-0b7f1c3e09600abd,API/code compatibility,Human reviewer,"Human-confirmed in the final 71-entry review. Field and form choices are declared in application code, though the example is truncated.",2026-11-01
+dj-b1a95b13877c5ed7,API/code compatibility,Human reviewer,"Human-confirmed in the final 71-entry review. Choices declarations can now use mappings, callables, or enum types directly.",2026-11-01
+dj-75c9dd1982b2c506,No targeted check stated,Human reviewer,Human-confirmed in the final 71-entry review. Only the bundled XRegExp version is stated; no concrete downstream check is named.,2026-11-01
+dj-ed6a8abe11eb55d9,No targeted check stated,Human reviewer,Human-confirmed in the final 71-entry review. Only the bundled jQuery version is stated; no concrete downstream check is named.,2026-11-01
+dj-10c5c6f1564e1a96,Data/schema migration,Human reviewer,Human-confirmed in the final 71-entry review. The GIS aggregate filter argument changes database query behavior.,2026-11-01
+dj-5b473a4a6ddd246b,API/code compatibility,Human reviewer,Human-confirmed in the final 71-entry review. Custom database backend code must set this capability flag correctly.,2026-11-01
+dj-e0c7cd09189e6b2b,Data/schema migration,Human reviewer,Human-confirmed in the final 71-entry review. Existing MariaDB UUIDField columns need migration or a compatibility subclass.,2026-11-01
+dj-4017b1ea8b70b1f2,Configuration/deployment,Human reviewer,Human-confirmed in the final 71-entry review. The deployed SQLite version must meet the new minimum.,2026-11-01
+dj-00b72b91c4f90c15,API/code compatibility,Human reviewer,Human-confirmed in the final 71-entry review. Code relying on SitemapIndexItem.__str__ must change.,2026-11-01
+dj-cc651ac2bfdeaca4,Configuration/deployment,Human reviewer,Human-confirmed in the final 71-entry review. PostgreSQL connection pooling is enabled through database OPTIONS settings.,2026-11-01
+dj-d05b8ab4c1944849,Configuration/deployment,Human reviewer,Human-confirmed in the final 71-entry review. The default password-hasher work factor changes runtime cost and security policy.,2026-11-01
+dj-766c38b4d85227d3,Data/schema migration,Human reviewer,Human-confirmed in the final 71-entry review. Removing Meta.index_together affects model index definitions and migrations.,2026-11-01
+dj-8517d40446f63bea,API/code compatibility,Human reviewer,Human-confirmed in the final 71-entry review. Code or configuration referencing the removed hasher classes must change; the named classes are the direct interface.,2026-11-01
+dj-3989c4537569848c,API/code compatibility,Human reviewer,Human-confirmed in the final 71-entry review. Code importing the removed CIText mixin must change.,2026-11-01
+dj-80689adac735bec0,UI/output behavior,Human reviewer,Human-confirmed in the final 71-entry review. The interactive shell now exposes automatically imported model names.,2026-11-01
+dj-41ff06db6a8aa983,Data/schema migration,Human reviewer,Human-confirmed in the final 71-entry review. CompositePrimaryKey changes the model's database key definition.,2026-11-01
+dj-e10f1f3c5b14d767,API/code compatibility,Human reviewer,Human-confirmed in the final 71-entry review. Custom BoundField implementations can use new attributes instead of a prior hook.,2026-11-01
+dj-81d5c5feeb4c54e3,UI/output behavior,Human reviewer,"Human-confirmed in the final 71-entry review. Admin documentation links can show custom link text, though markup detail is flattened.",2026-11-01
+dj-181a2c7204b0faed,Configuration/deployment,Human reviewer,Human-confirmed in the final 71-entry review. The default password-hasher work factor changes runtime cost and security policy.,2026-11-01
+dj-921d8d2be656a09d,Configuration/deployment,Human reviewer,Human-confirmed in the final 71-entry review. The deployed PostgreSQL version must be at least 14.,2026-11-01
+dj-7a9d699f7f5f0382,Configuration/deployment,Human reviewer,Human-confirmed in the final 71-entry review. The installed oracledb version must meet the new minimum.,2026-11-01
+dj-0c2fa2afae144ffe,Data/schema migration,Human reviewer,Human-confirmed in the final 71-entry review. inspectdb no longer generates a redundant composite-key constraint.,2026-11-01
+dj-ac417e0075e0ce6f,UI/output behavior,Human reviewer,Human-confirmed in the final 71-entry review. The security fix concerns escaping request paths in HTTP response logs.,2026-11-01
+dj-1d862c7e81f8a7d3,Configuration/deployment,Human reviewer,Human-confirmed in the final 71-entry review. The Oracle driver version compatibility affects dependency deployment.,2026-11-01
+dj-c081e2aa74aded85,Configuration/deployment,Human reviewer,Human-confirmed in the final 71-entry review. The deployed Python runtime must match the supported versions.,2026-11-01
+dj-8871962e9ae3baea,API/code compatibility,Human reviewer,Human-confirmed in the final 71-entry review. Third-party package code and tests should address deprecations for Django 6.0.,2026-11-01
+dj-51c93f31c9f0a85f,UI/output behavior,Human reviewer,Human-confirmed in the final 71-entry review. Template-partial references change how components are loaded and rendered.,2026-11-01
+dj-df99d4a90dc58aac,API/code compatibility,Human reviewer,Human-confirmed in the final 71-entry review. Task-definition code can use the named django.tasks.task decorator.,2026-11-01
+dj-f0fe77c17653b2f2,Configuration/deployment,Human reviewer,Human-confirmed in the final 71-entry review. Optional dependencies and the Python runtime must support Python 3.12.,2026-11-01
+dj-d3718b29380710b6,API/code compatibility,Human reviewer,Human-confirmed in the final 71-entry review. Custom ORM as_sql implementations must return parameters as a tuple.,2026-11-01
+dj-fbcfc6a881e46dc7,API/code compatibility,Human reviewer,Human-confirmed in the final 71-entry review. Cross-version custom expressions must accept tuple or list parameters.,2026-11-01
+dj-abdce59827ec12b0,API/code compatibility,Human reviewer,Human-confirmed in the final 71-entry review. Mail API calls should use keyword arguments to avoid future TypeError.,2026-11-01
+dj-ece85e6c30a75c99,API/code compatibility,Human reviewer,Human-confirmed in the final 71-entry review. Custom database backends cannot call the removed field_cast_sql method.,2026-11-01
+dj-a4d6ecd610075d12,API/code compatibility,Human reviewer,Human-confirmed in the final 71-entry review. Custom prefetch code cannot call the removed method.,2026-11-01
+dj-3778d8d420591d0e,Data/schema migration,Human reviewer,Human-confirmed in the final 71-entry review. bulk_create no longer silently truncates oversized PostgreSQL field data.,2026-11-01

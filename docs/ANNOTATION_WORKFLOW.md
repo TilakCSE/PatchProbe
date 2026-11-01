@@ -83,3 +83,8 @@ Om Nathani confirmed all 100 visible suggestions in [Om batch 02](OM_BATCH_02_RE
 Bhargav Panchal confirmed all 50 visible suggestions in [Bhargav batch 02](BHARGAV_BATCH_02_REVIEW.md), with no `UNCLEAR`. His ignored named CSV has exact timestamps; `data/processed/bhargav_batch_02_reviewed_labels.csv` is the name-free date-only export. The validated merged CSV now has 500 decisions: 487 model labels and 13 `UNCLEAR`.
 
 [Kavya's final sheet](KAVYA_FINAL_71_REVIEW.md) includes every remaining source ID, including short fragments that earlier selection filters skipped. It proposes 44 model labels and 27 `EXCLUDE` decisions; none are saved as human decisions yet. On confirmation, save labels to Kavya's named local CSV and name-free public export. Put confirmed exclusions, source IDs, reasons, and date in a separate public CSV. Then assert that the union of reviewed labels and exclusions is exactly the 571-entry source set, with no overlap. The batch is non-blind because suggestions are visible.
+
+
+## Final corpus confirmation (2026-11-01)
+
+Kavya Jariwala confirmed every decision in [the final 71-entry sheet](KAVYA_FINAL_71_REVIEW.md): 44 five-class labels and 27 `EXCLUDE` dispositions. Named records with exact timestamps remain in ignored `data/annotations/`; name-free date-only exports are `data/processed/kavya_final_71_reviewed_labels.csv` and `data/processed/excluded_entries.csv`. The merged label CSV has 544 rows, including 13 `UNCLEAR`, and the full 571-row corpus is in `data/processed/annotated_corpus.csv`. Run `python scripts/merge_reviewed_labels.py` followed by `python scripts/build_annotated_corpus.py` to reproduce the final coverage audit. These were human confirmations of visible suggestions, not independent blind annotations.

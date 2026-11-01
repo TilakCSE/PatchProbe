@@ -58,3 +58,8 @@ There were 571 extracted candidates before exact deduplication and zero exact du
 ## Near-duplicate review
 
 `python scripts/audit_near_duplicates.py` is a reproducible, non-destructive audit. On the pinned 571 entries it flags 20 cross-release pairs at character TF-IDF cosine similarity ≥ 0.88. This is a candidate list, not proof that 20 rows are erroneous. The output is ignored by Git and must be reviewed before interpreting a future grouped test result.
+
+
+## Completed human review — 2026-11-01
+
+The pinned extractor still yields 571 candidate entries; it does not assign labels. Nine human-confirmed batches now account for every source ID. The final disposition is 531 five-class labels, 13 `UNCLEAR`, and 27 `EXCLUDE` entries. The latter are headings, fragments, or omitted-example introductions that cannot stand alone. The [full annotated corpus](../data/processed/annotated_corpus.csv) keeps source URL, revision, section, raw text, cleaned text, decision, note, and date. The 27 excluded IDs and reasons are in [excluded_entries.csv](../data/processed/excluded_entries.csv). Run `python scripts/build_annotated_corpus.py` after merging public labels to verify exact ID coverage and no overlap. Near-duplicate release entries were not automatically excluded; handle them in evaluation.

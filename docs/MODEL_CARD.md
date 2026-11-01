@@ -1,5 +1,7 @@
 # PatchProbe model card
 
+> **Historical pilot material.** The 2026-11-01 full review now has 531 model labels, 13 `UNCLEAR`, and 27 exclusions. The model, metrics, and demo steps below still describe the original 49-label pilot. Refresh them after a new grouped evaluation; see [annotation progress](ANNOTATION_PROGRESS.md).
+
 ## Status
 
 The first model is trained from 49 human-confirmed, agent-assisted pilot labels. The 50th reviewed entry is `UNCLEAR` and excluded. The observed labels cover only four of the five intended classes, so this is a presentation pilot, not a validated five-class classifier. Synthetic fixtures in tests verify software behavior only.

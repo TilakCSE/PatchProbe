@@ -1,0 +1,28 @@
+entry_id,reason,reviewed_at
+dj-3c217f5005290bdd,This is only the introduction to a missing code example and states no actual change.,2026-11-01
+dj-65ce9c733debb429,A bare decorator name does not state the change or affected behavior.,2026-11-01
+dj-4a304aeb5488a053,A bare decorator name does not state the change or affected behavior.,2026-11-01
+dj-543ff7c6f42ed38e,A bare decorator name does not state the change or affected behavior.,2026-11-01
+dj-cd019b306a8915f2,A bare decorator name does not state the change or affected behavior.,2026-11-01
+dj-6fca5ca4579f3578,A bare decorator name does not state the change or affected behavior.,2026-11-01
+dj-7ba114cbe9497a34,A bare decorator name does not state the change or affected behavior.,2026-11-01
+dj-3aa0ba2f057e974c,"This is an introduction to a list of changes, with no change stated in the extracted entry.",2026-11-01
+dj-51a058ccf97f81d0,This is a generic heading sentence; the actual removed features are separate entries.,2026-11-01
+dj-f15b4ff3e018bf5b,"This describes a forthcoming template example, not a released change on its own.",2026-11-01
+dj-fd948218719b6737,The note points to an omitted example and names no standalone behavior.,2026-11-01
+dj-913598c6f5c064a4,This is a generic heading sentence; the actual removed features are separate entries.,2026-11-01
+dj-a938e708b944403b,The sentence refers to prior context and gives no standalone setting or behavior.,2026-11-01
+dj-4e03e59dd540443f,This is a fragment of a list and does not say what the attribute does on its own.,2026-11-01
+dj-802649339fdb0eb5,This is a fragment of a list and does not say what the attribute does on its own.,2026-11-01
+dj-89d1d6955bf1654a,This only introduces a missing code example.,2026-11-01
+dj-53628809ef71e5fc,This only introduces missing HTML output.,2026-11-01
+dj-61d6953f6615cbb3,The phrase 'These settings' has no named referent in the extracted entry; the example is missing.,2026-11-01
+dj-ed581c8f20c4e925,This refers to a missing Content-Security-Policy header example.,2026-11-01
+dj-62259fa7f2df222c,This points to documentation rather than stating an affected behavior.,2026-11-01
+dj-d2e6e50dd5f278ab,This only points to a separate migration guide and states no change.,2026-11-01
+dj-c0429469c52c9b51,This introduces a missing enqueue example and names no method or concrete behavior.,2026-11-01
+dj-1153b44d9ccc16a4,"This introduces an omitted historical settings example, not a standalone change.",2026-11-01
+dj-f75d4f5c9f437094,This is a fragment introducing an omitted AppConfig example.,2026-11-01
+dj-5950434072b40045,This historical background does not state the current change on its own.,2026-11-01
+dj-e4334074ebb8b266,This reassurance refers to prior context and does not identify a standalone change.,2026-11-01
+dj-54eb887a13f51045,This is a generic heading sentence; the actual removed features are separate entries.,2026-11-01

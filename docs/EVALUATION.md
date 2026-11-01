@@ -18,3 +18,10 @@ Run `python scripts/audit_near_duplicates.py` before freezing the split. The scr
 ## First pilot audit
 
 The 50-decision pilot has 49 usable model labels. At the default 0.88 corpus-wide similarity threshold, one flagged pair has both entries labeled and crosses the dev/test split: `dj-b142f460d25e91a9` (Django 5.1, dev, deprecation) and `dj-d6a87abb10b5e5c1` (Django 6.0, test, removal), similarity 0.890675. There is no flagged train/test pair among labeled rows at this threshold. No parameter tuning used the dev set, but the pair still makes the tiny test less independent in topic. Retain both in the first pilot result and disclose the issue; review the pair and define a duplicate-family policy before a final evaluation.
+
+
+The five `No targeted check stated` examples occur only in Django 4.2 (two), 5.0 (two), and 5.1 (one); 5.2 and 6.0 have none. A release-held-out test therefore cannot establish stable fifth-class quality from this corpus.
+
+## Full-corpus evaluation gate (2026-11-01)
+
+All 571 source candidates are accounted for: 531 model labels, 13 `UNCLEAR`, and 27 `EXCLUDE`. Before a new score, audit related entries across releases, decide whether to cluster or keep them within the same split, then freeze release-grouped train/dev/test assignments. The fifth class has only five labels; show its exact support in each split, and avoid claiming stable class-specific performance. Fit TF-IDF and model selection on train/dev only. Report both baselines and the classifier on an untouched test release, with per-class support and errors. The existing pilot score cannot be transferred to the expanded data.

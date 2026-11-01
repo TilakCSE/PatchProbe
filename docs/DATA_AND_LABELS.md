@@ -41,3 +41,6 @@ Deduplicate near-identical notes across releases before splitting. Group by rele
 ## Final corpus disposition
 
 For a full-corpus review, every extracted source ID must receive exactly one human-confirmed disposition: one of the five model labels, `UNCLEAR`, or `EXCLUDE`. Use `EXCLUDE` only when an entry is not a standalone substantive note, such as a heading sentence, bare symbol name, list fragment, or introduction to an example that the extractor omitted. Record a reason and preserve the source ID in a separate exclusions CSV; do not put `EXCLUDE` in a model labels CSV. A note can end with an omitted example and still be labelable if its own text clearly states the change. Near-duplicate release entries can still be substantive; keep their labels and handle similarity in the final evaluation split.
+
+
+The completed 2026-11-01 review applies this disposition rule to all 571 source IDs: 531 model labels, 13 `UNCLEAR`, and 27 `EXCLUDE`. See [annotation progress](ANNOTATION_PROGRESS.md) for class support and [excluded entries](../data/processed/excluded_entries.csv) for each exclusion reason.

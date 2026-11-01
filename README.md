@@ -11,7 +11,9 @@ PatchProbe classifies a software release-note entry into the **first downstream 
 
 ## Current state
 
-The repository contains 571 extracted candidate entries from 14 pinned Django release-note files. Eight review batches now contain 500 human-confirmed decisions: 487 model labels and 13 `UNCLEAR` review states. The [merged annotated CSV](data/processed/reviewed_labels.csv) can be regenerated from eight reviewer-name-free exports. The fifth planned class has only two confirmed examples. [Kavya's final 71-entry sheet](docs/KAVYA_FINAL_71_REVIEW.md) covers every remaining source ID with draft labels or proposed data-quality exclusions; none are confirmed yet. See [annotation progress](docs/ANNOTATION_PROGRESS.md) for counts. The CPU-only model and its small held-out score still describe the original 49-label pilot, not the expanded review data. Read [PROJECT_STATUS.md](PROJECT_STATUS.md) for remaining work.
+All **571** entries extracted from 14 pinned Django release-note files now have a human-confirmed disposition: **531 model labels, 13 `UNCLEAR`, and 27 `EXCLUDE`**. The five model classes have support of 233/91/106/96/5 in [label-guide order](docs/DATA_AND_LABELS.md). [The full annotated corpus](data/processed/annotated_corpus.csv) includes every source entry and decision; [reviewed labels](data/processed/reviewed_labels.csv) contain 544 rows and [exclusions](data/processed/excluded_entries.csv) contain 27. See [annotation progress](docs/ANNOTATION_PROGRESS.md) for batch details.
+
+The existing local model and its score still use only the original 49-label pilot. The full dataset has **not yet been used for a final model evaluation**. A new release-grouped split and cross-release near-duplicate audit are required before retraining and reporting performance. Read [PROJECT_STATUS.md](PROJECT_STATUS.md) for the remaining work.
 
 ## Run locally
 
@@ -30,13 +32,15 @@ The committed `data/processed/` files make the review demo work offline. To rebu
 
 Run `python scripts/audit_near_duplicates.py` to list highly similar notes from different releases in ignored `artifacts/data_audit/near_duplicates.csv`. Review these pairs before interpreting a release-held-out score; the script does not delete or relabel entries.
 
-With the confirmed pilot decisions, reproduce the pilot training run:
+To reproduce the validated full-corpus CSVs, run `python scripts/merge_reviewed_labels.py` and then `python scripts/build_annotated_corpus.py`. The named reviewer records stay local; the committed exports contain aliases and dates.
+
+To reproduce the **historical pilot** training run:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\train_model.py --labels data\processed\pilot_reviewed_labels.csv
 ```
 
-The committed label export records only a reviewer alias and date; the original name and exact timestamps remain in the ignored local annotation file. To show the 50/50 annotation count in a fresh clone, copy the export to `data/annotations/pilot_labels.csv` before starting the app. Training stops if the selected labels file is absent or lacks enough release groups. A completed run writes an ignored `artifacts/model/` directory with the split manifest, metrics, predictions, and fitted model. The current run has only 49 usable labels across four observed classes; see [docs/MODEL_CARD.md](docs/MODEL_CARD.md) before citing a number.
+The committed label export records only a reviewer alias and date; the original name and exact timestamps remain in the ignored local annotation file. To show the 50/50 annotation count in a fresh clone, copy the export to `data/annotations/pilot_labels.csv` before starting the app. Training stops if the selected labels file is absent or lacks enough release groups. A completed run writes an ignored `artifacts/model/` directory with the split manifest, metrics, predictions, and fitted model. The currently documented model run has only 49 usable labels across four observed classes; see [docs/MODEL_CARD.md](docs/MODEL_CARD.md) before citing a number.
 
 ## Pipeline
 

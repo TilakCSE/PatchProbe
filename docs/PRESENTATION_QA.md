@@ -1,5 +1,7 @@
 # Presentation guide and likely professor questions
 
+> **Historical pilot material.** The 2026-11-01 full review now has 531 model labels, 13 `UNCLEAR`, and 27 exclusions. The model, metrics, and demo steps below still describe the original 49-label pilot. Refresh them after a new grouped evaluation; see [annotation progress](ANNOTATION_PROGRESS.md).
+
 Team 8 should be ready for the earliest possible date, Monday 2026-10-19. The turn may instead be 21 or 23 October; the rubric has not been supplied.
 
 ## One sentence

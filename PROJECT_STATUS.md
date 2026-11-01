@@ -4,12 +4,12 @@ Updated 2026-11-01.
 
 ## Current annotation status
 
-- Eight batches contain **500 human-confirmed decisions**: 487 model labels and 13 `UNCLEAR` states. The source corpus has 571 entries, leaving 71 without a decision. See [annotation progress](docs/ANNOTATION_PROGRESS.md).
-- Confirmed model-label support is API/code 219, configuration/deployment 81, data/schema 94, UI/output 91, and No targeted check stated 2. The fifth class is too sparse for a credible class-specific metric.
-- Bhargav confirmed all 50 suggestions in [batch 02](docs/BHARGAV_BATCH_02_REVIEW.md). His name and exact timestamps remain in an ignored local record; a reviewer-name-free export is included in `data/processed/reviewed_labels.csv` by `python scripts/merge_reviewed_labels.py`.
-- [Kavya's final sheet](docs/KAVYA_FINAL_71_REVIEW.md) contains every one of the 71 unused IDs. It proposes 44 model labels and 27 data-quality exclusions. All reviewer fields are blank; none of these draft decisions are in the confirmed data. After review, store exclusions separately and reconcile all 571 IDs.
-- The published 0.276 five-label macro-F1 belongs to the original 49-label pilot only. Freeze a fresh release-grouped split and audit near-duplicates before reporting a final model score. Later reviews were non-blind confirmation of visible suggestions and do not measure independent annotator agreement.
-- Next steps: complete Kavya's review, audit cross-release duplicates, resolve sparse fifth-class evaluation, retrain with a defensible split, and polish the final UI and deployment plan.
+- The full 571-entry source corpus has a confirmed disposition: **531 model labels, 13 `UNCLEAR`, and 27 `EXCLUDE`**. The merged labels file has 544 rows; the exclusions file has 27. The [full annotated corpus](data/processed/annotated_corpus.csv) joins every decision with source text and provenance. See [annotation progress](docs/ANNOTATION_PROGRESS.md).
+- Five-class support is API/code 233, configuration/deployment 91, data/schema 106, UI/output 96, and No targeted check stated 5. The fifth class remains sparse.
+- Kavya confirmed all 71 proposals in [the final review sheet](docs/KAVYA_FINAL_71_REVIEW.md): 44 model labels and 27 exclusions for non-standalone extracted fragments. The ignored local records keep her name and exact timestamps; public files omit them.
+- `python scripts/merge_reviewed_labels.py` regenerates the merged 544-row labels file from nine exports. `python scripts/build_annotated_corpus.py` verifies complete non-overlapping coverage and writes the 571-row annotated corpus. The full test suite passes (28 tests on 2026-11-01).
+- The existing 0.276 five-label macro-F1 and local model artifact still describe the original **49-label pilot only**. A new release-grouped split, duplicate audit, retraining, and per-class evaluation are the next work. The later annotation batches were non-blind confirmation of visible suggestions and cannot estimate independent reviewer agreement.
+- Presentation slides, speaking guide, and live demo were prepared for the original pilot and need a refresh after final evaluation. The Streamlit UI currently loads the local pilot model until a newly evaluated artifact replaces it.
 
 ## Historical MVP snapshot from 2026-10-18
 

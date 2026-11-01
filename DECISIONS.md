@@ -149,3 +149,12 @@ Each decision records the choice, evidence, alternatives, and what would change 
 **Choice:** Keep Bhargav's named, timestamped record local, publish a name-free date-only export, and regenerate the validated merge. Present every remaining ID to Kavya without the earlier text-length and similarity filters. Propose labels for 44 substantive entries and `EXCLUDE` for 27 incomplete or generic extraction fragments. `EXCLUDE` is a corpus-quality disposition, not a sixth class; await her explicit review before creating the exclusions CSV or adding any of the 44 labels.
 
 **Risk and next decision:** Similar entries across releases remain in the annotated corpus; a final grouped split must audit or cluster them to prevent leakage. The fifth class has only two confirmed examples. After Kavya reviews the final queue, reconcile every source ID to one label, `UNCLEAR`, or exclusion and record exact counts. The original model score remains pilot-only.
+
+
+## D018 — Complete source disposition and public corpus (2026-11-01)
+
+**Evidence:** Kavya explicitly confirmed all 71 decisions in the final queue: 44 model labels and 27 exclusions. Across nine batches, all 571 pinned source IDs have exactly one disposition: 531 five-class labels, 13 `UNCLEAR`, and 27 `EXCLUDE`. Confirmed class support is 233/91/106/96/5 in guide order. The 27 exclusions are non-standalone fragments or headings, not negative examples. Reviewers saw proposed decisions, so these labels do not measure independent agreement.
+
+**Choice:** Keep Kavya's named, timestamped label and exclusion records local. Publish a name-free label export and an exclusion CSV with IDs, reasons, and dates. Regenerate the 544-row reviewed-label merge and a 571-row `annotated_corpus.csv` that preserves source provenance, decisions, and a model-only target column. A new builder rejects missing IDs, overlaps, unknown IDs, and malformed exclusions. Keep historical queue and suggestion files as review provenance.
+
+**Next decision:** The five examples in `No targeted check stated` are still sparse. Review cross-release near-duplicate families, freeze a fresh grouped split, then retrain and report baselines, per-class support, errors, and uncertainty. Until then, the 0.276 macro-F1 and local artifact remain pilot-only. Refresh the presentation and UI after the final evaluation.
