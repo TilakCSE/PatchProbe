@@ -122,3 +122,12 @@ Each decision records the choice, evidence, alternatives, and what would change 
 **Choice:** Store Tilak's named, timestamped decisions locally, publish a name-free date-only export, and regenerate the validated merged CSV. Prepare 50 new draft entries for Kavya: ten per feature release. Only two patch-release candidates survived the existing text-length, fragment, and near-duplicate filters, so this queue does not claim patch-release coverage. Each draft label has a text-based reason and a source link; human-decision fields remain blank.
 
 **Risk and next decision:** All confirmed batches involved visible agent suggestions, so they do not measure independent annotator agreement. One Kavya draft row may fit the previously absent `No targeted check stated` class; she must review it under the fixed guide before it counts. Recheck data quality, class support, and cross-release duplicates before a new held-out evaluation. The existing model score remains pilot-only.
+
+
+## D015 — Kavya confirmation and Om's larger queue (2026-11-01)
+
+**Evidence:** Kavya explicitly confirmed all 50 proposals in her second batch, including two `UNCLEAR` states and one `No targeted check stated` label. Six reviewed batches now contain 350 distinct IDs: 337 model labels and 13 `UNCLEAR`. Confirmed class support is 146/49/68/73/1 in guide order.
+
+**Choice:** Keep Kavya's named, timestamped record local, publish a name-free date-only export, and regenerate the validated merge. Prepare 100 source-linked draft suggestions for Om from remaining IDs: 26 from Django 4.2, 32 from 5.0, 12 from 5.1, and 30 from 6.0. Filter obvious near-duplicates and incomplete fragments. Remaining 5.2 entries failed the current similarity filter; patch-release candidates were too few for a balanced quota. Suggestions have reasons and blank human-decision fields.
+
+**Risk and next decision:** One confirmed fifth-class example is insufficient for a meaningful class-specific score. Om's row 13 is only a suggestion. All reviews so far showed recommendations to reviewers, so they do not estimate independent agreement. Audit cross-release similarity and select a fresh held-out split before retraining; the original model score remains pilot-only.

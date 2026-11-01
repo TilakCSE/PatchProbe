@@ -62,3 +62,10 @@ Om Nathani reviewed all 50 rows in [Batch 04](BATCH_04_REVIEW.md) and confirmed 
 Tilaksinh Chauhan confirmed all 100 visible suggestions in [Tilak batch 02](TILAK_BATCH_02_REVIEW.md), retaining five `UNCLEAR` states. The ignored named CSV records his decisions with exact timestamps; `data/processed/tilak_batch_02_reviewed_labels.csv` is a name-free date-only export. The validated merged CSV now has 300 decisions, 289 model labels, and 11 `UNCLEAR` states.
 
 [Kavya batch 02](KAVYA_BATCH_02_REVIEW.md) contains 50 new draft suggestions from five feature releases. The suggestion CSV has blank reviewer-decision fields. None may enter training until Kavya confirms or changes it. Row 30 proposes the first `No targeted check stated` label and deserves particular scrutiny against the guide. The two proposed `UNCLEAR` rows are 10 and 45. The review remains non-blind because proposed labels are visible.
+
+
+## Sixth confirmed batch and Om's second draft (2026-11-01)
+
+Kavya Jariwala confirmed all 50 visible suggestions in [Kavya batch 02](KAVYA_BATCH_02_REVIEW.md), retaining two `UNCLEAR` states and confirming one `No targeted check stated` decision. The ignored named CSV records her decisions with exact timestamps; `data/processed/kavya_batch_02_reviewed_labels.csv` is a name-free date-only export. The validated merged CSV now has 350 decisions, 337 model labels, and 13 `UNCLEAR` states.
+
+[Om batch 02](OM_BATCH_02_REVIEW.md) contains 100 new draft suggestions from four feature releases. The suggestion CSV has blank reviewer-decision fields. None may enter training until Om confirms or changes it. Row 13 proposes another `No targeted check stated` example and should be checked carefully against the guide. This review remains non-blind because proposed labels are visible.

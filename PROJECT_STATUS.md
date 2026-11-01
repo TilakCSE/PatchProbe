@@ -4,12 +4,12 @@ Updated 2026-11-01.
 
 ## Current annotation status
 
-- Five batches contain **300 human-confirmed decisions**: 289 model-usable labels and 11 `UNCLEAR` states. The source corpus has 571 entries, leaving 271 without a human decision. See [annotation progress](docs/ANNOTATION_PROGRESS.md).
-- Confirmed model-label support is API/code 129, configuration/deployment 44, data/schema 55, UI/output 61, and No targeted check stated 0. Do not invent fifth-class labels to balance the dataset.
-- Tilaksinh confirmed all 100 suggestions in [batch 02](docs/TILAK_BATCH_02_REVIEW.md), including five `UNCLEAR` states. The named local record remains ignored; the reviewer-name-free export is merged into `data/processed/reviewed_labels.csv` by `python scripts/merge_reviewed_labels.py`.
-- [Kavya batch 02](docs/KAVYA_BATCH_02_REVIEW.md) contains 50 new draft suggestions, with blank human decisions. It includes one proposed No targeted check stated example. Nothing from this batch is yet in training data.
+- Six batches contain **350 human-confirmed decisions**: 337 model-usable labels and 13 `UNCLEAR` states. The source corpus has 571 entries, leaving 221 without a human decision. See [annotation progress](docs/ANNOTATION_PROGRESS.md).
+- Confirmed model-label support is API/code 146, configuration/deployment 49, data/schema 68, UI/output 73, and No targeted check stated 1. The fifth class needs more support before a credible class-specific metric.
+- Kavya confirmed all 50 suggestions in [batch 02](docs/KAVYA_BATCH_02_REVIEW.md), including two `UNCLEAR` states and one No targeted check stated label. The named local record remains ignored; the reviewer-name-free export is merged into `data/processed/reviewed_labels.csv` by `python scripts/merge_reviewed_labels.py`.
+- [Om batch 02](docs/OM_BATCH_02_REVIEW.md) contains 100 new draft suggestions, with blank human decisions. It includes another proposed No targeted check stated example. Nothing from this batch is yet in training data.
 - The published 0.276 five-label macro-F1 belongs to the original 49-label pilot only. Freeze a fresh release-grouped split and audit near-duplicates before reporting a final model score. These later reviews were non-blind confirmation of visible suggestions and do not constitute an independent agreement estimate.
-- Next steps: complete human review, resolve the five-versus-four-class taxonomy based on observed support, rerun defensible evaluation, then polish the final UI and deployment plan.
+- Next steps: complete human review, resolve the sparse fifth class, rerun defensible evaluation, then polish the final UI and deployment plan.
 
 ## Historical MVP snapshot from 2026-10-18
 

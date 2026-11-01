@@ -11,7 +11,7 @@ PatchProbe classifies a software release-note entry into the **first downstream 
 
 ## Current state
 
-The repository contains 571 extracted candidate entries from 14 pinned Django release-note files. Five review batches now contain 300 human-confirmed decisions: 289 model labels and 11 `UNCLEAR` review states. The [merged annotated CSV](data/processed/reviewed_labels.csv) can be regenerated from five reviewer-name-free exports. The fifth planned class has zero confirmed examples. [Kavya's next 50-row sheet](docs/KAVYA_BATCH_02_REVIEW.md) contains draft suggestions only; see [annotation progress](docs/ANNOTATION_PROGRESS.md) for exact counts. The CPU-only model and its small held-out score still describe the original 49-label pilot, not the expanded review data. Read [PROJECT_STATUS.md](PROJECT_STATUS.md) for remaining work.
+The repository contains 571 extracted candidate entries from 14 pinned Django release-note files. Six review batches now contain 350 human-confirmed decisions: 337 model labels and 13 `UNCLEAR` review states. The [merged annotated CSV](data/processed/reviewed_labels.csv) can be regenerated from six reviewer-name-free exports. The fifth planned class has one confirmed example and remains too sparse for a credible class-specific metric. [Om's next 100-row sheet](docs/OM_BATCH_02_REVIEW.md) contains draft suggestions only; see [annotation progress](docs/ANNOTATION_PROGRESS.md) for exact counts. The CPU-only model and its small held-out score still describe the original 49-label pilot, not the expanded review data. Read [PROJECT_STATUS.md](PROJECT_STATUS.md) for remaining work.
 
 ## Run locally
 
