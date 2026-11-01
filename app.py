@@ -85,7 +85,7 @@ def _corpus_view() -> None:
     visible_columns = ["entry_id", "release", "text", "review_decision", "source_url"]
     st.dataframe(
         pd.DataFrame(filtered, columns=visible_columns),
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
         column_config={"source_url": st.column_config.LinkColumn("Official source")},
     )
