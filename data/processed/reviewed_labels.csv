@@ -199,3 +199,103 @@ dj-ea8a4b3db9ca42d0,API/code compatibility,Human reviewer (agent-assisted),Human
 dj-6adf916cf27f4d3f,UI/output behavior,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 48. Reason: Rendered error-page HTML changes.,2026-10-18
 dj-dc03a5ae696d4d53,UI/output behavior,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 49. Reason: Redirect response and HTTP method behavior; also exposes a new API argument.,2026-10-18
 dj-b1a2a162dc7f12a0,Data/schema migration,Human reviewer (agent-assisted),Human confirmed entire agent review draft in chat on 2026-10-18; draft row 50. Reason: SQLite JSON query semantics.,2026-10-18
+dj-c9f1d86b95decabb,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. argon2-cffi has a new minimum installed version.,2026-11-01
+dj-bc6ecfae352920de,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Application code can call the new FromWKB and FromWKT functions.,2026-11-01
+dj-b64c56240aa3d4d2,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The admin's fonts and CSS overrides change visible styling.,2026-11-01
+dj-4a43b0aa07c74863,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The supported psycopg driver version is a deployment dependency.,2026-11-01
+dj-7ba587321c7cea8c,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Replacing index_together concerns the database index definition.,2026-11-01
+dj-b0cece5dd42a4eea,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Transaction statements now appear in DEBUG log output.,2026-11-01
+dj-7552789ddda7dc35,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Model gains named async methods for code to call.,2026-11-01
+dj-dca902e4b419c816,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. makemigrations --update changes generated migration operations.,2026-11-01
+dj-b95f515917eab967,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Encoded JSON literals affect JSONField database value semantics.,2026-11-01
+dj-597808d7d1899ca6,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Custom save methods must handle the update_fields argument correctly.,2026-11-01
+dj-2341f64ca23aea16,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The file-storage setting name changes in project configuration.,2026-11-01
+dj-d215f2a7e069be24,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. STORAGES configures file and static-file backend choices.,2026-11-01
+dj-726eb907dae5be02,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The array overlap lookup changes accepted ORM query inputs.,2026-11-01
+dj-e2e1d6cefd3845f2,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. AlterModelTableComment is a database migration operation.,2026-11-01
+dj-84715c40f992e27f,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. GZipMiddleware changes compressed HTTP response bytes.,2026-11-01
+dj-6489551cc6a6453f,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The new translation changes language shown in the interface.,2026-11-01
+dj-e9848db3721fe466,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. inspectdb changes how a CharField is inferred from database metadata.,2026-11-01
+dj-fde6932bcb0ca6fc,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. StreamingHttpResponse can consume async iterators under ASGI.,2026-11-01
+dj-53a26ce0817c6705,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. UserCreationForm now saves many-to-many values to persistent data.,2026-11-01
+dj-86a1ecdd2043df42,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The new translation changes user-visible language.,2026-11-01
+dj-21e4ef44e3d007e5,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The two test assertion methods no longer accept those call arguments.,2026-11-01
+dj-e470f7f664ff2bf0,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. BoundField.as_field_group changes the template used to render a field.,2026-11-01
+dj-8319d6da9eb1f5ab,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Tests can call the new assertMessages assertion method.,2026-11-01
+dj-e18113f343eaf133,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. URLField gains a named argument for form code.,2026-11-01
+dj-8e5670eefec63c29,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. colorama has a new minimum installed version.,2026-11-01
+dj-6bd35b7b8592bfa9,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The supported Oracle Python driver changes for deployment.,2026-11-01
+dj-bfe7ac5e6607ea08,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Async view code can handle client disconnects for cleanup.,2026-11-01
+dj-22c340c7b9814198,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. HttpRequest gains the auser method for code to call.,2026-11-01
+dj-01dbf017c6eeb1ea,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. AsyncClient gains a follow parameter in test code.,2026-11-01
+dj-d2ce1f5ac552b9d6,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Updated choices are normalized into a new canonical Python value shape.,2026-11-01
+dj-4f98d626fc69234a,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. update_or_create gains a create_defaults call argument.,2026-11-01
+dj-73ce2c03d92cf9ad,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. File.open forwards its positional and keyword call arguments.,2026-11-01
+dj-4e231316ad07dcad,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. MySQL 8.0.11 or later is required in the deployed database.,2026-11-01
+dj-b273243d421ee60d,Data/schema migration,Human reviewer,"Human-confirmed after reviewing the 100-row suggestion sheet. makemigrations generates an AlterField operation, even if it is a no-op.",2026-11-01
+dj-a69e50f7011856f0,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Admin list filters now handle multi-value query parameters in the interface.,2026-11-01
+dj-2946844b8483f1a1,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. GEOSGeometry gains a named geometry-comparison method.,2026-11-01
+dj-7f8247ead72eacfa,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Cached functions can now be serialized into migrations.,2026-11-01
+dj-120492989b4cda79,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Third-party app code should fix deprecations for Django 5.0 compatibility.,2026-11-01
+dj-e148b6d9e48a48f3,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. OGRGeometry gains a centroid property for code to read.,2026-11-01
+dj-1ea0b1ec665f6b36,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Model.save and asave callers must move positional values to keywords.,2026-11-01
+dj-c47bb20fb2a41fdb,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Expression gains a Python attribute controlling validation behavior.,2026-11-01
+dj-647753226b554227,UNCLEAR,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The note names both middleware redirect behavior and a view decorator; routing setup and code are plausible first checks.,2026-11-01
+dj-59c73b0b265e0e49,UNCLEAR,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The note changes session-cache storage handling and error-log output; both checks are explicit.,2026-11-01
+dj-66f72e2ebbc08247,UNCLEAR,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The form saves an unusable password and changes admin page behavior; data/auth state and UI checks both matter.,2026-11-01
+dj-8e3ae4d2beee8433,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. makemigrations now prints different symbols in command output.,2026-11-01
+dj-62afa19a6411cb13,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The fieldset renders new details and summary HTML elements.,2026-11-01
+dj-ca9fce341ec17d38,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Assertion failure messages now include haystack text.,2026-11-01
+dj-d599d9b309ff4e5a,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Code can call the new domain-name validator class or function.,2026-11-01
+dj-ebbe289df2de19a1,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Test code calling assertQuerysetEqual must change.,2026-11-01
+dj-42ae7be519a47cbe,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The PostgreSQL connection pool is selected through database OPTIONS.,2026-11-01
+dj-b14b9502d2cbd3eb,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. makemigrations displays symbols for operation categories.,2026-11-01
+dj-90191dc1142d59ab,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The form fieldset renders an aria-describedby attribute.,2026-11-01
+dj-a6663c521e47bafb,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Custom template-tag code can pass data through Parser to Template.,2026-11-01
+dj-8038b8b0b35ac963,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. list_display can show related-model fields in the admin table.,2026-11-01
+dj-abfc06ff06216ed9,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. FromWKB and FromWKT gain an optional srid call argument.,2026-11-01
+dj-6a8ff4ba985cbfab,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. order_by changes supported ordering of ORM query results.,2026-11-01
+dj-01d080c1626a83bf,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. GeoIP2.country exposes additional return-value keys.,2026-11-01
+dj-245026eb59d3a39b,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. A database-backend method now returns its input unchanged.,2026-11-01
+dj-2f1f40af9fddef5c,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. reverse and reverse_lazy gain query and fragment keyword arguments.,2026-11-01
+dj-0896989ac8c3c94e,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Aggregate function calls now raise TypeError for wrong argument counts.,2026-11-01
+dj-6a0c228821685d31,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. An environment variable controls the runserver warning.,2026-11-01
+dj-f00d25a9f516c502,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. SQLite CharField schema no longer requires max_length.,2026-11-01
+dj-437a0b96dc0778cd,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Custom serializers now extend a Deserializer class rather than a function.,2026-11-01
+dj-958df5e44fe7eaa8,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. A stylesheet processing instruction is added to feed output.,2026-11-01
+dj-32b33a0e1871342f,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The redirect response can use different HTTP status codes.,2026-11-01
+dj-c7068115d2ed4748,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. format_html_join accepts mapping values passed as keyword arguments.,2026-11-01
+dj-4fb7e64520d2dffb,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The admin template gains a block affecting rendered page content.,2026-11-01
+dj-30c1ff70517f87c6,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. MySQL now supports these spatial ORM lookups.,2026-11-01
+dj-6be4e414a62b8ad8,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. BoundField exposes ARIA description text for rendered templates.,2026-11-01
+dj-fa875e72fd1eea4e,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Library gains a decorator for defining custom block tags.,2026-11-01
+dj-078c223b0a181fcf,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Test fixture data becomes available earlier in setUpClass.,2026-11-01
+dj-21c91c9037b5e764,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The MySQL connection charset default and DATABASES option change.,2026-11-01
+dj-f8a40f7edb69080c,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. RemoteUserMiddleware subclasses need an async override.,2026-11-01
+dj-1c46ed5022e97f72,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. CompositePrimaryKey changes the database primary-key schema.,2026-11-01
+dj-b1cf4044c13415af,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Permissions now change which admindocs model pages are visible.,2026-11-01
+dj-79e5d031414a7165,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The default project template omits a context processor setting.,2026-11-01
+dj-5a2ea893bde42a53,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The system check verifies django.contrib.postgres is installed.,2026-11-01
+dj-7898dac145983c8b,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. EmailMessage.message returns a different Python object type.,2026-11-01
+dj-4cd4d16d8e80e1e6,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The removed ForeignObject method requires call-site review.,2026-11-01
+dj-c86600580a2a6291,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The transitional HTTPS setting is deprecated.,2026-11-01
+dj-b0abf963b55caeb3,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. GEOSGeometry gains the hasm property for code to read.,2026-11-01
+dj-fccc186303613cf1,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Constraints gain a registered check method.,2026-11-01
+dj-9251157d15ef54ef,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Database backends can set a named DatabaseFeatures attribute.,2026-11-01
+dj-4477e12e473786f4,UNCLEAR,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. A configuration default changes and can affect database primary-key schema; both checks are explicit.,2026-11-01
+dj-7675e0e48b5d2cd6,UNCLEAR,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The new Tasks API and background worker deployment are both plausible first checks.,2026-11-01
+dj-1e5ce06380134918,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. AdminSite gains an attribute for selecting a password-change form.,2026-11-01
+dj-a4b7d37cb533d0a4,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The querystring tag changes URLs rendered in links.,2026-11-01
+dj-2e1d2abd3f648f2e,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. AsyncPaginator and AsyncPage are new classes for code to use.,2026-11-01
+dj-55794410a09d9106,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. EmailMessage.attach accepts a new MIMEPart argument type.,2026-11-01
+dj-a15e682a99d0ed08,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The static-files manifest output now has stable path ordering.,2026-11-01
+dj-b7dffeac71b02af5,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Project setup commands now create a missing target directory.,2026-11-01
+dj-f1d77b81d9ec4f95,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. EmailMessage constructors now restrict positional arguments.,2026-11-01
+dj-5ccaf6e861ba495e,Configuration/deployment,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. CSP trusted-source policy is an application security configuration.,2026-11-01
+dj-e2e11e844245d968,API/code compatibility,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. EmailMessage.encoding no longer accepts a legacy Charset object.,2026-11-01
+dj-dcf0e14c4bba7df0,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Migration serialization now supports unusual keyword names.,2026-11-01
+dj-3b38f31e42c8f79c,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. The file overwrite fix prevents persistent file-content corruption.,2026-11-01
+dj-49b2515cbe8ef124,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. A composite-key filter changes ORM query behavior.,2026-11-01
+dj-485803ee534b9de7,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. bulk_create on SQLite changes ORM data-write behavior.,2026-11-01
+dj-41502838e5207a6d,Data/schema migration,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Aggregate annotations and grouping change ORM query behavior.,2026-11-01
+dj-47264f3af3f7a71d,UI/output behavior,Human reviewer,Human-confirmed after reviewing the 100-row suggestion sheet. Custom admin templates no longer render object tools twice.,2026-11-01

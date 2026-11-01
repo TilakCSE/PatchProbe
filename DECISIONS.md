@@ -113,3 +113,12 @@ Each decision records the choice, evidence, alternatives, and what would change 
 **Why:** A larger batch reduces review handoffs while preserving source and release variety. It is an annotation work queue, not a random sample for final evaluation or a way to fill class quotas. Five mixed rows are proposed as `UNCLEAR`; no row clearly supports the still-unobserved fifth class.
 
 **Limit:** Reviewers may find additional extraction defects or disagree with the suggestions. `EXCLUDE` is a review instruction, not a model class. The confirmed dataset remains 200 rows until the review is complete, and the old model score still reflects only the original pilot.
+
+
+## D014 — Tilak confirmation and next reviewer queue (2026-11-01)
+
+**Evidence:** Tilaksinh explicitly confirmed every proposal in the 100-row batch. Five remain `UNCLEAR`; the other 95 add 40 API/code, 15 configuration/deployment, 19 data/schema, and 21 UI/output labels. The five reviewed batches now have 300 distinct IDs, 289 model labels, and 11 `UNCLEAR` states. The fifth target class still has zero confirmed support.
+
+**Choice:** Store Tilak's named, timestamped decisions locally, publish a name-free date-only export, and regenerate the validated merged CSV. Prepare 50 new draft entries for Kavya: ten per feature release. Only two patch-release candidates survived the existing text-length, fragment, and near-duplicate filters, so this queue does not claim patch-release coverage. Each draft label has a text-based reason and a source link; human-decision fields remain blank.
+
+**Risk and next decision:** All confirmed batches involved visible agent suggestions, so they do not measure independent annotator agreement. One Kavya draft row may fit the previously absent `No targeted check stated` class; she must review it under the fixed guide before it counts. Recheck data quality, class support, and cross-release duplicates before a new held-out evaluation. The existing model score remains pilot-only.

@@ -4,12 +4,12 @@ Updated 2026-11-01.
 
 ## Current annotation status
 
-- The original pilot and the Kavya, Bhargav, and Om batches each contain 50 human-confirmed decisions. The merged shareable file is `data/processed/reviewed_labels.csv` and can be regenerated with `python scripts/merge_reviewed_labels.py`.
-- Across all 200 reviewed rows, **194 have a model label and six remain `UNCLEAR`**. The confirmed model-label counts are API/code 89, configuration/deployment 29, data/schema 36, UI/output 40, and No targeted check stated 0. The source corpus has 571 entries, leaving 371 unreviewed.
-- The named reviewer files remain ignored locally. Four shareable batch exports contain reviewer aliases and date-only timestamps. Om confirmed his full 50-row sheet with no changes or `UNCLEAR` rows.
-- The published 0.276 five-label macro-F1 belongs to the **original 49-label pilot only**. The newer labels include entries from the old held-out release. Freeze a fresh release-grouped split and audit near-duplicates before reporting a final model score. The fifth class still has zero support; do not invent labels to fill it.
-- Tilak has a new 100-row draft suggestion sheet at `docs/TILAK_BATCH_02_REVIEW.md`. These entries do not overlap the 200 confirmed IDs. They are **not** human labels until he reviews them; the confirmed count remains 200.
-- The next project steps are to review more entries, resolve the five-versus-four-class taxonomy based on evidence, rerun defensible evaluation, and polish the final user interface and deployment plan.
+- Five batches contain **300 human-confirmed decisions**: 289 model-usable labels and 11 `UNCLEAR` states. The source corpus has 571 entries, leaving 271 without a human decision. See [annotation progress](docs/ANNOTATION_PROGRESS.md).
+- Confirmed model-label support is API/code 129, configuration/deployment 44, data/schema 55, UI/output 61, and No targeted check stated 0. Do not invent fifth-class labels to balance the dataset.
+- Tilaksinh confirmed all 100 suggestions in [batch 02](docs/TILAK_BATCH_02_REVIEW.md), including five `UNCLEAR` states. The named local record remains ignored; the reviewer-name-free export is merged into `data/processed/reviewed_labels.csv` by `python scripts/merge_reviewed_labels.py`.
+- [Kavya batch 02](docs/KAVYA_BATCH_02_REVIEW.md) contains 50 new draft suggestions, with blank human decisions. It includes one proposed No targeted check stated example. Nothing from this batch is yet in training data.
+- The published 0.276 five-label macro-F1 belongs to the original 49-label pilot only. Freeze a fresh release-grouped split and audit near-duplicates before reporting a final model score. These later reviews were non-blind confirmation of visible suggestions and do not constitute an independent agreement estimate.
+- Next steps: complete human review, resolve the five-versus-four-class taxonomy based on observed support, rerun defensible evaluation, then polish the final UI and deployment plan.
 
 ## Historical MVP snapshot from 2026-10-18
 

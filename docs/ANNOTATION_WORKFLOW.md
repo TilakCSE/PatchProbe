@@ -55,3 +55,10 @@ Om Nathani reviewed all 50 rows in [Batch 04](BATCH_04_REVIEW.md) and confirmed 
 ## Tilak's 100-row draft batch (2026-11-01)
 
 [TILAK_BATCH_02_REVIEW.md](TILAK_BATCH_02_REVIEW.md) presents 100 new, source-linked entries with proposed labels and short reasons. The corresponding queue and suggestion CSVs are in `data/review_batches/`. They exclude the first 200 reviewed IDs and have blank human-decision fields. Tilak can confirm all, list corrections by row number, keep or change proposed `UNCLEAR` states, or mark a visibly broken extraction `EXCLUDE`. Do not save the proposals as reviewer labels until he explicitly confirms them. Any excluded extraction remains outside training and is counted separately.
+
+
+## Fifth confirmed batch and Kavya's second draft (2026-11-01)
+
+Tilaksinh Chauhan confirmed all 100 visible suggestions in [Tilak batch 02](TILAK_BATCH_02_REVIEW.md), retaining five `UNCLEAR` states. The ignored named CSV records his decisions with exact timestamps; `data/processed/tilak_batch_02_reviewed_labels.csv` is a name-free date-only export. The validated merged CSV now has 300 decisions, 289 model labels, and 11 `UNCLEAR` states.
+
+[Kavya batch 02](KAVYA_BATCH_02_REVIEW.md) contains 50 new draft suggestions from five feature releases. The suggestion CSV has blank reviewer-decision fields. None may enter training until Kavya confirms or changes it. Row 30 proposes the first `No targeted check stated` label and deserves particular scrutiny against the guide. The two proposed `UNCLEAR` rows are 10 and 45. The review remains non-blind because proposed labels are visible.
