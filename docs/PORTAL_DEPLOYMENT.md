@@ -7,7 +7,7 @@ The public portal is a separate Next.js application in `portal/`. Its Node route
 From the repository root after the full-data training run:
 
 ```powershell
-.\.venv\Scripts\python.exe scripts\train_full_model.py
+.\.venv\Scripts\python.exe scripts\train_full_corpus.py
 .\.venv\Scripts\python.exe scripts\export_portal_model.py
 .\.venv\Scripts\python.exe -m pytest tests\test_portable_inference.py
 .\.venv\Scripts\python.exe scripts\check_portal_parity.py
