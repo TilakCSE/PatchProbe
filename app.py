@@ -5,10 +5,13 @@ Run with: streamlit run app.py
 
 from __future__ import annotations
 
+import csv
 import sys
+from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
 
+import pandas as pd
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
@@ -34,11 +37,67 @@ from patchprobe.inference import (  # noqa: E402
 DEFAULT_ENTRIES = "data/processed/pilot_queue.csv"
 DEFAULT_LABELS = "data/annotations/pilot_labels.csv"
 PROJECT_ROOT = Path(__file__).resolve().parent
+CORPUS_PATH = PROJECT_ROOT / "data/processed/annotated_corpus.csv"
 
 
 def _safe_source_url(url: str) -> bool:
     parsed = urlparse(url)
     return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
+
+
+def _corpus_view() -> None:
+    st.title("PatchProbe: reviewed corpus")
+    st.caption("Explore every pinned Django note and its human-confirmed disposition. These rows are source data and review decisions, not model predictions.")
+    if not CORPUS_PATH.is_file():
+        st.error("The reviewed corpus is missing. Run scripts/build_annotated_corpus.py from the project root.")
+        return
+    with CORPUS_PATH.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+    decisions = Counter(row["review_decision"] for row in rows)
+    model_ready = sum(bool(row["model_label"]) for row in rows)
+    total_col, usable_col, unclear_col, excluded_col = st.columns(4)
+    total_col.metric("Source notes", len(rows))
+    usable_col.metric("Model labels", model_ready)
+    unclear_col.metric("Unclear", decisions["UNCLEAR"])
+    excluded_col.metric("Excluded", decisions["EXCLUDE"])
+
+    st.subheader("Label coverage")
+    chart_rows = [
+        {"First check area": label, "Reviewed notes": decisions[label]}
+        for label in LABEL_DEFINITIONS
+    ]
+    st.bar_chart(pd.DataFrame(chart_rows).set_index("First check area"), horizontal=True)
+    st.caption("The small 'No targeted check stated' class remains a key model limitation. UNCLEAR and EXCLUDE are not training labels.")
+
+    st.subheader("Inspect entries")
+    release_options = sorted({row["release"] for row in rows})
+    selected_releases = st.multiselect("Release", release_options, default=release_options)
+    decision_options = list(LABEL_DEFINITIONS) + ["UNCLEAR", "EXCLUDE"]
+    selected_decisions = st.multiselect("Review decision", decision_options, default=decision_options)
+    search = st.text_input("Find text", placeholder="Search the cleaned note text or entry ID").casefold().strip()
+    filtered = [
+        row for row in rows
+        if row["release"] in selected_releases
+        and row["review_decision"] in selected_decisions
+        and (not search or search in row["text"].casefold() or search in row["entry_id"].casefold())
+    ]
+    st.caption(f"Showing {len(filtered)} of {len(rows)} source notes")
+    visible_columns = ["entry_id", "release", "text", "review_decision", "source_url"]
+    st.dataframe(
+        pd.DataFrame(filtered, columns=visible_columns),
+        use_container_width=True,
+        hide_index=True,
+        column_config={"source_url": st.column_config.LinkColumn("Official source")},
+    )
+    if filtered:
+        selected_id = st.selectbox("Read a full entry", [row["entry_id"] for row in filtered])
+        selected = next(row for row in filtered if row["entry_id"] == selected_id)
+        st.write(selected["text"])
+        st.caption(f"Django {selected['release']} · {selected['review_decision']} · {selected['section_path']}")
+        if selected["review_note"]:
+            st.caption(f"Review note: {selected['review_note']}")
+        if _safe_source_url(selected["source_url"]):
+            st.link_button("Open official release note", selected["source_url"])
 
 
 def _prediction_view(metrics: dict) -> None:
@@ -76,17 +135,20 @@ def _prediction_view(metrics: dict) -> None:
 
 
 def main() -> None:
-    st.set_page_config(page_title="PatchProbe review", page_icon="🧩", layout="centered")
+    st.set_page_config(page_title="PatchProbe review", page_icon="🧩", layout="wide")
     model_status = artifact_status(PROJECT_ROOT)
     with st.sidebar:
         st.header("PatchProbe mode")
-        choices = ["Guided annotation"]
+        choices = ["Reviewed corpus", "Guided annotation"]
         if model_status.available:
             choices.append("Prediction review")
         workspace_mode = st.radio("Choose a mode", choices)
         if not model_status.available:
             st.info(model_status.reason)
 
+    if workspace_mode == "Reviewed corpus":
+        _corpus_view()
+        return
     if workspace_mode == "Prediction review":
         _prediction_view(model_status.metrics or {})
         return
