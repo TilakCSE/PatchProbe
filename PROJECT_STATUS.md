@@ -4,10 +4,10 @@ Updated 2026-11-01.
 
 ## Current annotation status
 
-- Six batches contain **350 human-confirmed decisions**: 337 model-usable labels and 13 `UNCLEAR` states. The source corpus has 571 entries, leaving 221 without a human decision. See [annotation progress](docs/ANNOTATION_PROGRESS.md).
-- Confirmed model-label support is API/code 146, configuration/deployment 49, data/schema 68, UI/output 73, and No targeted check stated 1. The fifth class needs more support before a credible class-specific metric.
-- Kavya confirmed all 50 suggestions in [batch 02](docs/KAVYA_BATCH_02_REVIEW.md), including two `UNCLEAR` states and one No targeted check stated label. The named local record remains ignored; the reviewer-name-free export is merged into `data/processed/reviewed_labels.csv` by `python scripts/merge_reviewed_labels.py`.
-- [Om batch 02](docs/OM_BATCH_02_REVIEW.md) contains 100 new draft suggestions, with blank human decisions. It includes another proposed No targeted check stated example. Nothing from this batch is yet in training data.
+- Seven batches contain **450 human-confirmed decisions**: 437 model-usable labels and 13 `UNCLEAR` states. The source corpus has 571 entries, leaving 121 without a human decision. See [annotation progress](docs/ANNOTATION_PROGRESS.md).
+- Confirmed model-label support is API/code 199, configuration/deployment 60, data/schema 87, UI/output 89, and No targeted check stated 2. The fifth class is still too sparse for a credible class-specific metric.
+- Om confirmed all 100 suggestions in [batch 02](docs/OM_BATCH_02_REVIEW.md), including one No targeted check stated label. The named local record remains ignored; the reviewer-name-free export is merged into `data/processed/reviewed_labels.csv` by `python scripts/merge_reviewed_labels.py`.
+- [Bhargav batch 02](docs/BHARGAV_BATCH_02_REVIEW.md) contains 50 new draft suggestions, with blank human decisions. The earlier 0.88 similarity filter yielded only 27 candidates, so this queue admits related but distinct source entries and records a 0.96 exclusion threshold. Audit these and other cross-release similarities before final evaluation.
 - The published 0.276 five-label macro-F1 belongs to the original 49-label pilot only. Freeze a fresh release-grouped split and audit near-duplicates before reporting a final model score. These later reviews were non-blind confirmation of visible suggestions and do not constitute an independent agreement estimate.
 - Next steps: complete human review, resolve the sparse fifth class, rerun defensible evaluation, then polish the final UI and deployment plan.
 

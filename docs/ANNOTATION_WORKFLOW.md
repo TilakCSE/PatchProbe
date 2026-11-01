@@ -69,3 +69,10 @@ Tilaksinh Chauhan confirmed all 100 visible suggestions in [Tilak batch 02](TILA
 Kavya Jariwala confirmed all 50 visible suggestions in [Kavya batch 02](KAVYA_BATCH_02_REVIEW.md), retaining two `UNCLEAR` states and confirming one `No targeted check stated` decision. The ignored named CSV records her decisions with exact timestamps; `data/processed/kavya_batch_02_reviewed_labels.csv` is a name-free date-only export. The validated merged CSV now has 350 decisions, 337 model labels, and 13 `UNCLEAR` states.
 
 [Om batch 02](OM_BATCH_02_REVIEW.md) contains 100 new draft suggestions from four feature releases. The suggestion CSV has blank reviewer-decision fields. None may enter training until Om confirms or changes it. Row 13 proposes another `No targeted check stated` example and should be checked carefully against the guide. This review remains non-blind because proposed labels are visible.
+
+
+## Seventh confirmed batch and Bhargav's second draft (2026-11-01)
+
+Om Nathani confirmed all 100 visible suggestions in [Om batch 02](OM_BATCH_02_REVIEW.md), including one `No targeted check stated` label and no `UNCLEAR`. The ignored named CSV records his decisions with exact timestamps; `data/processed/om_batch_02_reviewed_labels.csv` is a name-free date-only export. The validated merged CSV now has 450 decisions, 437 model labels, and 13 `UNCLEAR` states.
+
+[Bhargav batch 02](BHARGAV_BATCH_02_REVIEW.md) contains 50 new draft suggestions from four feature releases. The suggestion CSV has blank reviewer-decision fields. None may enter training until Bhargav confirms or changes it. The first similarity threshold left too few unused candidates, so this batch uses 0.96 to exclude only very close text; cross-release near-duplicates at the original 0.88 audit threshold need explicit handling before evaluation. This review remains non-blind because proposed labels are visible.

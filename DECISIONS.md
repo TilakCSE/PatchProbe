@@ -131,3 +131,12 @@ Each decision records the choice, evidence, alternatives, and what would change 
 **Choice:** Keep Kavya's named, timestamped record local, publish a name-free date-only export, and regenerate the validated merge. Prepare 100 source-linked draft suggestions for Om from remaining IDs: 26 from Django 4.2, 32 from 5.0, 12 from 5.1, and 30 from 6.0. Filter obvious near-duplicates and incomplete fragments. Remaining 5.2 entries failed the current similarity filter; patch-release candidates were too few for a balanced quota. Suggestions have reasons and blank human-decision fields.
 
 **Risk and next decision:** One confirmed fifth-class example is insufficient for a meaningful class-specific score. Om's row 13 is only a suggestion. All reviews so far showed recommendations to reviewers, so they do not estimate independent agreement. Audit cross-release similarity and select a fresh held-out split before retraining; the original model score remains pilot-only.
+
+
+## D016 — Om confirmation and broader final annotation queue (2026-11-01)
+
+**Evidence:** Om explicitly confirmed all 100 proposals in his second batch, including one `No targeted check stated` label and no `UNCLEAR`. Seven reviewed batches now contain 450 distinct IDs: 437 model labels and 13 `UNCLEAR`. Confirmed class support is 199/60/87/89/2 in guide order.
+
+**Choice:** Keep Om's named, timestamped record local, publish a name-free date-only export, and regenerate the validated merge. Prepare 50 source-linked draft suggestions for Bhargav from unused IDs: 14 from Django 4.2, 17 from 5.0, 10 from 5.1, and 9 from 6.0. Exclude incomplete fragments and text pairs at SequenceMatcher similarity at least 0.96. The prior 0.88 threshold left only 27 unused candidates; widening this annotation queue allows review of related release entries without claiming that they are independent evaluation examples.
+
+**Risk and next decision:** The 0.96 queue can contain near-duplicate entries by the earlier 0.88 audit criterion. Cluster or exclude cross-split related notes before a final model score. Two fifth-class labels are still inadequate for a class-specific quality claim. Om's confirmation was non-blind because suggestions were visible. The original model score remains pilot-only.
