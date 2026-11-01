@@ -4,12 +4,12 @@ Updated 2026-11-01.
 
 ## Current annotation status
 
-- Seven batches contain **450 human-confirmed decisions**: 437 model-usable labels and 13 `UNCLEAR` states. The source corpus has 571 entries, leaving 121 without a human decision. See [annotation progress](docs/ANNOTATION_PROGRESS.md).
-- Confirmed model-label support is API/code 199, configuration/deployment 60, data/schema 87, UI/output 89, and No targeted check stated 2. The fifth class is still too sparse for a credible class-specific metric.
-- Om confirmed all 100 suggestions in [batch 02](docs/OM_BATCH_02_REVIEW.md), including one No targeted check stated label. The named local record remains ignored; the reviewer-name-free export is merged into `data/processed/reviewed_labels.csv` by `python scripts/merge_reviewed_labels.py`.
-- [Bhargav batch 02](docs/BHARGAV_BATCH_02_REVIEW.md) contains 50 new draft suggestions, with blank human decisions. The earlier 0.88 similarity filter yielded only 27 candidates, so this queue admits related but distinct source entries and records a 0.96 exclusion threshold. Audit these and other cross-release similarities before final evaluation.
-- The published 0.276 five-label macro-F1 belongs to the original 49-label pilot only. Freeze a fresh release-grouped split and audit near-duplicates before reporting a final model score. These later reviews were non-blind confirmation of visible suggestions and do not constitute an independent agreement estimate.
-- Next steps: complete human review, resolve the sparse fifth class, rerun defensible evaluation, then polish the final UI and deployment plan.
+- Eight batches contain **500 human-confirmed decisions**: 487 model labels and 13 `UNCLEAR` states. The source corpus has 571 entries, leaving 71 without a decision. See [annotation progress](docs/ANNOTATION_PROGRESS.md).
+- Confirmed model-label support is API/code 219, configuration/deployment 81, data/schema 94, UI/output 91, and No targeted check stated 2. The fifth class is too sparse for a credible class-specific metric.
+- Bhargav confirmed all 50 suggestions in [batch 02](docs/BHARGAV_BATCH_02_REVIEW.md). His name and exact timestamps remain in an ignored local record; a reviewer-name-free export is included in `data/processed/reviewed_labels.csv` by `python scripts/merge_reviewed_labels.py`.
+- [Kavya's final sheet](docs/KAVYA_FINAL_71_REVIEW.md) contains every one of the 71 unused IDs. It proposes 44 model labels and 27 data-quality exclusions. All reviewer fields are blank; none of these draft decisions are in the confirmed data. After review, store exclusions separately and reconcile all 571 IDs.
+- The published 0.276 five-label macro-F1 belongs to the original 49-label pilot only. Freeze a fresh release-grouped split and audit near-duplicates before reporting a final model score. Later reviews were non-blind confirmation of visible suggestions and do not measure independent annotator agreement.
+- Next steps: complete Kavya's review, audit cross-release duplicates, resolve sparse fifth-class evaluation, retrain with a defensible split, and polish the final UI and deployment plan.
 
 ## Historical MVP snapshot from 2026-10-18
 

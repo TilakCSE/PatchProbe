@@ -36,3 +36,8 @@ Start with 50 varied entries. The interface should show one row at a time with t
 
 ## Data quality and split
 Deduplicate near-identical notes across releases before splitting. Group by release version; no release belongs to more than one split. Keep section headings and release metadata out of model input. Freeze test releases before tuning. Report exact accepted, excluded, and UNCLEAR counts plus class support.
+
+
+## Final corpus disposition
+
+For a full-corpus review, every extracted source ID must receive exactly one human-confirmed disposition: one of the five model labels, `UNCLEAR`, or `EXCLUDE`. Use `EXCLUDE` only when an entry is not a standalone substantive note, such as a heading sentence, bare symbol name, list fragment, or introduction to an example that the extractor omitted. Record a reason and preserve the source ID in a separate exclusions CSV; do not put `EXCLUDE` in a model labels CSV. A note can end with an omitted example and still be labelable if its own text clearly states the change. Near-duplicate release entries can still be substantive; keep their labels and handle similarity in the final evaluation split.

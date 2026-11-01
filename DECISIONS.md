@@ -140,3 +140,12 @@ Each decision records the choice, evidence, alternatives, and what would change 
 **Choice:** Keep Om's named, timestamped record local, publish a name-free date-only export, and regenerate the validated merge. Prepare 50 source-linked draft suggestions for Bhargav from unused IDs: 14 from Django 4.2, 17 from 5.0, 10 from 5.1, and 9 from 6.0. Exclude incomplete fragments and text pairs at SequenceMatcher similarity at least 0.96. The prior 0.88 threshold left only 27 unused candidates; widening this annotation queue allows review of related release entries without claiming that they are independent evaluation examples.
 
 **Risk and next decision:** The 0.96 queue can contain near-duplicate entries by the earlier 0.88 audit criterion. Cluster or exclude cross-split related notes before a final model score. Two fifth-class labels are still inadequate for a class-specific quality claim. Om's confirmation was non-blind because suggestions were visible. The original model score remains pilot-only.
+
+
+## D017 — Bhargav confirmation and full-corpus disposition queue (2026-11-01)
+
+**Evidence:** Bhargav explicitly confirmed all 50 proposals in his second batch. Eight reviewed batches contain 500 distinct IDs: 487 model labels and 13 `UNCLEAR`. Confirmed class support is 219/81/94/91/2 in guide order. Exactly 71 source IDs remain without a decision.
+
+**Choice:** Keep Bhargav's named, timestamped record local, publish a name-free date-only export, and regenerate the validated merge. Present every remaining ID to Kavya without the earlier text-length and similarity filters. Propose labels for 44 substantive entries and `EXCLUDE` for 27 incomplete or generic extraction fragments. `EXCLUDE` is a corpus-quality disposition, not a sixth class; await her explicit review before creating the exclusions CSV or adding any of the 44 labels.
+
+**Risk and next decision:** Similar entries across releases remain in the annotated corpus; a final grouped split must audit or cluster them to prevent leakage. The fifth class has only two confirmed examples. After Kavya reviews the final queue, reconcile every source ID to one label, `UNCLEAR`, or exclusion and record exact counts. The original model score remains pilot-only.

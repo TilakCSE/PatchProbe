@@ -76,3 +76,10 @@ Kavya Jariwala confirmed all 50 visible suggestions in [Kavya batch 02](KAVYA_BA
 Om Nathani confirmed all 100 visible suggestions in [Om batch 02](OM_BATCH_02_REVIEW.md), including one `No targeted check stated` label and no `UNCLEAR`. The ignored named CSV records his decisions with exact timestamps; `data/processed/om_batch_02_reviewed_labels.csv` is a name-free date-only export. The validated merged CSV now has 450 decisions, 437 model labels, and 13 `UNCLEAR` states.
 
 [Bhargav batch 02](BHARGAV_BATCH_02_REVIEW.md) contains 50 new draft suggestions from four feature releases. The suggestion CSV has blank reviewer-decision fields. None may enter training until Bhargav confirms or changes it. The first similarity threshold left too few unused candidates, so this batch uses 0.96 to exclude only very close text; cross-release near-duplicates at the original 0.88 audit threshold need explicit handling before evaluation. This review remains non-blind because proposed labels are visible.
+
+
+## Eighth confirmed batch and full remaining queue (2026-11-01)
+
+Bhargav Panchal confirmed all 50 visible suggestions in [Bhargav batch 02](BHARGAV_BATCH_02_REVIEW.md), with no `UNCLEAR`. His ignored named CSV has exact timestamps; `data/processed/bhargav_batch_02_reviewed_labels.csv` is the name-free date-only export. The validated merged CSV now has 500 decisions: 487 model labels and 13 `UNCLEAR`.
+
+[Kavya's final sheet](KAVYA_FINAL_71_REVIEW.md) includes every remaining source ID, including short fragments that earlier selection filters skipped. It proposes 44 model labels and 27 `EXCLUDE` decisions; none are saved as human decisions yet. On confirmation, save labels to Kavya's named local CSV and name-free public export. Put confirmed exclusions, source IDs, reasons, and date in a separate public CSV. Then assert that the union of reviewed labels and exclusions is exactly the 571-entry source set, with no overlap. The batch is non-blind because suggestions are visible.
