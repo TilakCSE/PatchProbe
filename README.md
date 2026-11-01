@@ -13,7 +13,9 @@ PatchProbe classifies a software release-note entry into the **first downstream 
 
 All **571** entries extracted from 14 pinned Django release-note files now have a human-confirmed disposition: **531 model labels, 13 `UNCLEAR`, and 27 `EXCLUDE`**. The five model classes have support of 233/91/106/96/5 in [label-guide order](docs/DATA_AND_LABELS.md). [The full annotated corpus](data/processed/annotated_corpus.csv) includes every source entry and decision; [reviewed labels](data/processed/reviewed_labels.csv) contain 544 rows and [exclusions](data/processed/excluded_entries.csv) contain 27. See [annotation progress](docs/ANNOTATION_PROGRESS.md) for batch details.
 
-The existing local model and its score still use only the original 49-label pilot. The full dataset has **not yet been used for a final model evaluation**. A new release-grouped split and cross-release near-duplicate audit are required before retraining and reporting performance. Read [PROJECT_STATUS.md](PROJECT_STATUS.md) for the remaining work.
+The full-corpus evaluation holds out later Django releases. After a documented cross-release similarity filter, the split contains **305 train / 109 development / 105 test** notes. The fixed TF-IDF and logistic-regression model reaches **0.733 test accuracy and 0.555 five-label macro-F1**, compared with 0.124 for the majority and 0.444 for the keyword baseline. This remains a **pilot result**: the fifth class has only five training examples and no development or test examples. Read the [model card](docs/MODEL_CARD.md) and [full evaluation](docs/FULL_CORPUS_EVALUATION.md) before citing the score.
+
+A separate model fitted to all 531 accepted labels powers the portable Next.js portal. A 15-note exploratory probe from React, VS Code, and Chrome matched **6 agent-proposed reference labels**. These are not independent human gold labels, so cross-product accuracy remains unknown. The [source-linked inputs and per-note results](data/external/probe_results.csv) make the limitation inspectable.
 
 ## Run locally
 
@@ -26,7 +28,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m streamlit run app.py
 ```
 
-Open the local URL printed by Streamlit. Enter your name, read one entry, choose the first area to verify, and save. The app resumes from `data/annotations/pilot_labels.csv`; that file is personal review data and is not committed by default. If a row is ambiguous, save `UNCLEAR` with a reason. The app offers a copyable prompt so an agent can explain the row while the reviewer retains the decision.
+Open the local URL printed by Streamlit. **Reviewed corpus** shows the complete dataset, label chart, filters, and source links. **Prediction review** uses the evaluated local model after the training command below. **Guided annotation** remains available for individual review decisions, saved locally to a CSV; it does not change the committed full corpus automatically.
 
 The committed `data/processed/` files make the review demo work offline. To rebuild the source dataset, run `python scripts/build_dataset.py` once with internet access. It caches pinned upstream RST sources under ignored `data/raw/django/`. Later, `python scripts/build_dataset.py --offline` uses that cache. Source revisions, hashes, counts, and selection rules are in [docs/DATA_PROVENANCE.md](docs/DATA_PROVENANCE.md) and `data/processed/manifest.json`.
 
@@ -34,16 +36,29 @@ Run `python scripts/audit_near_duplicates.py` to list highly similar notes from 
 
 To reproduce the validated full-corpus CSVs, run `python scripts/merge_reviewed_labels.py` and then `python scripts/build_annotated_corpus.py`. The named reviewer records stay local; the committed exports contain aliases and dates.
 
-To reproduce the **historical pilot** training run:
+To generate the current evaluated Streamlit model, the separate full-data serving model, and the external probe:
 
 ```powershell
-.\.venv\Scripts\python.exe scripts\train_model.py --labels data\processed\pilot_reviewed_labels.csv
+.\.venv\Scripts\python.exe scripts\train_full_corpus.py
+.\.venv\Scripts\python.exe scripts\probe_external_notes.py
 ```
 
-The committed label export records only a reviewer alias and date; the original name and exact timestamps remain in the ignored local annotation file. To show the 50/50 annotation count in a fresh clone, copy the export to `data/annotations/pilot_labels.csv` before starting the app. Training stops if the selected labels file is absent or lacks enough release groups. A completed run writes an ignored `artifacts/model/` directory with the split manifest, metrics, predictions, and fitted model. The currently documented model run has only 49 usable labels across four observed classes; see [docs/MODEL_CARD.md](docs/MODEL_CARD.md) before citing a number.
+This writes ignored artifacts under `artifacts/model/`: `metrics.json`, `split_manifest.csv`, `predictions.csv`, an evaluated `model.joblib`, and `serving/model.joblib`. The latter is fitted to all 531 labels and has no independent held-out score. The original 49-label pilot is still reproducible with `scripts/train_model.py --labels data/processed/pilot_reviewed_labels.csv`.
+
+## Next.js portal
+
+The public-facing `portal/` app provides one-note classification, CSV batch suggestions for up to 100 notes, a guided human review session, and CSV export. The prediction routes use a committed portable JSON model, so a clean clone can serve predictions without Python or a secret key. Scores are uncalibrated, and browser review drafts are not training labels.
+
+```powershell
+cd portal
+npm ci
+npm run dev
+```
+
+Set the Vercel project Root Directory to `portal`. Build and deployment details, API limits, and model export commands are in [PORTAL_DEPLOYMENT.md](docs/PORTAL_DEPLOYMENT.md). The portal has not been deployed from this repository yet.
 
 ## Pipeline
 
-Pinned Django RST → deterministic entry extraction and provenance → human annotation → release-grouped train/dev/test split → train-only word and character TF-IDF → balanced logistic regression → majority and keyword baselines → review of per-class results and errors. The Streamlit app supports guided annotation and **Prediction review**. The local pilot model and matching metrics now unlock the latter on this machine. A clean clone without the ignored labels and model artifacts starts with annotation only.
+Pinned Django RST → deterministic entry extraction and provenance → human-confirmed dispositions → chronological release-grouped split and similarity audit → train-only word and character TF-IDF → balanced logistic regression → majority and keyword baselines → per-class error review → evaluated Streamlit model plus a separate all-label portable model for the Next.js portal.
 
 For the classroom walkthrough, use [docs/DEMO_RUNBOOK.md](docs/DEMO_RUNBOOK.md). See [DECISIONS.md](DECISIONS.md) for why we chose these parts, [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how they connect, [docs/LITERATURE_SURVEY.md](docs/LITERATURE_SURVEY.md) for related work and the originality boundary, [docs/PRESENTATION_QA.md](docs/PRESENTATION_QA.md) for likely professor questions, and [docs/CLOUD_WORKFLOW.md](docs/CLOUD_WORKFLOW.md) for cloud/phone setup.

@@ -8,8 +8,15 @@ Updated 2026-11-01.
 - Five-class support is API/code 233, configuration/deployment 91, data/schema 106, UI/output 96, and No targeted check stated 5. The fifth class remains sparse.
 - Kavya confirmed all 71 proposals in [the final review sheet](docs/KAVYA_FINAL_71_REVIEW.md): 44 model labels and 27 exclusions for non-standalone extracted fragments. The ignored local records keep her name and exact timestamps; public files omit them.
 - `python scripts/merge_reviewed_labels.py` regenerates the merged 544-row labels file from nine exports. `python scripts/build_annotated_corpus.py` verifies complete non-overlapping coverage and writes the 571-row annotated corpus. The full test suite passes (28 tests on 2026-11-01).
-- The existing 0.276 five-label macro-F1 and local model artifact still describe the original **49-label pilot only**. A new release-grouped split, duplicate audit, retraining, and per-class evaluation are the next work. The later annotation batches were non-blind confirmation of visible suggestions and cannot estimate independent reviewer agreement.
-- Presentation slides, speaking guide, and live demo were prepared for the original pilot and need a refresh after final evaluation. The Streamlit UI currently loads the local pilot model until a newly evaluated artifact replaces it.
+- The new chronological release-grouped evaluation uses 305 train, 109 development, and 105 test notes after 12 documented cross-split similarity exclusions. Test accuracy is 0.733 and five-label macro-F1 is 0.555, above the majority (0.124) and keyword (0.444) baselines. The run remains a **pilot** because all five `No targeted check stated` examples are in train; dev and test have no support for it. The original 0.276 score belongs to the historical 49-label pilot.
+- The primary checkout has regenerated the evaluated Streamlit artifact and a separate full-data serving artifact. Streamlit now opens with a reviewed-corpus explorer and retains guided annotation and prediction review. The Next.js portal source and same-origin prediction API are integrated into `main`; its committed portable model reproduces Python predictions on 571 Django entries and 15 external probe entries.
+- The external probe agreed with 6 of 15 agent-proposed reference labels across React, VS Code, and Chrome (2/5 each). These references are not independent human ground truth, so transfer accuracy is unmeasured. See `docs/FULL_CORPUS_EVALUATION.md` and `data/external/probe_results.csv`.
+
+## Remaining product work
+
+1. The Next.js dependency lockfile is committed and the production build passes. Run API smoke tests and inspect the Vercel function bundle before deployment.
+2. Verify the Vercel function bundle and preview deployment. The repository is prepared for Vercel with `portal/` as Root Directory, but no Vercel deployment is verified yet.
+3. For any wider product claim, collect independently adjudicated examples from other software ecosystems, increase fifth-class support, and measure reviewer agreement. Add access control, rate limiting, and privacy controls before handling confidential notes.
 
 ## Historical MVP snapshot from 2026-10-18
 
