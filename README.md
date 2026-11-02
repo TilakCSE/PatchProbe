@@ -25,10 +25,11 @@ From the project root with Python 3.11 or newer:
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -e ".[dev]"
 .\.venv\Scripts\python.exe -m pytest
+.\.venv\Scripts\python.exe scripts\train_full_corpus.py
 .\.venv\Scripts\python.exe -m streamlit run app.py
 ```
 
-Open the local URL printed by Streamlit. **Reviewed corpus** shows the complete dataset, label chart, filters, and source links. **Prediction review** uses the evaluated local model after the training command below. **Guided annotation** remains available for individual review decisions, saved locally to a CSV; it does not change the committed full corpus automatically.
+Open the local URL printed by Streamlit. **Reviewed corpus** shows the complete dataset, label chart, filters, and source links. **Model evaluation** shows the current full-corpus split, per-class metrics, errors, and external probe. **Prediction review** uses the evaluated local model. **Guided annotation (pilot)** preserves the original 50-row review workflow, saved locally to a CSV; it does not change the committed full corpus automatically.
 
 The committed `data/processed/` files make the review demo work offline. To rebuild the source dataset, run `python scripts/build_dataset.py` once with internet access. It caches pinned upstream RST sources under ignored `data/raw/django/`. Later, `python scripts/build_dataset.py --offline` uses that cache. Source revisions, hashes, counts, and selection rules are in [docs/DATA_PROVENANCE.md](docs/DATA_PROVENANCE.md) and `data/processed/manifest.json`.
 
@@ -47,7 +48,7 @@ This writes ignored artifacts under `artifacts/model/`: `metrics.json`, `split_m
 
 ## Next.js portal
 
-The public-facing `portal/` app provides one-note classification, CSV batch suggestions for up to 100 notes, a guided human review session, and CSV export. The prediction routes use a committed portable JSON model, so a clean clone can serve predictions without Python or a secret key. Scores are uncalibrated, and browser review drafts are not training labels.
+The public-facing `portal/` app provides one-note classification, CSV batch suggestions for up to 100 notes, a guided human review session, and CSV export. Upload the [12-row batch demo CSV](data/demo/batch_demo.csv) to show Django, React, VS Code, and Chrome examples. The prediction routes use a committed portable JSON model, so a clean clone can serve predictions without Python or a secret key. Scores are uncalibrated, and browser review drafts are not training labels.
 
 ```powershell
 cd portal
@@ -61,4 +62,4 @@ Set the Vercel project Root Directory to `portal`. Build and deployment details,
 
 Pinned Django RST → deterministic entry extraction and provenance → human-confirmed dispositions → chronological release-grouped split and similarity audit → train-only word and character TF-IDF → balanced logistic regression → majority and keyword baselines → per-class error review → evaluated Streamlit model plus a separate all-label portable model for the Next.js portal.
 
-For the classroom walkthrough, use [docs/DEMO_RUNBOOK.md](docs/DEMO_RUNBOOK.md). See [DECISIONS.md](DECISIONS.md) for why we chose these parts, [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how they connect, [docs/LITERATURE_SURVEY.md](docs/LITERATURE_SURVEY.md) for related work and the originality boundary, [docs/PRESENTATION_QA.md](docs/PRESENTATION_QA.md) for likely professor questions, and [docs/CLOUD_WORKFLOW.md](docs/CLOUD_WORKFLOW.md) for cloud/phone setup.
+Read the [project specification](docs/PROJECT_SPECIFICATION.md) for the full pipeline, stack, parameters, measured results, API, and future encoder path. [DECISIONS.md](DECISIONS.md) explains material choices; [ARCHITECTURE.md](docs/ARCHITECTURE.md), [LITERATURE_SURVEY.md](docs/LITERATURE_SURVEY.md), and [PORTAL_DEPLOYMENT.md](docs/PORTAL_DEPLOYMENT.md) cover implementation, related work, and deployment.

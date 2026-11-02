@@ -38,6 +38,8 @@ DEFAULT_ENTRIES = "data/processed/pilot_queue.csv"
 DEFAULT_LABELS = "data/annotations/pilot_labels.csv"
 PROJECT_ROOT = Path(__file__).resolve().parent
 CORPUS_PATH = PROJECT_ROOT / "data/processed/annotated_corpus.csv"
+PREDICTIONS_PATH = PROJECT_ROOT / "artifacts/model/predictions.csv"
+EXTERNAL_RESULTS_PATH = PROJECT_ROOT / "data/external/probe_results.csv"
 
 
 def _safe_source_url(url: str) -> bool:
@@ -100,11 +102,78 @@ def _corpus_view() -> None:
             st.link_button("Open official release note", selected["source_url"])
 
 
+def _evaluation_view(metrics: dict) -> None:
+    st.title("PatchProbe: full-corpus evaluation")
+    st.caption("Release-held-out Django results for the fixed TF-IDF and logistic-regression recipe. The displayed model is fitted on training releases only.")
+    test = metrics.get("evaluation", {}).get("test", {})
+    model = test.get("model", {})
+    majority = test.get("majority", {})
+    keyword = test.get("keyword", {})
+    if not model:
+        st.error("Evaluation metrics are incomplete. Regenerate them with scripts/train_full_corpus.py.")
+        return
+    test_count, accuracy, macro_f1, baseline_f1 = st.columns(4)
+    test_count.metric("Held-out test notes", model.get("n", "?"))
+    accuracy.metric("Test accuracy", f"{model.get('accuracy', 0):.1%}")
+    macro_f1.metric("Five-label macro-F1", f"{model.get('macro_f1_five_labels', 0):.3f}")
+    baseline_f1.metric("Keyword macro-F1", f"{keyword.get('macro_f1_five_labels', 0):.3f}")
+    st.warning("Pilot evaluation: the fifth class has only five training examples and zero development or test examples. Its test recall cannot be measured. The all-label portal model is a separate fit and has no held-out score of its own.")
+
+    split_counts = metrics.get("split_counts", {})
+    audit = metrics.get("near_duplicate_audit", {})
+    st.caption(
+        f"Chronological release split after similarity filtering: {split_counts.get('train', '?')} train / "
+        f"{split_counts.get('dev', '?')} dev / {split_counts.get('test', '?')} test. "
+        f"{audit.get('excluded_model_rows', '?')} cross-split near-duplicate rows excluded from evaluation."
+    )
+    st.subheader("Baselines and class results")
+    st.dataframe(pd.DataFrame([
+        {"Method": "TF-IDF + logistic regression", "Accuracy": model.get("accuracy"), "Five-label macro-F1": model.get("macro_f1_five_labels")},
+        {"Method": "Majority class", "Accuracy": majority.get("accuracy"), "Five-label macro-F1": majority.get("macro_f1_five_labels")},
+        {"Method": "Fixed keyword rules", "Accuracy": keyword.get("accuracy"), "Five-label macro-F1": keyword.get("macro_f1_five_labels")},
+    ]), width="stretch", hide_index=True)
+    per_class = model.get("per_class", {})
+    st.dataframe(pd.DataFrame([
+        {"First check area": label, "Support": per_class.get(label, {}).get("support", 0),
+         "Precision": per_class.get(label, {}).get("precision", 0),
+         "Recall": per_class.get(label, {}).get("recall", 0),
+         "F1": per_class.get(label, {}).get("f1-score", 0)}
+        for label in LABEL_DEFINITIONS
+    ]), width="stretch", hide_index=True)
+
+    st.subheader("Confusion matrix")
+    labels = list(LABEL_DEFINITIONS)
+    matrix = model.get("confusion_matrix", [])
+    if len(matrix) == len(labels):
+        st.dataframe(pd.DataFrame(matrix, index=labels, columns=labels), width="stretch")
+        st.caption("Rows are human-confirmed labels; columns are model predictions on the held-out Django notes.")
+
+    if PREDICTIONS_PATH.is_file():
+        with PREDICTIONS_PATH.open("r", encoding="utf-8-sig", newline="") as stream:
+            predictions = list(csv.DictReader(stream))
+        errors = [row for row in predictions if row["split"] == "test" and row["correct"] == "False"]
+        st.subheader(f"Held-out errors ({len(errors)})")
+        st.dataframe(pd.DataFrame(errors, columns=("entry_id", "release", "text", "gold_label", "predicted_label", "source_url")),
+                     width="stretch", hide_index=True,
+                     column_config={"source_url": st.column_config.LinkColumn("Official source")})
+
+    st.subheader("External product probe")
+    st.info("These 15 React, VS Code, and Chrome references were proposed by an agent, not independently human-labeled. Agreement is exploratory and is not cross-product accuracy.")
+    if EXTERNAL_RESULTS_PATH.is_file():
+        with EXTERNAL_RESULTS_PATH.open("r", encoding="utf-8-sig", newline="") as stream:
+            external = list(csv.DictReader(stream))
+        agreed = sum(row["agrees_with_agent_proposal"] == "True" for row in external)
+        st.caption(f"{agreed} of {len(external)} predictions match the proposed interpretations; 2 of 5 per product in this fixed probe.")
+        st.dataframe(pd.DataFrame(external, columns=("probe_id", "product", "text", "proposed_reference_label", "predicted_label", "source_url")),
+                     width="stretch", hide_index=True,
+                     column_config={"source_url": st.column_config.LinkColumn("Official source")})
+
+
 def _prediction_view(metrics: dict) -> None:
     st.title("PatchProbe: prediction review")
     st.caption("Paste a Django release-note entry to see a suggested first check area. A developer still reviews the note and plans the actual checks.")
     if metrics.get("status") == "pilot":
-        st.warning("This is a pilot model. Class support is below the planned evaluation threshold; treat every output as a demonstration suggestion.")
+        st.warning("This full-corpus model is still a pilot: the fifth class has no development or test examples. Treat every output as a review suggestion.")
     else:
         st.info("The model has a recorded five-class evaluation. Check metrics.json and the model card for test support and failure cases.")
     counts = metrics.get("counts", {})
@@ -127,11 +196,11 @@ def _prediction_view(metrics: dict) -> None:
     st.warning("Review the original note before acting. This suggestion does not prove an upgrade is safe or that every app needs this check.")
     st.markdown("**Full class scores (uncalibrated)**")
     st.table([
-        {"First check area": label, "Uncalibrated model score": f"{score:.1%}" if score is not None else "Not trained in this pilot"}
+        {"First check area": label, "Uncalibrated model score": f"{score:.1%}" if score is not None else "Not present in fitted model"}
         for label, score in result.scores.items()
     ])
-    st.caption("Scores are logistic-regression outputs, not calibrated probabilities of correctness. A class absent from pilot training has no score.")
-    st.caption("For a source-linked entry and a saved human decision, use Guided annotation.")
+    st.caption("Scores are logistic-regression outputs, not calibrated probabilities of correctness.")
+    st.caption("For source-linked notes and saved human decisions, open Reviewed corpus.")
 
 
 def main() -> None:
@@ -139,8 +208,9 @@ def main() -> None:
     model_status = artifact_status(PROJECT_ROOT)
     with st.sidebar:
         st.header("PatchProbe mode")
-        choices = ["Reviewed corpus", "Guided annotation"]
+        choices = ["Reviewed corpus", "Guided annotation (pilot)"]
         if model_status.available:
+            choices.append("Model evaluation")
             choices.append("Prediction review")
         workspace_mode = st.radio("Choose a mode", choices)
         if not model_status.available:
@@ -149,12 +219,15 @@ def main() -> None:
     if workspace_mode == "Reviewed corpus":
         _corpus_view()
         return
+    if workspace_mode == "Model evaluation":
+        _evaluation_view(model_status.metrics or {})
+        return
     if workspace_mode == "Prediction review":
         _prediction_view(model_status.metrics or {})
         return
 
-    st.title("PatchProbe: release-note review")
-    st.caption("Choose the first downstream area to verify based on the note text. This is a human decision, not a model prediction.")
+    st.title("PatchProbe: guided annotation pilot")
+    st.caption("This screen preserves the original 50-row review workflow. The complete 571-row confirmed corpus is in Reviewed corpus. A saved choice here is a human decision, not a model prediction.")
 
     with st.sidebar:
         st.header("Review session")

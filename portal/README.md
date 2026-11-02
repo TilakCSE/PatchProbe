@@ -7,7 +7,7 @@ The public-facing Next.js interface for PatchProbe. It makes one-note and CSV-ba
 Use Node.js 20.9 or newer. From this directory:
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -18,7 +18,7 @@ The deployment's project root is `portal/`. The app uses `/api/predict`, `/api/p
 ## Use
 
 - **Classify one note:** paste one substantive release-note entry, up to 10,000 characters. The output includes the suggested first verification area and uncalibrated score breakdown.
-- **Batch workspace:** import a CSV with a `text`, `note`, `release_note`, or `entry` column. Optional `id`/`entry_id` and `source_url`/`source`/`url` columns are accepted. Maximum 100 nonempty notes. Export suggestions as CSV.
+- **Batch workspace:** import a CSV with a `text`, `note`, `release_note`, or `entry` column. Optional `id`/`entry_id` and `source_url`/`source`/`url` columns are accepted. Maximum 100 nonempty notes. Export suggestions as CSV. Try the [12-row demo CSV](../data/demo/batch_demo.csv); it deliberately includes difficult examples and is not an accuracy benchmark.
 - **Human review:** confirm, change, or mark suggestions `UNCLEAR`. A reason is required for `UNCLEAR`. Export only decided rows as a review draft. This file is not an independently labeled gold set or an automatic training source.
 
 CSV parsing handles quoted commas and newlines. User notes and decisions live only in browser memory until the user exports; reloading clears the session. Requests send note text to the same-origin server route for prediction. The portal stores no notes on the server. Source links are clickable only for HTTP or HTTPS URLs. Exported cells beginning with spreadsheet formula characters are prefixed with an apostrophe.

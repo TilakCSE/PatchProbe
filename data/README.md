@@ -8,5 +8,7 @@
 - `processed/annotated_corpus.csv`: full 571-row source-and-decision join. `review_decision` includes five classes, `UNCLEAR`, or `EXCLUDE`; `model_label` is blank for `UNCLEAR` and `EXCLUDE`.
 - `review_batches/`: historical queue and suggestion sheets showing what reviewers saw; not an extra source of labels.
 - `annotations/`: named reviewer decisions with exact timestamps, local and ignored by Git.
+- `demo/batch_demo.csv`: 12 source-linked notes for the portal CSV import demonstration; illustrative, without target labels. Rebuild with `python scripts/build_demo_batch.py`.
+- `external/`: source-linked React, VS Code, and Chrome probe inputs and qualitative results. Proposed reference interpretations are not independent human ground truth.
 
-Rebuild the merged labels with `python scripts/merge_reviewed_labels.py`; then run `python scripts/build_annotated_corpus.py` to regenerate and validate full coverage. Keep source IDs and revisions stable. The final evaluation must audit cross-release near-duplicates before splitting.
+Rebuild the merged labels with `python scripts/merge_reviewed_labels.py`; then run `python scripts/build_annotated_corpus.py` to regenerate and validate full coverage. Keep source IDs and revisions stable. The completed evaluation audits cross-release near-duplicates before scoring; see `docs/FULL_CORPUS_EVALUATION.md`.

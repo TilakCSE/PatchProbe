@@ -176,3 +176,13 @@ Each decision records the choice, evidence, alternatives, and what would change 
 **Why:** Django-only held-out releases cannot establish transfer to other products. A small transparent probe exposes likely domain failures and gives concrete candidates for later human adjudication.
 
 **Evidence and limit:** The all-data model agreed with 6 of 15 proposed interpretations (2 of 5 for each product). The three product pages were purposefully sampled, not randomly selected; wording was adapted; the reference labels were proposed by an agent. Agreement is exploratory and cannot be reported as cross-company accuracy or proof of generalization. No model tuning followed this probe. Independent human review and a larger untouched external set are future work.
+
+## D021 — Full-corpus research UI and illustrative batch input (2026-11-02)
+
+**Choice:** Keep Streamlit as the local research interface and expose the completed 571-entry corpus and 105-note held-out evaluation there. Preserve the original guided annotation screen as a clearly marked historical pilot. Ship a reproducible 12-note CSV for the public portal's 100-note batch importer, using source-linked Django and external probe entries without supplying expected labels.
+
+**Why:** The old Streamlit landing view made the 50-note pilot look current. The corpus and error tables let a reviewer inspect the actual training data and evaluation limits. The CSV demonstrates the batch workflow and realistic out-of-domain failures without presenting a hand-picked file as a benchmark.
+
+**Evidence and limit:** Streamlit's corpus, evaluation, and prediction modes passed a local AppTest smoke check. The demo CSV produced 12 predictions through the local Next.js batch API. The full Python suite passed 33 tests. Neither the demonstration nor local API checks verify Vercel behavior or external-product accuracy.
+
+**Future model decision:** Keep TF-IDF plus balanced logistic regression as the current deployed baseline. A frozen 384-dimensional MiniLM encoder with a balanced linear classifier is a feasible comparison; fine-tuning a compact transformer should wait for more independently reviewed, multi-product and fifth-class examples. Use a fresh untouched evaluation set and measure runtime cost before replacing the baseline. No transformer is part of this deliverable.

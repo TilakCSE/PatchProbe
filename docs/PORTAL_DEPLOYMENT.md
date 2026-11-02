@@ -27,6 +27,8 @@ npm run dev
 
 Open the local URL printed by Next.js. `npm run build` verifies the production bundle. If the JSON export is missing or malformed, the build fails rather than displaying made-up results.
 
+For CSV import, use [`data/demo/batch_demo.csv`](../data/demo/batch_demo.csv): 12 source-linked notes, including six from other products. It has no target labels and is a UI demonstration, not an external accuracy test. The local production server returned 12 predictions for this file; the homepage, one-note route, ordinary batch route, and validation errors for an empty note and 101-note batch also passed on 2026-11-02. The API route traces were about 6.3 MB uncompressed each. These checks do not establish that a cloud preview works.
+
 ## Vercel
 
 1. Import `TilakCSE/PatchProbe` into Vercel and set **Root Directory** to `portal`.

@@ -1,0 +1,13 @@
+id,product,text,source_url
+dj-9bb0f2c834a0031c,Django 6.0,The minimum supported version of asgiref is increased from 3.8.1 to 3.9.1.,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L481-L482
+dj-7339e91a634f4dda,Django 6.0,Migrations now support serialization of zoneinfo.ZoneInfo instances.,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L272-L272
+dj-336f88e0d839a604,Django 6.0,The new variable forloop.length is now available within a for loop.,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L339-L340
+dj-011546728c329f4d,Django 6.0,The undocumented django.utils.itercompat.is_iterable() function and the django.utils.itercompat module are removed.,https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L610-L611
+dj-084daac63d98e842,Django 6.0,"Setting ADMINS or MANAGERS to a list of (name, address) tuples is deprecated. Set to a list of email address strings instead. Django never used the name portion. To include a name, format the address string as '""Name"" <address>' or use Python's email.utils.formataddr.",https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L525-L528
+dj-c0f7b469ad475d3a,Django 6.0,"The querystring template tag now accepts multiple positional arguments, which must be mappings, such as django.http.QueryDict or dict.",https://github.com/django/django/blob/85eb963c5297fb285aecf4a90c97141a1b9c5bee/docs/releases/6.0.txt#L345-L347
+react-02,React,ReactDOM.findDOMNode has been removed and applications should replace calls with DOM refs.,https://react.dev/blog/2024/04/25/react-19-upgrade-guide
+react-05,React,React 19 no longer distributes UMD builds; script-based deployments should use an ESM CDN.,https://react.dev/blog/2024/04/25/react-19-upgrade-guide
+vscode-01,VS Code,The chat.instructionsFilesLocations setting controls where VS Code looks for instruction files.,https://code.visualstudio.com/updates/v1_100
+vscode-04,VS Code,The Node extension host supports ESM extensions when package.json sets type to module.,https://code.visualstudio.com/updates/v1_100
+chrome-01,Chrome,Container queries now inspect flat-tree ancestors in shadow DOM and may alter the selected CSS container.,https://developer.chrome.com/release-notes/130
+chrome-04,Chrome,IndexedDB requests now raise NotFoundError when the backing data file is missing from disk.,https://developer.chrome.com/release-notes/130
